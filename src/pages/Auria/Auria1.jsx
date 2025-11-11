@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Star, Building, Trees, Home, Award } from 'lucide-react';
-import './auria1.css';
+import './Auria1.css';
 import Map from '../Map';
 
 const Auria1 = () => {

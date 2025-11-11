@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin } from 'lucide-react';
-import './auria2.css';
+import './Auria2.css';
 
 const Auria2 = () => {
   const [formData, setFormData] = useState({

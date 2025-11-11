@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/contact.css';
+import '../css/Contact.css';
 import Map from './Map';
 
 const Contact = () => {

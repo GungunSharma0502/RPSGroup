@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/project.css';
+import '../css/Project.css';
 import { Link } from 'react-router-dom';
 
 const Projects = () => {

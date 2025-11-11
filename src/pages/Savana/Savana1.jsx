@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './savana1.css';
+import './Savana1.css';
 
 const Savana1 = () => {
   const [activeTab, setActiveTab] = useState('all');
