@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/footer.css';
+import '../css/Footer.css';
 
 const Footer = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
