@@ -1,0 +1,935 @@
+/* 12thAvenue.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Avenue-container {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.Avenue-hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=900&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Avenue-hero-overlay {
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.Avenue-hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.Avenue-hero-subtitle {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+}
+
+.Avenue-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Avenue-nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.Avenue-nav-link:hover {
+  color: #ff6b00;
+}
+
+/* Overview Section */
+.Avenue-overview {
+  padding: 80px 5%;
+  background: #f8f8f8;
+}
+
+.Avenue-overview-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+}
+
+.Avenue-overview-text {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.Avenue-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.Avenue-title-icon {
+  color: #ff6b00;
+  font-size: 0.5rem;
+}
+
+.Avenue-section-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.Avenue-overview-description {
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.Avenue-overview-details {
+  border-top: 2px solid #ddd;
+}
+
+.Avenue-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.Avenue-detail-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.Avenue-detail-value {
+  color: #666;
+  text-align: right;
+}
+
+.Avenue-overview-image {
+  position: relative;
+  z-index: 2;
+}
+
+.Avenue-image-placeholder {
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+  background: transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); */
+  position: relative;
+  overflow: visible;
+}
+
+.Avenue-building-mockup {
+  width: 90%;
+  height: 85%;
+  background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop') center/cover;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-40px);
+}
+
+/* Offerings Section */
+.Avenue-offerings {
+  padding: 80px 5%;
+  background: white;
+}
+
+.Avenue-offerings-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.Avenue-offerings-title {
+  font-size: 2.5rem;
+  color: #ff6b00;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.Avenue-offerings-subtitle {
+  font-size: 2.5rem;
+  color: #ff6b00;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.Avenue-offerings-description {
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.Avenue-offerings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.Avenue-offering-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.Avenue-offering-icon {
+  width: 60px;
+  height: 60px;
+  background: #ff6b00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.Avenue-icon-orange {
+  background: #ff6b00;
+}
+
+.Avenue-offering-text {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.Avenue-aerial-view {
+  background: url('https://images.unsplash.com/photo-1448630360428-65456885c650?w=1200&h=800&fit=crop') center/cover;
+  height: 450px;
+}
+
+/* Advantages Section */
+.Avenue-advantages {
+  padding: 80px 5%;
+  background: linear-gradient(to bottom, #f0f4f8, #d9e8f5);
+}
+
+.Avenue-advantages-header {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.Avenue-advantages-icon {
+  color: #ff6b00;
+  font-size: 1.2rem;
+}
+
+.Avenue-advantages-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Avenue-advantages-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.Avenue-advantage-card {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.Avenue-advantage-card:hover {
+  transform: translateY(-5px);
+}
+
+.Avenue-advantage-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.Avenue-advantage-text {
+  color: #333;
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Infrastructure Section */
+.Avenue-infrastructure {
+  padding: 80px 5%;
+  background: linear-gradient(to right, #ff6b00, #ff8c42);
+}
+
+.Avenue-infrastructure-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Avenue-infrastructure-title {
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.Avenue-infrastructure-subtitle {
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.Avenue-infrastructure-subtitle-alt {
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.Avenue-infrastructure-description {
+  color: white;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.Avenue-infrastructure-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.Avenue-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+
+.Avenue-feature-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.Avenue-rooftop-view {
+  background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&h=800&fit=crop') center/cover;
+  height: 400px;
+}
+
+/* Why Choose Us Section */
+.Avenue-choose {
+  padding: 80px 5%;
+  background: #f8f8f8;
+  position: relative;
+}
+
+.Avenue-choose-header {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.Avenue-choose-icon {
+  color: #ff6b00;
+  font-size: 1.2rem;
+}
+
+.Avenue-choose-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.Avenue-choose-grid {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.Avenue-choose-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.Avenue-choose-card:hover {
+  transform: translateY(-5px);
+}
+
+.Avenue-choose-card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.Avenue-choose-card-title {
+  color: #333;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.Avenue-choose-card-text {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.Avenue-choose-badge {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.Avenue-badge-circle {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #ff6b00, #ff4444);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(255, 107, 0, 0.4);
+}
+
+.Avenue-badge-top,
+.Avenue-badge-right,
+.Avenue-badge-bottom,
+.Avenue-badge-left {
+  position: absolute;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.Avenue-badge-top {
+  top: 20px;
+}
+
+.Avenue-badge-right {
+  right: 20px;
+}
+
+.Avenue-badge-bottom {
+  bottom: 20px;
+}
+
+.Avenue-badge-left {
+  left: 20px;
+}
+
+.Avenue-badge-center {
+  text-align: center;
+  color: white;
+}
+
+.Avenue-badge-the {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.Avenue-badge-power {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.Avenue-badge-of {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.Avenue-badge-number {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+/* Gallery Section */
+.Avenue-gallery {
+  padding: 80px 5%;
+  background: white;
+}
+
+.Avenue-gallery-grid {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.Avenue-gallery-item {
+  aspect-ratio: 4/3;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.Avenue-gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.Avenue-gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&h=600&fit=crop') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Avenue-gallery-item:nth-child(1) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-item:nth-child(2) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-item:nth-child(3) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-item:nth-child(4) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-item:nth-child(5) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-item:nth-child(6) .Avenue-gallery-placeholder {
+  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop') center/cover;
+}
+
+.Avenue-gallery-load-more {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 50px;
+  background: #d4a23e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.Avenue-gallery-load-more:hover {
+  background: #c49331;
+}
+
+/* Location Section */
+.Avenue-location {
+  padding: 80px 5%;
+  background: #2c3e50;
+}
+
+.Avenue-location-header {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.Avenue-location-icon {
+  color: #ff6b00;
+  font-size: 1.2rem;
+}
+
+.Avenue-location-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.Avenue-location-content {
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Avenue-location-subtitle {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.Avenue-location-description {
+  color: #ecf0f1;
+  line-height: 1.8;
+}
+
+.Avenue-location-map-placeholder {
+  width: 100%;
+  height: 400px;
+  background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=800&fit=crop') center/cover;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Avenue-connectivity-header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.Avenue-connectivity-icon {
+  color: #ff6b00;
+  font-size: 1.2rem;
+}
+
+.Avenue-connectivity-title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.Avenue-connectivity-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.Avenue-connectivity-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.Avenue-connectivity-card:hover {
+  transform: translateY(-5px);
+}
+
+.Avenue-connectivity-card .Avenue-connectivity-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.Avenue-connectivity-card p {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* Contact Section */
+.Avenue-contact {
+  padding: 80px 5%;
+  background: #f8f8f8;
+}
+
+.Avenue-contact-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.Avenue-contact-map {
+  width: 100%;
+  height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.Avenue-map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=800&fit=crop') center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.Avenue-map-marker {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.Avenue-map-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Avenue-contact-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.Avenue-form-wrapper {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Avenue-form-input,
+.Avenue-form-select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.Avenue-form-input:focus,
+.Avenue-form-select:focus {
+  outline: none;
+  border-color: #ff6b00;
+}
+
+.Avenue-form-group {
+  margin-bottom: 20px;
+}
+
+.Avenue-form-label {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.Avenue-form-submit {
+  width: 100%;
+  padding: 15px;
+  background: #d4a23e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.Avenue-form-submit:hover {
+  background: #c49331;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .Avenue-overview-content,
+  .Avenue-offerings-content,
+  .Avenue-infrastructure-content,
+  .Avenue-location-content,
+  .Avenue-contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .Avenue-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Avenue-connectivity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Avenue-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .Avenue-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .Avenue-hero-subtitle {
+    font-size: 3rem;
+  }
+
+  .Avenue-nav {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .Avenue-nav-link {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .Avenue-section-title,
+  .Avenue-offerings-title,
+  .Avenue-offerings-subtitle,
+  .Avenue-advantages-title,
+  .Avenue-infrastructure-title,
+  .Avenue-infrastructure-subtitle,
+  .Avenue-infrastructure-subtitle-alt,
+  .Avenue-location-title,
+  .Avenue-choose-title {
+    font-size: 1.8rem;
+  }
+
+  .Avenue-offerings-grid,
+  .Avenue-infrastructure-features,
+  .Avenue-advantages-grid,
+  .Avenue-choose-grid,
+  .Avenue-connectivity-grid,
+  .Avenue-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .Avenue-hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+
+  .Avenue-hero-subtitle {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+
+  .Avenue-section-title,
+  .Avenue-offerings-title,
+  .Avenue-offerings-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .Avenue-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

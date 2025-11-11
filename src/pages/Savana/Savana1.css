@@ -1,0 +1,675 @@
+.savana1-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.savana1-hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.savana1-hero-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.savana1-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.savana1-main-nav {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  gap: 0;
+  padding: 0;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1400px;
+}
+
+.savana1-nav-link {
+  flex: 1;
+  padding: 25px 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.savana1-nav-link:hover {
+  background: #f8f8f8;
+  border-bottom-color: #C9A961;
+  color: #C9A961;
+}
+
+.savana1-nav-link.savana1-nav-active {
+  background: #f8f8f8;
+  border-bottom-color: #C9A961;
+  color: #C9A961;
+}
+
+/* Container */
+.savana1-container-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Section Header */
+.savana1-section-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.savana1-dots {
+  color: #C9A961;
+  font-size: 20px;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.savana1-section-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #2c2c2c;
+}
+
+/* Overview Section */
+.savana1-overview-section {
+  background: #fff;
+}
+
+.savana1-overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.savana1-overview-text {
+  width: 100%;
+}
+
+.savana1-text-paragraph {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+  text-align: justify;
+}
+
+.savana1-overview-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.savana1-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stats Grid */
+.savana1-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.savana1-stat-item {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.savana1-stat-number {
+  font-size: 48px;
+  font-weight: 300;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.savana1-highlight {
+  color: #1e56a0;
+  font-weight: 400;
+}
+
+.savana1-plus {
+  color: #1e56a0;
+}
+
+.savana1-stat-label {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Why Choose Section */
+.savana1-why-choose-section {
+  background: #f9f9f9;
+}
+
+.savana1-why-choose-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.savana1-why-choose-images {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.savana1-aerial-img-1 {
+  grid-column: 1 / 2;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.savana1-aerial-img-2 {
+  grid-column: 2 / 3;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: 100px;
+}
+
+.savana1-why-choose-text {
+  width: 100%;
+}
+
+.savana1-subtitle {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.savana1-why-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #2c2c2c;
+}
+
+.savana1-description {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+  text-align: justify;
+}
+
+/* Amenities Section */
+.savana1-amenities-section {
+  background: #fff;
+}
+
+.savana1-amenities-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+}
+
+.savana1-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 40px;
+  margin-top: 60px;
+}
+
+.savana1-amenity-item {
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.savana1-amenity-item:hover {
+  transform: translateY(-5px);
+}
+
+.savana1-amenity-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.savana1-amenity-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.savana1-amenity-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2c2c2c;
+}
+
+/* Layout Section */
+.savana1-layout-section {
+  background: #f9f9f9;
+}
+
+.savana1-layout-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 40px 0;
+}
+
+.savana1-layout-tab {
+  padding: 18px 50px;
+  border: none;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.savana1-layout-tab-active {
+  background: #000;
+  color: #fff;
+}
+
+.savana1-layout-tab:not(.savana1-layout-tab-active):hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.savana1-layout-tab:nth-child(2) {
+  background: #1e56a0;
+  color: #fff;
+}
+
+.savana1-layout-tab:nth-child(2):hover {
+  background: #164477;
+}
+
+.savana1-layout-tab:nth-child(3) {
+  background: #1e56a0;
+  color: #fff;
+}
+
+.savana1-layout-tab:nth-child(3):hover {
+  background: #164477;
+}
+
+.savana1-layout-plans {
+  margin-top: 60px;
+}
+
+.savana1-layout-plan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-items: center;
+}
+
+.savana1-layout-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+}
+
+/* Why Choose Features Section */
+.savana1-why-choose-features {
+  background: #fff;
+  padding: 80px 40px;
+}
+
+.savana1-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.savana1-feature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.savana1-feature:hover {
+  transform: translateY(-5px);
+}
+
+.savana1-feature-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.savana1-feature-text h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* Gallery Section */
+.savana1-gallery-section {
+  background: #f9f9f9;
+  padding: 80px 40px;
+}
+
+.savana1-gallery-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.savana1-gallery-tab {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border: 2px solid #d1d5db;
+  background-color: white;
+  color: #2c2c2c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.savana1-gallery-tab.savana1-gallery-tab-active {
+  background-color: #2c2c2c;
+  color: white;
+  border-color: #2c2c2c;
+}
+
+.savana1-gallery-tab:hover {
+  border-color: #C9A961;
+}
+
+.savana1-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.savana1-gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 300px;
+}
+
+.savana1-gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.savana1-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Benefits Section */
+.savana1-benefits-section {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.savana1-benefits-section .savana1-section-title {
+  color: #fff;
+}
+
+.savana1-benefits-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.savana1-benefits-text h3 {
+  color: #C9A961;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.savana1-benefits-text h3:first-child {
+  margin-top: 0;
+}
+
+.savana1-benefits-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+.savana1-benefits-image {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.savana1-benefits-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Location Section */
+.savana1-location-section {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+.savana1-location-section .savana1-section-title {
+  color: #fff;
+}
+
+.savana1-location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.savana1-location-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.savana1-location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(201, 169, 97, 0.3);
+}
+
+.savana1-location-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  color: #C9A961;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.savana1-location-card p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Footer */
+.savana1-footer {
+  background-color: #111827;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.savana1-footer p {
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .savana1-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .savana1-amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .savana1-benefits-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 968px) {
+  .savana1-main-nav {
+    flex-wrap: wrap;
+  }
+  
+  .savana1-nav-link {
+    font-size: 12px;
+    padding: 20px 15px;
+  }
+  
+  .savana1-overview-content,
+  .savana1-why-choose-content,
+  .savana1-layout-plan,
+  .savana1-benefits-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .savana1-why-choose-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .savana1-aerial-img-2 {
+    margin-top: 0;
+  }
+  
+  .savana1-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .savana1-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .savana1-container-inner {
+    padding: 60px 20px;
+  }
+  
+  .savana1-section-title {
+    font-size: 28px;
+  }
+  
+  .savana1-stats-grid,
+  .savana1-amenities-grid,
+  .savana1-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .savana1-stat-number {
+    font-size: 36px;
+  }
+  
+  .savana1-main-nav {
+    flex-direction: column;
+    width: 95%;
+  }
+  
+  .savana1-nav-link {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .savana1-features-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .savana1-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .savana1-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .savana1-location-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

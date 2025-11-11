@@ -1,0 +1,187 @@
+/* Establishment.css */
+
+.establishment-section {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+}
+
+.establishment-overlay {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px 200px;
+  margin-bottom: -150px;
+}
+
+.establishment-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 87, 0.85) 0%, rgba(67, 97, 123, 0.75) 100%);
+  z-index: 0;
+}
+
+.establishment-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.establishment-title {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.establishment-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin: 0;
+  max-width: 900px;
+  font-weight: 300;
+}
+
+.cards-wrapper {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  padding: 0 20px 80px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.property-card {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 50px 40px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.property-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  color: #2d5f8d;
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .establishment-title {
+    font-size: 36px;
+  }
+  
+  .establishment-description {
+    font-size: 16px;
+  }
+  
+  .establishment-overlay {
+    padding: 60px 20px 180px;
+    margin-bottom: -130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .establishment-overlay {
+    padding: 50px 20px 160px;
+    min-height: 300px;
+    margin-bottom: -110px;
+  }
+  
+  .establishment-title {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  
+  .establishment-description {
+    font-size: 15px;
+  }
+  
+  .cards-wrapper {
+    padding: 0 20px 60px;
+  }
+  
+  .property-card {
+    padding: 40px 30px;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .establishment-title {
+    font-size: 28px;
+  }
+  
+  .establishment-overlay {
+    padding: 40px 20px 140px;
+    margin-bottom: -90px;
+  }
+  
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .property-card {
+    padding: 35px 25px;
+  }
+}

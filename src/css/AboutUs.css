@@ -1,0 +1,263 @@
+/* General Container */
+.about-container {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200') center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.about-hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Section Styling */
+.about-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.about-vision-section {
+  background: #f9f9f9;
+}
+
+.about-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text-column {
+  flex: 1;
+}
+
+.about-image-column {
+  flex: 1;
+}
+
+.about-mission-text {
+  max-width: 800px;
+}
+
+.about-section-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.about-title-icon {
+  color: #c49b63;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.about-description {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.about-section-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section */
+.about-stats-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #1a3a52 0%, #2c5f7f 100%);
+  gap: 40px;
+}
+
+.about-stat-card {
+  text-align: center;
+  color: white;
+  min-width: 200px;
+}
+
+.about-stat-value {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-stat-unit {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #c49b63;
+}
+
+.about-stat-description {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Testimonials Section */
+.about-testimonials-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.about-testimonials-title {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.about-testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.about-testimonial-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.about-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-testimonial-stars {
+  margin-bottom: 20px;
+}
+
+.about-star {
+  color: #ffa500;
+  font-size: 1.2rem;
+  margin-right: 3px;
+}
+
+.about-testimonial-text {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
+  min-height: 100px;
+}
+
+.about-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.about-testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-testimonial-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-testimonial-quote {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  font-size: 4rem;
+  color: #e0e0e0;
+  font-family: Georgia, serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+
+  .about-stats-section {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .about-section {
+    padding: 50px 5%;
+  }
+
+  .about-section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-stat-value {
+    font-size: 2.5rem;
+  }
+
+  .about-stat-unit {
+    font-size: 1.5rem;
+  }
+
+  .about-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-title {
+    font-size: 2rem;
+  }
+
+  .about-hero {
+    height: 300px;
+  }
+
+  .about-section-title {
+    font-size: 1.3rem;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+  }
+
+  .about-stat-value {
+    font-size: 2rem;
+  }
+}

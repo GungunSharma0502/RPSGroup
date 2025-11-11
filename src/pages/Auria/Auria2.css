@@ -1,0 +1,220 @@
+/* Reset and Base Styles */
+.auria2-container {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Dots Decoration */
+.auria2-dots {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}
+
+.auria2-dots div {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #d97706;
+  border-radius: 50%;
+}
+
+/* Contact Section */
+.auria2-contact-section {
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.auria2-map-container {
+  width: 100%;
+}
+
+.auria2-map-container > div:first-child {
+  background-color: #e5e7eb;
+  height: 24rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.auria2-map-info {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.auria2-map-info h4 {
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.auria2-map-info p {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.auria2-contact-form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.auria2-input,
+.auria2-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.auria2-input:focus,
+.auria2-select:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.auria2-select {
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.auria2-submit {
+  width: 100%;
+  background-color: #d97706;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.auria2-submit:hover {
+  background-color: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Banking Section */
+.auria2-banking-section {
+  margin-top: 4rem;
+}
+
+.auria2-banking-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+.auria2-banks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.auria2-bank-logo {
+  background-color: #f3f4f6;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.auria2-bank-logo:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.auria2-bank-logo p {
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Footer */
+.auria2-footer {
+  background-color: #111827;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.auria2-footer p {
+  font-size: 0.875rem;
+}
+
+/* Utility Classes */
+.auria2-text-gold {
+  color: #d97706;
+}
+
+.auria2-bg-gold {
+  background-color: #d97706;
+}
+
+.auria2-border-gold {
+  border-color: #d97706;
+}
+
+.auria2-max-width {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .auria2-contact-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .auria2-banking-section {
+    margin-top: 3rem;
+  }
+
+  .auria2-banking-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .auria2-banks-grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .auria2-contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .auria2-contact-form h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes auria2-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auria2-bank-logo {
+  animation: auria2-fadeIn 0.5s ease-out;
+}
