@@ -2,9 +2,20 @@ import React, { useState } from 'react';
 import '../css/ProjectsCss/Palms.css';
 import { Shield, Baby, Gamepad2, Phone, Home, Zap, Flame, Camera, ChevronDown } from 'lucide-react';
 import Map from './Map';
+
 const Palms = () => {
   const [activeTab, setActiveTab] = useState('3bhk');
   const [expandedProject, setExpandedProject] = useState(null);
+
+  const layoutImages = {
+    '3bhk': [
+      'https://rpsgroupindia.com/wp-content/uploads/2023/08/270-TYPICAL.jpg',
+      'https://rpsgroupindia.com/wp-content/uploads/2023/08/270-TYPICAL.jpg'
+    ],
+    '4bhk': [
+      'https://rpsgroupindia.com/wp-content/uploads/2023/08/340-TYPICAL.jpg'
+    ]
+  };
 
   const amenities = [
     { icon: <Shield size={50} />, label: 'GATED COMMUNITY' },
@@ -18,9 +29,9 @@ const Palms = () => {
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop'
+   'https://rpsgroupindia.com/wp-content/uploads/2023/09/fs.jpeg-1024x560.webp',
+   'https://rpsgroupindia.com/wp-content/uploads/2023/05/triange-copy-1024x527.jpg',
+   'https://rpsgroupindia.com/wp-content/uploads/2023/05/nite-copy-1024x768.jpg'
   ];
 
   const projects = [
@@ -78,7 +89,7 @@ const Palms = () => {
 
             <div className="Palms__overview-image">
               <img 
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=500&fit=crop" 
+                src="https://rpsgroupindia.com/wp-content/uploads/elementor/thumbs/VILA-new-copy-scaled-e1684588849696-qbn5ofw6x7ktkovrgarhp6852clltl03p6gf84zqe0.jpg" 
                 alt="RPS Palms"
               />
             </div>
@@ -92,7 +103,7 @@ const Palms = () => {
           <div className="Palms__building-grid">
             <div className="Palms__building-image-large">
               <img 
-                src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&h=500&fit=crop" 
+                src="https://rpsgroupindia.com/wp-content/uploads/2023/09/fs.jpeg-1024x560.webp" 
                 alt="Building view"
               />
             </div>
@@ -167,16 +178,20 @@ const Palms = () => {
                 </div>
                 <div className="Palms__layout-row">
                   <span className="Palms__layout-label">Super Area</span>
-                  <span className="Palms__layout-value">1400 SQ. FT</span>
+                  <span className="Palms__layout-value">{activeTab === '3bhk' ? '1400 SQ. FT' : '1800 SQ. FT'}</span>
                 </div>
               </div>
             </div>
 
-            <div className="Palms__layout-image">
-              <img 
-                src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=600&fit=crop" 
-                alt="Floor Plan"
-              />
+            <div className="Palms__layout-images-wrapper">
+              {layoutImages[activeTab].map((image, index) => (
+                <div key={index} className="Palms__layout-image">
+                  <img 
+                    src={image} 
+                    alt={`${activeTab.toUpperCase()} Floor Plan ${index + 1}`}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

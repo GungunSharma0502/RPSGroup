@@ -14,7 +14,7 @@
 .Palms__hero-section {
   position: relative;
   height: 350px;
-  background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=400&fit=crop') center/cover;
+  background: url('https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&q=80') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,9 +241,10 @@
 
 .Palms__layout-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 60px;
   margin-top: 50px;
+  align-items: start;
 }
 
 .Palms__layout-type {
@@ -275,16 +276,23 @@
   font-size: 15px;
 }
 
+.Palms__layout-images-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .Palms__layout-image {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 .Palms__layout-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -526,7 +534,11 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .Palms__overview-grid,
-  .Palms__building-grid,
+  .Palms__building-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .Palms__layout-content {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -581,12 +593,20 @@
     padding: 15px 40px;
   }
 
+  .Palms__tab--active::after {
+    display: none;
+  }
+
   .Palms__overview-section,
   .Palms__building-images-section,
   .Palms__layout-section,
   .Palms__amenities-section,
   .Palms__gallery-section {
     padding: 50px 0;
+  }
+
+  .Palms__layout-images-wrapper {
+    gap: 20px;
   }
 }
 
@@ -602,5 +622,14 @@
 
   .Palms__location-sidebar {
     padding: 40px 20px;
+  }
+
+  .Palms__tab {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .Palms__layout-content {
+    gap: 30px;
   }
 }

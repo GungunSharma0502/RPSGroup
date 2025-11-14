@@ -136,7 +136,7 @@ const Overview = () => {
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)'
           }}>
             <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" 
+              src="https://rpsgroupindia.com/wp-content/uploads/2023/05/nite-copy-1024x768.jpg" 
               alt="RPS Group Building" 
               style={{
                 width: '100%',

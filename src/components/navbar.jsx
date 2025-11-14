@@ -81,6 +81,11 @@ const Navbar = () => {
                   <li><Link to="/rps-palm-drive" onClick={closeMobileMenu}>RPS Palm Drive</Link></li>
                   <li><Link to="/rps-palms" onClick={closeMobileMenu}>RPS Palms</Link></li>
                   <li><Link to="/rps-green-valley" onClick={closeMobileMenu}>RPS Green Valley</Link></li>
+                  <li><Link to="/rps-Sargam" onClick={closeMobileMenu}>RPS Sargam Farmland Naugoan</Link></li>
+                  <li><Link to="/the-elements-goa" onClick={closeMobileMenu}>The Elements, Goa</Link></li>
+                  <li><Link to="/propex-city" onClick={closeMobileMenu}>PropexCity</Link></li>
+                  
+                   
                 </ul>
               </div>
 

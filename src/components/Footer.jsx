@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Footer.css';
 
 const Footer = () => {
@@ -15,16 +16,16 @@ const Footer = () => {
                 <img src="https://via.placeholder.com/120x50/ffffff/003d82?text=RPS+GROUP" alt="RPS Group" />
               </div>
               <div className="social-icons">
-                <a href="#" className="social-icon" aria-label="Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" className="social-icon" aria-label="Instagram">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#" className="social-icon" aria-label="LinkedIn">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" className="social-icon" aria-label="YouTube">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
@@ -44,13 +45,8 @@ const Footer = () => {
             <div className="footer-section">
               <h3 className="footer-heading">ABOUT US</h3>
               <ul className="footer-links">
-                <li><a href="/overview">Overview</a></li>
-                <li><a href="/vision-mission">Vision & Mission</a></li>
-                <li><a href="/our-leaders">Our Leaders</a></li>
-                <li><a href="/media">Media</a></li>
-                <li><a href="/awards">Awards</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/blogs">Blogs</a></li>
+                <li><Link to="/about">Overview</Link></li>
+                <li><Link to="/about">Vision & Mission</Link></li>
               </ul>
             </div>
 
@@ -58,14 +54,14 @@ const Footer = () => {
             <div className="footer-section">
               <h3 className="footer-heading">OUR PROJECTS</h3>
               <ul className="footer-links">
-                <li><a href="/rps-12th-avenue">RPS 12th Avenue</a></li>
-                <li><a href="/rps-auria">RPS Auria</a></li>
-                <li><a href="/all-projects">All Projects</a></li>
+                <li><Link to="/rps-12th-avenue">RPS 12th Avenue</Link></li>
+                <li><Link to="/rps-auria">RPS Auria</Link></li>
+                <li><Link to="/all-projects">All Projects</Link></li>
               </ul>
               <h3 className="footer-heading career-heading">CAREER</h3>
               <ul className="footer-links">
-                <li><a href="/work-with-us">Work With Us</a></li>
-                <li><a href="/internship">Internship</a></li>
+                <li><Link to="/career">Work With Us</Link></li>
+                <li><Link to="/internship">Internship</Link></li>
               </ul>
             </div>
 
@@ -73,9 +69,9 @@ const Footer = () => {
             <div className="footer-section">
               <h3 className="footer-heading">IMPORTANT LINKS</h3>
               <ul className="footer-links">
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/terms-conditions">Terms & Conditions</a></li>
-                <li><a href="/disclaimer-policy">Disclaimer Policy</a></li>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
+                <li><Link to="/disclaimer-policy">Disclaimer Policy</Link></li>
               </ul>
             </div>
 
@@ -107,7 +103,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-container">
             <p className="copyright">Copyright © 2024 RPS Group | All Rights Reserved.</p>
-            <p className="developed-by">Developed by</p>
+            <p className="developed-by">Developed by RPS Tech Team</p>
           </div>
         </div>
       </footer>
@@ -149,8 +145,8 @@ const Footer = () => {
                   I Agree
                 </button>
                 <div className="disclaimer-links">
-                  <a href="#" onClick={(e) => e.preventDefault()}>Opt-Out Preferences</a>
-                  <a href="#" onClick={(e) => e.preventDefault()}>RCMB</a>
+                  <Link to="/opt-out-preferences">Opt-Out Preferences</Link>
+                  <Link to="/rcmb">RCMB</Link>
                 </div>
               </div>
             </div>

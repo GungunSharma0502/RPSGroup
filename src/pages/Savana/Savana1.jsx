@@ -4,7 +4,6 @@ import './Savana1.css';
 const Savana1 = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [activeLayout, setActiveLayout] = useState(1);
-  const [activeGallery, setActiveGallery] = useState('exterior');
 
   const navItems = [
     { id: 'all', label: 'OVERVIEW' },
@@ -14,6 +13,16 @@ const Savana1 = () => {
     { id: 'gallery', label: 'GALLERY' },
     { id: 'benefits', label: 'BENEFITS' },
     { id: 'location', label: 'LOCATION' }
+  ];
+
+  // Gallery images data - only exterior
+  const galleryImages = [
+    'https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1-1024x576.png',
+    'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-3-1024x565.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-6-1024x576.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-4-1024x576.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-7-1024x576.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-1-1024x683.jpg'
   ];
 
   const renderOverview = () => (
@@ -38,7 +47,7 @@ const Savana1 = () => {
             </p>
           </div>
           <div className="savana1-overview-image">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&h=400&fit=crop" alt="RPS Savana Aerial View" className="savana1-image" />
+            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1.png" alt="RPS Savana Aerial View" className="savana1-image" />
           </div>
         </div>
         
@@ -69,8 +78,8 @@ const Savana1 = () => {
       <div className="savana1-container-inner">
         <div className="savana1-why-choose-content">
           <div className="savana1-why-choose-images">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&h=800&fit=crop" alt="Aerial View 1" className="savana1-aerial-img-1" />
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&h=500&fit=crop" alt="Aerial View 2" className="savana1-aerial-img-2" />
+            <img src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Park-view-Hires-1024x577.jpg" alt="Aerial View 1" className="savana1-aerial-img-1" />
+            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-2-1024x683.jpg" alt="Aerial View 2" className="savana1-aerial-img-2" />
           </div>
           <div className="savana1-why-choose-text">
             <p className="savana1-subtitle">WHERE YOUR JOURNEY TO LUXURY BEGINS</p>
@@ -223,20 +232,19 @@ const Savana1 = () => {
         <div className="savana1-layout-plans">
           {activeLayout === 1 && (
             <div className="savana1-layout-plan">
-              <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=500&h=600&fit=crop" alt="Layout 1" className="savana1-layout-image" />
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&h=600&fit=crop" alt="Layout 1 Detail" className="savana1-layout-image" />
+              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-2-scaled.jpg" alt="Layout 1" className="savana1-layout-image" />
+              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-21-1024x830.jpg" alt="Layout 1 Detail" className="savana1-layout-image" />
             </div>
           )}
           {activeLayout === 2 && (
             <div className="savana1-layout-plan">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&h=600&fit=crop" alt="Layout 2" className="savana1-layout-image" />
-              <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=500&h=600&fit=crop" alt="Layout 2 Detail" className="savana1-layout-image" />
+              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-3-1024x830.jpg" alt="Layout 2" className="savana1-layout-image" />
+              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-31-1024x830.jpg" alt="Layout 2 Detail" className="savana1-layout-image" />
             </div>
           )}
           {activeLayout === 3 && (
             <div className="savana1-layout-plan">
-              <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=500&h=600&fit=crop" alt="Layout 3" className="savana1-layout-image" />
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&h=600&fit=crop" alt="Layout 3 Detail" className="savana1-layout-image" />
+              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-41-1024x830.jpg" alt="Layout 3" className="savana1-layout-image" />
             </div>
           )}
         </div>
@@ -320,28 +328,13 @@ const Savana1 = () => {
           <span className="savana1-dots">::::</span>
           <h2 className="savana1-section-title">GALLERY</h2>
         </div>
-        
-        <div className="savana1-gallery-tabs">
-          <button
-            onClick={() => setActiveGallery('exterior')}
-            className={`savana1-gallery-tab ${activeGallery === 'exterior' ? 'savana1-gallery-tab-active' : ''}`}
-          >
-            EXTERIOR
-          </button>
-          <button
-            onClick={() => setActiveGallery('interior')}
-            className={`savana1-gallery-tab ${activeGallery === 'interior' ? 'savana1-gallery-tab-active' : ''}`}
-          >
-            INTERIOR
-          </button>
-        </div>
 
         <div className="savana1-gallery-grid">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className="savana1-gallery-item">
+          {galleryImages.map((imageUrl, index) => (
+            <div key={index} className="savana1-gallery-item">
               <img 
-                src={`https://images.unsplash.com/photo-${activeGallery === 'exterior' ? '1545324418-cc1a3fa10c00' : '1600607687939-ce8a6c25118c'}?w=600&h=400&fit=crop`} 
-                alt={`${activeGallery} View ${item}`} 
+                src={imageUrl} 
+                alt={`Gallery View ${index + 1}`} 
               />
             </div>
           ))}
@@ -366,7 +359,7 @@ const Savana1 = () => {
             <p>Discover the pinnacle of residential excellence at RPS Savana, where prime location meets ultimate comfort and style.</p>
           </div>
           <div className="savana1-benefits-image">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&h=600&fit=crop" alt="Project Overview" />
+            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-1-1024x683.jpg" alt="Project Overview" />
           </div>
         </div>
       </div>
@@ -450,7 +443,7 @@ const Savana1 = () => {
       {/* Hero Section */}
       <section className="savana1-hero-section">
         <div className="savana1-hero-image">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&h=600&fit=crop" alt="RPS Savana Complex" />
+          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80" alt="RPS Savana Complex" />
         </div>
         <nav className="savana1-main-nav">
           {navItems.map(item => (
@@ -472,10 +465,6 @@ const Savana1 = () => {
       <main>
         {renderContent()}
       </main>
-
-      <footer className="savana1-footer">
-        <p>© 2024 RPS Savana. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

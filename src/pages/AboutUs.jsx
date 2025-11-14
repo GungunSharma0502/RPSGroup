@@ -66,7 +66,7 @@ const AboutUs = () => {
           </div>
           <div className="about-image-column">
             <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200" 
+              src="https://rpsgroupindia.com/wp-content/uploads/2023/05/nite-copy-1024x768.jpg" 
               alt="RPS Overview" 
               className="about-section-image"
             />
@@ -99,7 +99,7 @@ const AboutUs = () => {
           </div>
           <div className="about-image-column">
             <img 
-              src="/api/placeholder/500/350" 
+              src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Entrance-View-Hires-1024x576.jpg" 
               alt="RPS Vision" 
               className="about-section-image"
             />

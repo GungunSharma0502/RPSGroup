@@ -49,6 +49,30 @@ const Auria1 = () => {
     { icon: '🧘', name: 'YOGA, AEROBICS & MEDITATION CENTRE' }
   ];
 
+  const galleryImages = [
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/Tower-night-1153x1536.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/Club-Pool-revised-HIRES-1024x576.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/Top-view-HIRES-1024x576.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/Landscape-2-HIRES-1024x620.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/Landscape-1-HIRES_1-1024x577.jpg',
+    'https://rpsgroupindia.com/wp-content/uploads/2023/05/exterior-day-1153x1536.jpg'
+  ];
+
+  const layoutImages = {
+    '5bhk': [
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/5-BHK-Type-1.jpg',
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/5-BHK-Type-2.jpg'
+    ],
+    '3bhk': [
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/3bhk-1-1024x1024.jpg',
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/3bhk-2-1024x1024.jpg',
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/3bhk-3-1024x1024.jpg'
+    ],
+    'site': [
+      'https://rpsgroupindia.com/wp-content/uploads/2023/05/rpsauria.jpg'
+    ]
+  };
+
   const renderOverview = () => (
     <div className="auria1-content" id="overview">
       <div className="auria1-overview-section">
@@ -94,13 +118,13 @@ const Auria1 = () => {
           </div>
         </div>
         <div className="auria1-overview-image">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800" alt="RPS Auria Building" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Auria-2-scaled.jpg" alt="RPS Auria Building" />
         </div>
       </div>
 
       <div className="auria1-residences-section">
         <div className="auria1-residences-image">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="Luxury Apartments" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Top-view-HIRES-scaled-1-1024x576.jpg" alt="Luxury Apartments" />
         </div>
         <div className="auria1-residences-text">
           <h3 className="auria1-subtitle">ULTRA LUXURIOUS 3 BHK & 5 BHK</h3>
@@ -137,7 +161,7 @@ const Auria1 = () => {
 
       <div className="auria1-apartment-content">
         <div className="auria1-apartment-image">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Luxury Living Room" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Landscape-2-HIRES-768x465.jpg" alt="Luxury Living Room" />
         </div>
         <div className="auria1-specifications">
           <h3 className="auria1-spec-title">SPECIFICATIONS</h3>
@@ -153,7 +177,7 @@ const Auria1 = () => {
 
       <div className="auria1-virtual-tour">
         <div className="auria1-tour-image">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="Building Exterior" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Auria-13-1.jpg" alt="Building Exterior" />
         </div>
         <div className="auria1-tour-content">
           <div className="auria1-section-marker">⬥⬥⬥</div>
@@ -174,7 +198,7 @@ const Auria1 = () => {
     <div className="auria1-content" id="clubhouse">
       <div className="auria1-clubhouse-section">
         <div className="auria1-clubhouse-image">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Clubhouse Interior" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Auria-10-1.jpg" alt="Clubhouse Interior" />
         </div>
         <div className="auria1-clubhouse-text">
           <h3 className="auria1-club-label">THE CLUB HOUSE</h3>
@@ -239,24 +263,48 @@ const Auria1 = () => {
       </div>
 
       <div className="auria1-layout-content">
-        <div className="auria1-layout-item">
-          <h3>T5- 5BHK (TYPICAL - I)</h3>
-          <div className="auria1-floorplan">
-            <p>Floor Plan Typical - I</p>
+        {activeLayout === '5bhk' && (
+          <>
+            <div className="auria1-layout-item">
+              <h3>T5- 5BHK (TYPICAL - I)</h3>
+              <div className="auria1-floorplan">
+                <img src={layoutImages['5bhk'][0]} alt="5 BHK Type 1" style={{ width: '100%', height: 'auto' }} />
+              </div>
+              <p style={{ textAlign: 'center', fontWeight: 'bold', color: '#2c2c2c' }}>
+                Total Area - 3250 sq.ft
+              </p>
+            </div>
+            <div className="auria1-layout-item">
+              <h3>T5- 5BHK (TYPICAL - II)</h3>
+              <div className="auria1-floorplan">
+                <img src={layoutImages['5bhk'][1]} alt="5 BHK Type 2" style={{ width: '100%', height: 'auto' }} />
+              </div>
+              <p style={{ textAlign: 'center', fontWeight: 'bold', color: '#2c2c2c' }}>
+                Total Area - 3300 Sqft
+              </p>
+            </div>
+          </>
+        )}
+        {activeLayout === '3bhk' && (
+          <>
+            {layoutImages['3bhk'].map((image, index) => (
+              <div key={index} className="auria1-layout-item">
+                <h3>3 BHK (TYPE - {index + 1})</h3>
+                <div className="auria1-floorplan">
+                  <img src={image} alt={`3 BHK Type ${index + 1}`} style={{ width: '100%', height: 'auto' }} />
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+        {activeLayout === 'site' && (
+          <div className="auria1-layout-item" style={{ maxWidth: '100%' }}>
+            <h3>SITE PLAN</h3>
+            <div className="auria1-floorplan">
+              <img src={layoutImages['site'][0]} alt="Site Plan" style={{ width: '100%', height: 'auto' }} />
+            </div>
           </div>
-          <p style={{ textAlign: 'center', fontWeight: 'bold', color: '#2c2c2c' }}>
-            Total Area - 3250 sq.ft
-          </p>
-        </div>
-        <div className="auria1-layout-item">
-          <h3>T5- 5BHK (TYPICAL - II)</h3>
-          <div className="auria1-floorplan">
-            <p>Floor Plan Typical - II</p>
-          </div>
-          <p style={{ textAlign: 'center', fontWeight: 'bold', color: '#2c2c2c' }}>
-            Total Area - 3300 Sqft
-          </p>
-        </div>
+        )}
       </div>
     </div>
   );
@@ -312,27 +360,10 @@ const Auria1 = () => {
         <h2 className="auria1-section-title">GALLERY</h2>
       </div>
 
-      <div className="auria1-gallery-tabs">
-        <button
-          onClick={() => setActiveGallery('exterior')}
-          className={`auria1-gallery-tab ${activeGallery === 'exterior' ? 'auria1-active-gallery' : ''}`}
-        >
-          EXTERIOR
-        </button>
-        <button
-          onClick={() => setActiveGallery('interior')}
-          className={`auria1-gallery-tab ${activeGallery === 'interior' ? 'auria1-active-gallery' : ''}`}
-        >
-          INTERIOR
-        </button>
-      </div>
-
       <div className="auria1-gallery-grid">
-        {[1, 2, 3, 4, 5, 6].map((item) => (
-          <div key={item} className="auria1-gallery-item">
-            <div>
-              {activeGallery === 'exterior' ? 'Exterior View' : 'Interior View'} {item}
-            </div>
+        {galleryImages.map((image, index) => (
+          <div key={index} className="auria1-gallery-item">
+            <img src={image} alt={`Gallery ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         ))}
       </div>
@@ -418,7 +449,7 @@ const Auria1 = () => {
     <div className="auria1-container">
       <div className="auria1-hero">
         <img 
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600" 
+          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" 
           alt="RPS Auria" 
           className="auria1-hero-image"
         />

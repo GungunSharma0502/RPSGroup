@@ -35,7 +35,7 @@ const Auria2 = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             <div className="auria2-map-container">
               <div>
-                <p style={{ color: '#6b7280' }}>RPS AURIA Location Map</p>
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Auria-13-1.jpg"alt="auriaLocation"/>
               </div>
               <div className="auria2-map-info">
                 <h4>RPS AURIA</h4>
@@ -121,12 +121,7 @@ const Auria2 = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="auria2-footer">
-        <div className="auria2-max-width">
-          <p>© 2024 RPS Auria. All rights reserved.</p>
-        </div>
-      </div>
+      
     </div>
   );
 };

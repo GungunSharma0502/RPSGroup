@@ -16,12 +16,11 @@ const GreenValley = () => {
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=400&h=300&fit=crop'
+  'https://rpsgroupindia.com/wp-content/uploads/2023/05/g2-1.jpg',
+  'https://rpsgroupindia.com/wp-content/uploads/2023/05/g3-1.jpg',
+  'https://rpsgroupindia.com/wp-content/uploads/2023/05/g4-1.jpg',
+  'https://rpsgroupindia.com/wp-content/uploads/2023/05/g5-1.jpg'
+
   ];
 
   return (
@@ -62,7 +61,7 @@ const GreenValley = () => {
 
             <div className="GreenValley__overview-image">
               <img 
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=500&fit=crop" 
+                src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Project-Photo-11-RPS-Green-Valley-Faridabad-5072696_972_1296-1024x917.jpg" 
                 alt="RPS Green Valley"
               />
             </div>
@@ -76,7 +75,7 @@ const GreenValley = () => {
           <div className="GreenValley__building-grid">
             <div className="GreenValley__building-image-large">
               <img 
-                src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&h=500&fit=crop" 
+                src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Project-Photo-13-RPS-Green-Valley-Faridabad-5072696_972_1296-1024x919.jpg" 
                 alt="Building view"
               />
             </div>

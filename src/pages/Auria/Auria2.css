@@ -37,6 +37,15 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Image Fixed Size */
+.auria2-map-container > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .auria2-map-info {
@@ -191,6 +200,10 @@
   .auria2-banks-grid {
     flex-direction: column;
   }
+
+  .auria2-map-container > div:first-child {
+    height: 18rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -200,6 +213,10 @@
 
   .auria2-contact-form h2 {
     font-size: 1.5rem;
+  }
+
+  .auria2-map-container > div:first-child {
+    height: 16rem;
   }
 }
 
