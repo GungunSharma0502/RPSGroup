@@ -1,34 +1,82 @@
-/* Palm Drive Stylesheet */
-
-
+/* ==================== GLOBAL STYLES ==================== */
 .palmDrive {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+.palmDrive__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(6, 182, 212, 0.7);
+  }
+  50% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(6, 182, 212, 0);
+  }
+}
+
+/* ==================== HERO SECTION ==================== */
 .palmDrive__hero {
   position: relative;
-  min-height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><rect fill="%23444" width="1600" height="900"/></svg>');
-  background-size: cover;
-  background-position: center;
+  min-height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  background: linear-gradient(180deg, 
+    rgba(12, 74, 110, 0.8) 0%, 
+    rgba(15, 23, 42, 0.7) 50%, 
+    rgba(2, 6, 23, 1) 100%
+  );
 }
 
 .palmDrive__heroOverlay {
   width: 100%;
-  max-width: 1400px;
-  padding: 40px;
+  max-width: 1280px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
 }
 
 .palmDrive__heroContent {
@@ -36,42 +84,53 @@
 }
 
 .palmDrive__heroCode {
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+  color: #06b6d4;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 4px;
   margin-bottom: 20px;
   opacity: 0.9;
 }
 
 .palmDrive__heroTitle {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 3px;
+  font-size: 80px;
+  font-weight: 100;
+  letter-spacing: 8px;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  margin: 0 0 24px 0;
+  line-height: 1.1;
 }
 
 .palmDrive__heroLocation,
 .palmDrive__heroSubtitle,
 .palmDrive__heroConfig {
-  font-size: 1.2rem;
+  font-size: 16px;
+  color: #d1d5db;
+  font-weight: 300;
+  letter-spacing: 2px;
   margin-bottom: 15px;
-  letter-spacing: 1px;
 }
 
 .palmDrive__heroButton {
   margin-top: 30px;
   padding: 15px 40px;
   background: transparent;
-  color: white;
-  border: 2px solid white;
-  font-size: 1rem;
+  color: #06b6d4;
+  border: 2px solid #06b6d4;
+  font-size: 14px;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 .palmDrive__heroButton:hover {
-  background: white;
-  color: #333;
+  background: #06b6d4;
+  color: #020617;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
 }
 
 .palmDrive__heroImages {
@@ -81,10 +140,18 @@
 }
 
 .palmDrive__heroImageCard {
-  background: white;
-  border-radius: 8px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.palmDrive__heroImageCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.6);
 }
 
 .palmDrive__heroImageWrapper {
@@ -92,6 +159,11 @@
   height: 250px;
   background-size: cover;
   background-position: center;
+  transition: transform 0.7s ease;
+}
+
+.palmDrive__heroImageCard:hover .palmDrive__heroImageWrapper {
+  transform: scale(1.05);
 }
 
 .palmDrive__heroImageWrapper--park {
@@ -103,12 +175,13 @@
 }
 
 .palmDrive__heroImageLabel {
-  padding: 15px;
-  color: #333;
+  padding: 15px 20px;
+  color: #e5e7eb;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
 }
 
 .palmDrive__heroImageLabel::before {
@@ -116,153 +189,199 @@
   font-size: 1.2rem;
 }
 
-/* Overview Section */
+/* ==================== OVERVIEW SECTION ==================== */
 .palmDrive__overview {
-  padding: 100px 40px;
-  background: #f9f9f9;
-}
-
-.palmDrive__container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.palmDrive__sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #333;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.palmDrive__sectionTitle::before {
-  content: '⋮⋮⋮';
-  display: block;
-  color: #c8102e;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  letter-spacing: 3px;
+  padding: 120px 0;
+  background: #020617;
 }
 
 .palmDrive__overviewGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
   align-items: start;
 }
 
+.palmDrive__sectionTitle {
+  font-size: 56px;
+  font-weight: 100;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  position: relative;
+  padding-top: 40px;
+}
+
+.palmDrive__sectionTitle::before {
+  content: '⋮⋮⋮';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #06b6d4;
+  font-size: 24px;
+  letter-spacing: 6px;
+}
+
 .palmDrive__description {
-  margin-bottom: 25px;
-  color: #555;
-  text-align: justify;
+  font-size: 16px;
   line-height: 1.8;
+  color: #d1d5db;
+  text-align: justify;
+  margin-bottom: 25px;
 }
 
 .palmDrive__specs {
   margin-top: 40px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .palmDrive__specItem {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 1px solid #ddd;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.palmDrive__specItem:last-child {
+  border-bottom: none;
 }
 
 .palmDrive__specLabel {
-  font-weight: 600;
-  color: #666;
+  color: #06b6d4;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .palmDrive__specValue {
-  color: #333;
-  font-weight: 500;
+  color: #e5e7eb;
+  font-weight: 300;
 }
 
-.palmDrive__overviewImage,
-.palmDrive__imageBlock {
+.palmDrive__overviewImage {
+  position: relative;
   width: 100%;
   height: 500px;
-  border-radius: 8px;
+}
+
+.palmDrive__imageBlock {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.palmDrive__imageBlock:hover {
+  transform: scale(1.02);
+}
+
+.palmDrive__imageBlock::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: glow 3s ease-in-out infinite;
+  z-index: -1;
 }
 
 .palmDrive__imageBlock--building {
-   background: url('https://rpsgroupindia.com/wp-content/uploads/2023/05/VILA-new-copy-scaled-e1684588849696-1024x1024.jpg') center/cover;
+  background: url('https://rpsgroupindia.com/wp-content/uploads/2023/05/VILA-new-copy-scaled-e1684588849696-1024x1024.jpg') center/cover;
 }
 
-/* Low Rise Section */
+/* ==================== LOW RISE SECTION ==================== */
 .palmDrive__lowRise {
-  padding: 100px 40px;
-  background: white;
+  padding: 120px 0;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
 .palmDrive__lowRiseGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
   align-items: start;
+}
+
+.palmDrive__lowRiseImage {
+  position: relative;
+  width: 100%;
+  height: 500px;
 }
 
 .palmDrive__badge {
   display: inline-block;
   padding: 8px 20px;
-  background: #f0f0f0;
-  color: #666;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  font-size: 12px;
+  letter-spacing: 2px;
   margin-bottom: 20px;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  font-weight: 600;
 }
 
 .palmDrive__imageBlock--aerial {
-   background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop') center/cover;
+  background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop') center/cover;
 }
 
 .palmDrive__lowRiseImageSmall {
   margin-top: 30px;
+  height: 300px;
 }
 
 .palmDrive__imageBlock--entrance {
   height: 300px;
-   background: url('https://rpsgroupindia.com/wp-content/uploads/2023/05/Entrance-View-Hires-1024x576.jpg') center/cover;
+  background: url('https://rpsgroupindia.com/wp-content/uploads/2023/05/Entrance-View-Hires-1024x576.jpg') center/cover;
 }
 
-/* Layout Section */
+/* ==================== LAYOUT SECTION ==================== */
 .palmDrive__layout {
-  padding: 100px 40px;
-  background: #f9f9f9;
+  padding: 120px 0;
+  background: #020617;
 }
 
 .palmDrive__tabs {
   display: flex;
   gap: 0;
   margin-bottom: 50px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+  overflow-x: auto;
 }
 
 .palmDrive__tab {
   padding: 20px 40px;
   background: transparent;
   border: none;
-  color: #666;
-  font-size: 1rem;
+  color: #d1d5db;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .palmDrive__tab--active {
-  background: #1e3a8a;
-  color: white;
-  border-bottom: 3px solid #1e3a8a;
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.1) 0%, transparent 100%);
+  color: #06b6d4;
+  border-bottom: 3px solid #06b6d4;
 }
 
 .palmDrive__tab:hover:not(.palmDrive__tab--active) {
-  background: #f0f0f0;
+  background: rgba(6, 182, 212, 0.05);
+  color: #67e8f9;
 }
 
 .palmDrive__layoutContent {
@@ -272,62 +391,81 @@
 }
 
 .palmDrive__layoutTitle {
-  font-size: 1.8rem;
+  font-size: 32px;
+  font-weight: 100;
+  color: #ffffff;
   margin-bottom: 30px;
-  color: #333;
+}
+
+.palmDrive__layoutDetails {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  height: fit-content;
 }
 
 .palmDrive__layoutSpec {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.palmDrive__layoutSpec:last-child {
+  border-bottom: none;
 }
 
 .palmDrive__layoutLabel {
-  color: #666;
-  font-weight: 500;
+  color: #06b6d4;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .palmDrive__layoutValue {
-  color: #333;
-  font-weight: 600;
+  color: #e5e7eb;
+  font-weight: 300;
+}
+
+.palmDrive__layoutPlan {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
 }
 
 .palmDrive__imageBlock--floorPlan {
   background: url('https://rpsgroupindia.com/wp-content/uploads/2023/09/Palm-Drive-_ground-floor.jpg') center/cover;
+  min-height: 500px;
 }
 
-/* Location Map Section */
+/* ==================== LOCATION MAP SECTION ==================== */
 .palmDrive__locationMap {
-  padding: 100px 40px;
-  background: #3a3a3a;
-}
-
-.palmDrive__locationMap .palmDrive__sectionTitle {
-  color: white;
-}
-
-.palmDrive__locationMap .palmDrive__sectionTitle::before {
-  color: white;
+  padding: 120px 0;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 .palmDrive__mapGrid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 0;
-  background: white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(30, 41, 59, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
 }
 
 .palmDrive__locationList {
-  background: white;
+  background: rgba(15, 23, 42, 0.8);
   padding: 0;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   max-height: 600px;
+  backdrop-filter: blur(10px);
 }
 
 .palmDrive__accordion {
@@ -335,17 +473,21 @@
 }
 
 .palmDrive__accordionItem {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.palmDrive__accordionItem:last-child {
+  border-bottom: none;
 }
 
 .palmDrive__accordionHeader {
   width: 100%;
   padding: 25px 35px;
-  background: white;
+  background: transparent;
   border: none;
-  color: #333;
+  color: #e5e7eb;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -368,37 +510,39 @@
 }
 
 .palmDrive__accordionHeader:hover {
-  background: #f5f5f5;
+  background: rgba(6, 182, 212, 0.05);
+  color: #67e8f9;
 }
 
 .palmDrive__accordionHeader--active {
-  background: #f9f9f9;
-  color: #1e3a8a;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
 }
 
 .palmDrive__accordionHeader--active::before {
-  background: #1e3a8a;
+  background: #06b6d4;
 }
 
 .palmDrive__accordionIcon {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 300;
-  color: #666;
-  transition: transform 0.3s ease;
+  color: #9ca3af;
+  transition: all 0.3s ease;
 }
 
 .palmDrive__accordionHeader--active .palmDrive__accordionIcon {
-  color: #1e3a8a;
+  color: #06b6d4;
+  transform: rotate(90deg);
 }
 
 .palmDrive__accordionContent {
   padding: 20px 35px 30px;
-  background: #fafafa;
-  animation: palmDrive__slideDown 0.3s ease;
-  border-left: 4px solid #1e3a8a;
+  background: rgba(6, 182, 212, 0.05);
+  animation: slideDown 0.3s ease;
+  border-left: 4px solid #06b6d4;
 }
 
-@keyframes palmDrive__slideDown {
+@keyframes slideDown {
   from {
     opacity: 0;
     max-height: 0;
@@ -414,21 +558,21 @@
 }
 
 .palmDrive__accordionContent p {
-  color: #555;
+  color: #d1d5db;
   line-height: 1.8;
   text-align: justify;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .palmDrive__mapContainer {
   position: relative;
-  background: #f0f0f0;
+  background: #0f172a;
 }
 
 .palmDrive__imageBlock--map {
   height: 600px;
-  background: linear-gradient(135deg, #89CFF0 0%, #4A90E2 100%);
+  background: linear-gradient(135deg, #0c4a6e 0%, #1e3a8a 100%);
   position: relative;
 }
 
@@ -436,30 +580,22 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background: #1e40af;
-  border: 3px solid white;
+  background: #06b6d4;
+  border: 3px solid #020617;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
-  animation: palmDrive__pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 .palmDrive__mapPin:hover {
   transform: scale(1.3);
   z-index: 10;
+  background: #67e8f9;
 }
 
-@keyframes palmDrive__pulse {
-  0%, 100% {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(30, 64, 175, 0.7);
-  }
-  50% {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(30, 64, 175, 0);
-  }
-}
-
-/* Responsive Design */
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
   .palmDrive__heroOverlay,
   .palmDrive__overviewGrid,
@@ -467,10 +603,15 @@
   .palmDrive__layoutContent,
   .palmDrive__mapGrid {
     grid-template-columns: 1fr;
+    gap: 60px;
   }
 
   .palmDrive__heroTitle {
-    font-size: 3rem;
+    font-size: 64px;
+  }
+
+  .palmDrive__sectionTitle {
+    font-size: 42px;
   }
 
   .palmDrive__tabs {
@@ -479,31 +620,63 @@
 
   .palmDrive__tab {
     flex: 1 1 45%;
+    padding: 15px 20px;
   }
 }
 
 @media (max-width: 768px) {
   .palmDrive__heroTitle {
-    font-size: 2.5rem;
+    font-size: 48px;
+    letter-spacing: 4px;
   }
 
   .palmDrive__sectionTitle {
-    font-size: 2rem;
+    font-size: 32px;
   }
 
   .palmDrive__overview,
   .palmDrive__lowRise,
   .palmDrive__layout,
   .palmDrive__locationMap {
-    padding: 60px 20px;
+    padding: 80px 0;
   }
 
   .palmDrive__tab {
     padding: 15px 20px;
-    font-size: 0.9rem;
+    font-size: 12px;
   }
 
-  .palmDrive__locationItem {
+  .palmDrive__accordionHeader {
     padding: 20px 25px;
+    font-size: 13px;
+  }
+
+  .palmDrive__accordionContent {
+    padding: 15px 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .palmDrive__heroTitle {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
+  .palmDrive__sectionTitle {
+    font-size: 28px;
+  }
+
+  .palmDrive__container {
+    padding: 0 15px;
+  }
+
+  .palmDrive__heroOverlay,
+  .palmDrive__overviewGrid,
+  .palmDrive__lowRiseGrid {
+    gap: 40px;
+  }
+
+  .palmDrive__tab {
+    flex: 1 1 100%;
   }
 }

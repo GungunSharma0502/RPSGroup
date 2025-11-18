@@ -1,26 +1,66 @@
+/* ==================== GLOBAL STYLES ==================== */
 .propexity-container {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
 }
 
-/* Header Styles */
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ==================== HEADER STYLES ==================== */
 .propexity-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5%;
-  background: var(--propexity-white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(6, 182, 212, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
 }
 
 .propexity-logo h1 {
-  color: var(--propexity-primary);
+  color: #06b6d4;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 2px;
+  background: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .propexity-nav {
@@ -31,66 +71,71 @@
 .propexity-nav button {
   background: none;
   border: none;
-  color: var(--propexity-secondary);
+  color: #d1d5db;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
 .propexity-nav button:hover {
-  color: var(--propexity-primary);
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
   transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* ==================== HERO SECTION ==================== */
 .propexity-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
   align-items: center;
 }
 
 .propexity-hero-content {
   max-width: 600px;
+  animation: fadeIn 1s ease-out;
 }
 
 .propexity-hero-title {
   font-size: 3.5rem;
-  color: var(--propexity-primary);
+  color: #ffffff;
   margin-bottom: 1rem;
-  font-weight: 800;
-  letter-spacing: 3px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  line-height: 1.2;
 }
 
 .propexity-hero-subtitle {
   font-size: 1.8rem;
-  color: var(--propexity-secondary);
+  color: #06b6d4;
   margin-bottom: 1rem;
   font-weight: 300;
-  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .propexity-hero-description {
   font-size: 1.1rem;
-  color: var(--propexity-gray);
+  color: #9ca3af;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .propexity-hero-text {
   font-size: 1rem;
-  color: var(--propexity-secondary);
+  color: #d1d5db;
   margin-bottom: 1.5rem;
   text-align: justify;
   line-height: 1.8;
 }
 
 .propexity-tagline {
-  color: var(--propexity-primary);
+  color: #67e8f9;
   font-size: 1.2rem;
   font-style: italic;
   margin-bottom: 2rem;
@@ -98,8 +143,8 @@
 }
 
 .propexity-cta-button {
-  background: var(--propexity-primary);
-  color: var(--propexity-white);
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: #ffffff;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -107,51 +152,80 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  letter-spacing: 1px;
 }
 
 .propexity-cta-button:hover {
-  background: var(--propexity-accent);
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
 }
 
 .propexity-hero-image {
   height: 500px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
-/* About Section */
+.propexity-hero-image::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: glow 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* ==================== ABOUT SECTION ==================== */
 .propexity-about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   padding: 5rem 5%;
-  background: var(--propexity-white);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
   align-items: center;
 }
 
 .propexity-about-image {
   height: 450px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.propexity-about-image::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: glow 3s ease-in-out infinite;
+  z-index: -1;
 }
 
 .propexity-section-title {
   font-size: 2.5rem;
-  color: var(--propexity-secondary);
+  color: #ffffff;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 
 .propexity-about-intro {
   font-size: 1.1rem;
-  color: var(--propexity-gray);
+  color: #d1d5db;
   margin-bottom: 2rem;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .propexity-features-list {
@@ -165,26 +239,37 @@
   gap: 1rem;
   margin-bottom: 1.2rem;
   font-size: 1.05rem;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  border-radius: 8px;
+  border-left: 3px solid #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.propexity-features-list li:hover {
+  transform: translateX(5px);
+  border-left-width: 5px;
 }
 
 .propexity-icon {
   font-size: 1.5rem;
-  color: var(--propexity-primary);
+  color: #06b6d4;
 }
 
 .propexity-motto {
-  color: var(--propexity-primary);
+  color: #67e8f9;
   font-size: 1.3rem;
   font-style: italic;
   font-weight: 600;
   margin-top: 2rem;
+  letter-spacing: 0.5px;
 }
 
-/* Location Section */
+/* ==================== LOCATION SECTION ==================== */
 .propexity-location {
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 .propexity-location-header {
@@ -194,9 +279,10 @@
 
 .propexity-subsection-title {
   font-size: 1.5rem;
-  color: var(--propexity-primary);
+  color: #06b6d4;
   font-weight: 500;
   margin-top: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .propexity-location-content {
@@ -208,16 +294,18 @@
 
 .propexity-location-map {
   height: 500px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(6, 182, 212, 0.3);
 }
 
 .propexity-location-details h4 {
   font-size: 1.5rem;
-  color: var(--propexity-secondary);
+  color: #ffffff;
   margin-bottom: 1.5rem;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .propexity-distance-grid {
@@ -231,32 +319,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: var(--propexity-white);
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
 .propexity-distance-item:hover {
   transform: translateX(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
 }
 
 .propexity-place {
   font-weight: 500;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
 }
 
 .propexity-km {
-  color: var(--propexity-primary);
+  color: #06b6d4;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
 .propexity-location-advantage p {
   font-size: 1rem;
-  color: var(--propexity-gray);
+  color: #d1d5db;
   line-height: 1.8;
   margin-bottom: 2rem;
   text-align: justify;
@@ -272,27 +362,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: var(--propexity-light);
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
   border-radius: 8px;
-  border-left: 4px solid var(--propexity-primary);
+  border-left: 4px solid #06b6d4;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.propexity-connectivity-item:hover {
+  transform: translateX(5px);
+  border-left-width: 6px;
 }
 
 .propexity-conn-name {
   font-size: 0.95rem;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
   font-weight: 500;
 }
 
 .propexity-conn-time {
-  color: var(--propexity-primary);
+  color: #06b6d4;
   font-weight: 700;
 }
 
-/* Address Section */
+/* ==================== ADDRESS SECTION ==================== */
 .propexity-address {
   padding: 5rem 5%;
-  background: var(--propexity-white);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
   text-align: center;
 }
 
@@ -300,34 +397,36 @@
   max-width: 900px;
   margin: 2rem auto;
   font-size: 1.1rem;
-  color: var(--propexity-gray);
+  color: #d1d5db;
   line-height: 1.8;
   text-align: justify;
 }
 
 .propexity-address-image {
   height: 450px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
   margin: 3rem auto;
   max-width: 1200px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(6, 182, 212, 0.3);
 }
 
-/* Master Plan Section */
+/* ==================== MASTER PLAN SECTION ==================== */
 .propexity-masterplan {
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
   text-align: center;
 }
 
 .propexity-masterplan-image {
   height: 600px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
   margin: 3rem auto;
   max-width: 1400px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(6, 182, 212, 0.3);
 }
 
 .propexity-phase-info {
@@ -339,34 +438,41 @@
 }
 
 .propexity-phase-card {
-  background: var(--propexity-white);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  border-top: 4px solid transparent;
 }
 
 .propexity-phase-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top-color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
 }
 
 .propexity-phase-card h4 {
-  color: var(--propexity-primary);
+  color: #06b6d4;
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .propexity-phase-card p {
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
-/* Amenities Section */
+/* ==================== AMENITIES SECTION ==================== */
 .propexity-amenities {
   padding: 5rem 5%;
-  background: var(--propexity-white);
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
 .propexity-amenities-grid {
@@ -377,28 +483,32 @@
 }
 
 .propexity-amenity-card {
-  background: var(--propexity-light);
-  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .propexity-amenity-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.2);
 }
 
 .propexity-amenity-image {
   height: 200px;
   width: 100%;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.3);
 }
 
 .propexity-amenity-card p {
   padding: 1rem;
   font-weight: 600;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
   font-size: 1.05rem;
 }
 
@@ -418,11 +528,18 @@
 
 .propexity-amenities-list li {
   padding: 0.8rem 1rem;
-  background: var(--propexity-light);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
   border-radius: 8px;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
   font-size: 1rem;
-  border-left: 4px solid var(--propexity-primary);
+  border-left: 4px solid #06b6d4;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.propexity-amenities-list li:hover {
+  transform: translateX(5px);
+  border-left-width: 6px;
 }
 
 .propexity-amenity-showcase {
@@ -434,26 +551,34 @@
 
 .propexity-showcase-image {
   height: 350px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
 }
 
-/* Contact Section */
+.propexity-showcase-image:hover {
+  transform: scale(1.02);
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+/* ==================== CONTACT SECTION ==================== */
 .propexity-contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
   align-items: center;
 }
 
 .propexity-contact-image {
   height: 500px;
-  border-radius: 15px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(6, 182, 212, 0.3);
 }
 
 .propexity-logo-large {
@@ -463,28 +588,34 @@
 
 .propexity-logo-large h2 {
   font-size: 3rem;
-  color: var(--propexity-primary);
-  font-weight: 800;
-  letter-spacing: 2px;
+  color: #ffffff;
+  font-weight: 100;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .propexity-logo-tagline {
   font-size: 1.5rem;
-  color: var(--propexity-secondary);
+  color: #06b6d4;
   font-weight: 600;
   margin-top: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .propexity-office-details h4 {
-  color: var(--propexity-secondary);
+  color: #ffffff;
   font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .propexity-office-details p {
-  color: var(--propexity-gray);
+  color: #d1d5db;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -492,44 +623,48 @@
 .propexity-contact-details {
   margin-top: 2rem;
   padding: 2rem;
-  background: var(--propexity-white);
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .propexity-contact-details p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: var(--propexity-secondary);
+  color: #e5e7eb;
 }
 
 .propexity-registration {
   margin-top: 2rem;
   font-size: 0.95rem;
-  color: var(--propexity-gray);
+  color: #9ca3af;
   font-style: italic;
 }
 
-/* Footer */
+/* ==================== FOOTER ==================== */
 .propexity-footer {
-  background: var(--propexity-secondary);
-  color: var(--propexity-white);
+  background: rgba(15, 23, 42, 0.95);
+  color: #d1d5db;
   text-align: center;
   padding: 3rem 5%;
+  border-top: 1px solid rgba(6, 182, 212, 0.2);
 }
 
 .propexity-footer p {
   margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
-/* Placeholder Images */
+/* ==================== PLACEHOLDER IMAGES ==================== */
 .propexity-placeholder-image,
 .propexity-placeholder-small {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--propexity-white);
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.2rem;
   height: 100%;
@@ -540,7 +675,7 @@
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
   .propexity-hero,
   .propexity-about,
@@ -548,6 +683,7 @@
   .propexity-contact,
   .propexity-amenity-showcase {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .propexity-amenities-grid {
@@ -556,6 +692,14 @@
 
   .propexity-phase-info {
     grid-template-columns: 1fr;
+  }
+
+  .propexity-hero-title {
+    font-size: 2.8rem;
+  }
+
+  .propexity-section-title {
+    font-size: 2rem;
   }
 }
 
@@ -566,11 +710,11 @@
   }
 
   .propexity-hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .propexity-section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .propexity-amenities-grid {
@@ -583,5 +727,43 @@
 
   .propexity-distance-grid {
     grid-template-columns: 1fr;
+  }
+
+  .propexity-hero,
+  .propexity-about,
+  .propexity-location,
+  .propexity-address,
+  .propexity-masterplan,
+  .propexity-amenities,
+  .propexity-contact {
+    padding: 4rem 5%;
+  }
+
+  .propexity-logo-large h2 {
+    font-size: 2rem;
+  }
+
+  .propexity-logo-tagline {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .propexity-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .propexity-section-title {
+    font-size: 1.5rem;
+  }
+
+  .propexity-hero-image,
+  .propexity-about-image,
+  .propexity-contact-image {
+    height: 300px;
+  }
+
+  .propexity-masterplan-image {
+    height: 400px;
   }
 }

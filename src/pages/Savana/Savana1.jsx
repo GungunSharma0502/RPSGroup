@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Savana1.css';
+import { Home, Droplets, Dumbbell, Shield, Utensils, Leaf, Zap, MapPin, Building2, Maximize2, CheckCircle, Users, Camera } from 'lucide-react';
 
 const Savana1 = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [activeLayout, setActiveLayout] = useState(1);
+  const [scrollY, setScrollY] = useState(0);
+  const [activeImage, setActiveImage] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { id: 'all', label: 'OVERVIEW' },
@@ -15,7 +24,24 @@ const Savana1 = () => {
     { id: 'location', label: 'LOCATION' }
   ];
 
-  // Gallery images data - only exterior
+  const highlights = [
+    { icon: <Building2 size={24} />, title: '27 Towers', desc: 'Meticulously Designed' },
+    { icon: <Maximize2 size={24} />, title: '41.4 Acres', desc: 'Sprawling Campus' },
+    { icon: <CheckCircle size={24} />, title: '18 Floors', desc: 'Premium Living' },
+    { icon: <Users size={24} />, title: '2500+ Families', desc: 'Thriving Community' }
+  ];
+
+  const amenities = [
+    { icon: <Home size={36} />, label: 'CLUB HOUSE' },
+    { icon: <Droplets size={36} />, label: 'SWIMMING POOL' },
+    { icon: <Dumbbell size={36} />, label: 'GYMNASIUM' },
+    { icon: <Utensils size={36} />, label: 'MULTI-CUISINE RESTAURANTS' },
+    { icon: <Leaf size={36} />, label: 'BEAUTIFUL GARDENS' },
+    { icon: <Shield size={36} />, label: 'CAR PARKING' },
+    { icon: <Shield size={36} />, label: '24/7 SECURITY' },
+    { icon: <Zap size={36} />, label: 'POWER BACKUP' }
+  ];
+
   const galleryImages = [
     'https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1-1024x576.png',
     'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-3-1024x565.jpg',
@@ -25,383 +51,311 @@ const Savana1 = () => {
     'https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-1-1024x683.jpg'
   ];
 
+  const whyChooseFeatures = [
+    { icon: '⭐', title: 'SCENIC AND\nSPACIOUS LIVING' },
+    { icon: '🏠', title: 'DIVERSE HOUSING\nOPTIONS' },
+    { icon: '🔒', title: 'MODERN\nAMENITIES' },
+    { icon: '📊', title: 'DESIGNED FOR\nONLY 45 FAMILIES\nPER ACRE' },
+    { icon: '⭐', title: 'STATE OF THE ART\nSPECIFICATIONS' },
+    { icon: '🌳', title: 'LUSH GREEN\nGARDENS' },
+    { icon: '🏡', title: 'ULTRA-SPACIOUS\nLAYOUTS' },
+    { icon: '🏢', title: 'GRAND BALCONY\nAREA' }
+  ];
+
+  const locationPoints = [
+    '30 MIN. DRIVE FROM NEHRU PLACE',
+    '10 MIN. DRIVE FROM MAIN MATHURA ROAD',
+    '5 MIN. DRIVE FROM DEL-MUM EXPRESSWAY',
+    '10 MIN. DRIVE FROM BADKHAL METRO STATION',
+    '15 MIN. DRIVE FROM DELHI BORDER',
+    'WORLD CLASS HOSPITALS & SCHOOLS IN VICINITY'
+  ];
+
   const renderOverview = () => (
-    <section id="overview" className="savana1-overview-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">PROJECT OVERVIEW</h2>
-        </div>
-        <div className="savana1-overview-content">
-          <div className="savana1-overview-text">
-            <p className="savana1-text-paragraph">
+    <div className="savana1__section">
+      <div className="savana1__container">
+        <div className="savana1__grid">
+          <div className="savana1__content">
+            <div className="savana1__section-header">
+              <div className="savana1__dots">
+                <span className="savana1__dot"></span>
+                <span className="savana1__dot"></span>
+                <span className="savana1__dot"></span>
+              </div>
+              <span className="savana1__section-subtitle">PROJECT OVERVIEW</span>
+            </div>
+            <h2 className="savana1__section-title">Experience Elevated Living</h2>
+
+            <p className="savana1__text">
               RPS Savana stands as an epitome of refined living, set across 41.40 
               acres of meticulously planned residential expanse. We offers a 
               variety of housing options, from contemporary apartments to 
-              opulent villas, ensuring a tailored living experience for each resident. 
+              opulent villas, ensuring a tailored living experience for each resident.
+            </p>
+            <p className="savana1__text">
               Surrounded by picturesque landscapes, RPS Savana provides an 
               enchanting retreat, marrying spacious living with contemporary 
               amenities. Residents can indulge in the beauty of well-manicured 
               green spaces, recreational facilities, and a vibrant community 
               atmosphere.
             </p>
+
+            <div className="savana1__details-card">
+              <div className="savana1__detail-row">
+                <span className="savana1__detail-label">TOTAL AREA</span>
+                <span className="savana1__detail-value">41.4 Acres</span>
+              </div>
+              <div className="savana1__detail-row">
+                <span className="savana1__detail-label">TOTAL TOWERS</span>
+                <span className="savana1__detail-value">27</span>
+              </div>
+              <div className="savana1__detail-row savana1__detail-row--last">
+                <span className="savana1__detail-label">TOTAL FLOORS</span>
+                <span className="savana1__detail-value">18</span>
+              </div>
+            </div>
           </div>
-          <div className="savana1-overview-image">
-            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1.png" alt="RPS Savana Aerial View" className="savana1-image" />
-          </div>
-        </div>
-        
-        <div className="savana1-stats-grid">
-          <div className="savana1-stat-item">
-            <h3 className="savana1-stat-number">41.4 <span className="savana1-highlight">Acres</span></h3>
-            <p className="savana1-stat-label">TOTAL AREA</p>
-          </div>
-          <div className="savana1-stat-item">
-            <h3 className="savana1-stat-number">27</h3>
-            <p className="savana1-stat-label">TOTAL TOWERS</p>
-          </div>
-          <div className="savana1-stat-item">
-            <h3 className="savana1-stat-number">18</h3>
-            <p className="savana1-stat-label">TOTAL FLOORS</p>
-          </div>
-          <div className="savana1-stat-item">
-            <h3 className="savana1-stat-number">2500 <span className="savana1-plus">+</span></h3>
-            <p className="savana1-stat-label">FAMILIES</p>
+
+          <div className="savana1__image-wrapper">
+            <div className="savana1__image-glow"></div>
+            <div className="savana1__image">
+              <img 
+                src="https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1.png" 
+                alt="RPS Savana"
+                className="savana1__img"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 
   const renderWhyChoose = () => (
-    <section id="why-choose" className="savana1-why-choose-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-why-choose-content">
-          <div className="savana1-why-choose-images">
-            <img src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Park-view-Hires-1024x577.jpg" alt="Aerial View 1" className="savana1-aerial-img-1" />
-            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-2-1024x683.jpg" alt="Aerial View 2" className="savana1-aerial-img-2" />
+    <div className="savana1__section">
+      <div className="savana1__container">
+        <div className="savana1__grid">
+          <div className="savana1__image-wrapper">
+            <div className="savana1__image-glow"></div>
+            <div className="savana1__image">
+              <img 
+                src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Park-view-Hires-1024x577.jpg" 
+                alt="Aerial View"
+                className="savana1__img"
+              />
+            </div>
           </div>
-          <div className="savana1-why-choose-text">
-            <p className="savana1-subtitle">WHERE YOUR JOURNEY TO LUXURY BEGINS</p>
-            <h2 className="savana1-why-title">EXCLUSIVE RESIDENTIAL TOWNSHIP</h2>
-            <p className="savana1-description">
+
+          <div className="savana1__content">
+            <p className="savana1__building-subtitle">WHERE YOUR JOURNEY TO LUXURY BEGINS</p>
+            <h2 className="savana1__building-title">EXCLUSIVE RESIDENTIAL TOWNSHIP</h2>
+            <p className="savana1__text">
               Welcome to RPS Savana where luxury meets security and 
               convenience. Our state-of-the-art clubhouse, fully-equipped gym, 
               serene gardens, and safe kids' play area provide the perfect blend of 
-              relaxation and recreation. With 24/7 security, gated community living, 
+              relaxation and recreation.
+            </p>
+            <p className="savana1__text">
+              With 24/7 security, gated community living, 
               and eco-conscious design, your peace of mind is our priority. Explore 
               a complete living experience with entertainment zones and a 
               sparkling pool. Your dream home awaits in our modern amenities, 
-              where every day feels like a vacation. Join us and discover an 
-              exceptional way of life
+              where every day feels like a vacation.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 
   const renderAmenities = () => (
-    <section id="amenities" className="savana1-amenities-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">AMENITIES</h2>
-        </div>
-        <p className="savana1-amenities-subtitle">
-          Indulge In A Meticulously Crafted Environment, Where Every Amenity Is Tailored To Enrich And Elevate Your Everyday Living.
-        </p>
-        
-        <div className="savana1-amenities-grid">
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 20h40v24H12z" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M20 20v-8h24v8M16 44v8h32v-8" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">CLUB HOUSE</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="12" y="28" width="40" height="20" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M16 28c0-4 4-8 8-8s8 4 8 8M32 28c0-4 4-8 8-8s8 4 8 8" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">SWIMMING POOL</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="16" width="8" height="16" stroke="#C9A961" strokeWidth="2"/>
-                <rect x="36" y="16" width="8" height="16" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M16 32h32v8H16z" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">GYMNASIUM</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 20h16l8 8v16l-8 8H24l-8-8V28z" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M28 32h8M32 28v8" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">MULTI-CUISINE RESTAURANTS</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="20" r="6" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M20 32c0-6 5.4-11 12-11s12 5 12 11M24 36h16v8H24z" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">BEAUTIFUL GARDENS</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="16" y="20" width="32" height="24" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M20 32h24M28 24v16" stroke="#C9A961" strokeWidth="2"/>
-                <circle cx="24" cy="28" r="2" fill="#C9A961"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">CAR PARKING</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M32 16l12 12v16H20V28z" stroke="#C9A961" strokeWidth="2"/>
-                <circle cx="32" cy="32" r="8" stroke="#C9A961" strokeWidth="2"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">24/7 SECURITY</h3>
-          </div>
-          
-          <div className="savana1-amenity-item">
-            <div className="savana1-amenity-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="16" width="24" height="32" stroke="#C9A961" strokeWidth="2"/>
-                <path d="M28 20v12M36 20v12M24 36h16" stroke="#C9A961" strokeWidth="2"/>
-                <circle cx="32" cy="28" r="2" fill="#C9A961"/>
-              </svg>
-            </div>
-            <h3 className="savana1-amenity-title">POWER BACKUP</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-
-  const renderLayout = () => (
-    <section id="layout" className="savana1-layout-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">PROJECT LAYOUT</h2>
-        </div>
-        
-        <div className="savana1-layout-tabs">
-          <button 
-            className={`savana1-layout-tab ${activeLayout === 1 ? 'savana1-layout-tab-active' : ''}`}
-            onClick={() => setActiveLayout(1)}
-          >
-            LAYOUT 1
-          </button>
-          <button 
-            className={`savana1-layout-tab ${activeLayout === 2 ? 'savana1-layout-tab-active' : ''}`}
-            onClick={() => setActiveLayout(2)}
-          >
-            LAYOUT 2
-          </button>
-          <button 
-            className={`savana1-layout-tab ${activeLayout === 3 ? 'savana1-layout-tab-active' : ''}`}
-            onClick={() => setActiveLayout(3)}
-          >
-            LAYOUT 3
-          </button>
-        </div>
-        
-        <div className="savana1-layout-plans">
-          {activeLayout === 1 && (
-            <div className="savana1-layout-plan">
-              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-2-scaled.jpg" alt="Layout 1" className="savana1-layout-image" />
-              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-21-1024x830.jpg" alt="Layout 1 Detail" className="savana1-layout-image" />
-            </div>
-          )}
-          {activeLayout === 2 && (
-            <div className="savana1-layout-plan">
-              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-3-1024x830.jpg" alt="Layout 2" className="savana1-layout-image" />
-              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-31-1024x830.jpg" alt="Layout 2 Detail" className="savana1-layout-image" />
-            </div>
-          )}
-          {activeLayout === 3 && (
-            <div className="savana1-layout-plan">
-              <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-41-1024x830.jpg" alt="Layout 3" className="savana1-layout-image" />
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-
-  const renderWhyChooseFeatures = () => (
-    <section className="savana1-why-choose-features">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">WHY CHOOSE US</h2>
-        </div>
-        
-        <div className="savana1-features-grid">
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">⭐</div>
-            <div className="savana1-feature-text">
-              <h3>SCENIC AND<br />SPACIOUS LIVING</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">🏠</div>
-            <div className="savana1-feature-text">
-              <h3>DIVERSE HOUSING<br />OPTIONS</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">🔒</div>
-            <div className="savana1-feature-text">
-              <h3>MODERN<br />AMENITIES</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">📊</div>
-            <div className="savana1-feature-text">
-              <h3>DESIGNED FOR<br />ONLY 45 FAMILIES<br />PER ACRE</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">⭐</div>
-            <div className="savana1-feature-text">
-              <h3>STATE OF THE ART<br />SPECIFICATIONS</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">🌳</div>
-            <div className="savana1-feature-text">
-              <h3>LUSH GREEN<br />GARDENS</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">🏡</div>
-            <div className="savana1-feature-text">
-              <h3>ULTRA-SPACIOUS<br />LAYOUTS</h3>
-            </div>
-          </div>
-
-          <div className="savana1-feature">
-            <div className="savana1-feature-icon">🏢</div>
-            <div className="savana1-feature-text">
-              <h3>GRAND BALCONY<br />AREA</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-
-  const renderGallery = () => (
-    <section id="gallery" className="savana1-gallery-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">GALLERY</h2>
+    <div className="savana1__amenities-section">
+      <div className="savana1__container">
+        <div className="savana1__amenities-header">
+          <h2 className="savana1__amenities-title">AMENITIES</h2>
+          <p className="savana1__amenities-description">
+            Every Amenity Is Planned And Designed With Utmost Passion & Unwavering Attention To Detail To Elevate Your Living Experience.
+          </p>
         </div>
 
-        <div className="savana1-gallery-grid">
-          {galleryImages.map((imageUrl, index) => (
-            <div key={index} className="savana1-gallery-item">
-              <img 
-                src={imageUrl} 
-                alt={`Gallery View ${index + 1}`} 
-              />
+        <div className="savana1__amenities-grid">
+          {amenities.map((amenity, idx) => (
+            <div key={idx} className="savana1__amenity-card">
+              <div className="savana1__amenity-bg"></div>
+              <div className="savana1__amenity-content">
+                <div className="savana1__amenity-icon">{amenity.icon}</div>
+                <p className="savana1__amenity-label">{amenity.label}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  );
+
+  const renderLayout = () => (
+    <div className="savana1__layout-section">
+      <div className="savana1__container">
+        <div className="savana1__layout-header">
+          <h2 className="savana1__layout-title">PROJECT LAYOUT</h2>
+        </div>
+        
+        <div className="savana1__layout-tabs">
+          {[1, 2, 3].map(num => (
+            <button 
+              key={num}
+              className={`savana1__layout-tab ${activeLayout === num ? 'savana1__layout-tab--active' : ''}`}
+              onClick={() => setActiveLayout(num)}
+            >
+              LAYOUT {num}
+            </button>
+          ))}
+        </div>
+        
+        <div className="savana1__layout-plans">
+          {activeLayout === 1 && (
+            <div className="savana1__layout-plan">
+              <div className="savana1__layout-image-wrapper">
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-2-scaled.jpg" alt="Layout 1" className="savana1__layout-image" />
+              </div>
+              <div className="savana1__layout-image-wrapper">
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-21-1024x830.jpg" alt="Layout 1 Detail" className="savana1__layout-image" />
+              </div>
+            </div>
+          )}
+          {activeLayout === 2 && (
+            <div className="savana1__layout-plan">
+              <div className="savana1__layout-image-wrapper">
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-3-1024x830.jpg" alt="Layout 2" className="savana1__layout-image" />
+              </div>
+              <div className="savana1__layout-image-wrapper">
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-31-1024x830.jpg" alt="Layout 2 Detail" className="savana1__layout-image" />
+              </div>
+            </div>
+          )}
+          {activeLayout === 3 && (
+            <div className="savana1__layout-plan">
+              <div className="savana1__layout-image-wrapper">
+                <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Savana-41-1024x830.jpg" alt="Layout 3" className="savana1__layout-image" />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderWhyChooseFeatures = () => (
+    <div className="savana1__section">
+      <div className="savana1__container">
+        <div className="savana1__features-header">
+          <h2 className="savana1__features-title">WHY CHOOSE US</h2>
+        </div>
+        
+        <div className="savana1__features-grid">
+          {whyChooseFeatures.map((feature, idx) => (
+            <div key={idx} className="savana1__feature-card">
+              <div className="savana1__feature-bg"></div>
+              <div className="savana1__feature-content">
+                <div className="savana1__feature-icon">{feature.icon}</div>
+                <h3 className="savana1__feature-title">{feature.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderGallery = () => (
+    <div className="savana1__gallery-section">
+      <div className="savana1__container">
+        <div className="savana1__gallery-header">
+          <h2 className="savana1__gallery-title">GALLERY</h2>
+        </div>
+
+        <div className="savana1__gallery-grid">
+          {galleryImages.map((image, idx) => (
+            <div 
+              key={idx} 
+              className="savana1__gallery-item"
+              onClick={() => setActiveImage(image)}
+            >
+              <div className="savana1__gallery-overlay"></div>
+              <img src={image} alt={`Gallery ${idx + 1}`} className="savana1__gallery-image" />
+              <div className="savana1__gallery-icon">
+                <div className="savana1__gallery-icon-bg">
+                  <Camera size={24} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 
   const renderBenefits = () => (
-    <section id="benefits" className="savana1-benefits-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">PROJECT BENEFITS</h2>
+    <div className="savana1__section">
+      <div className="savana1__container">
+        <div className="savana1__benefits-header">
+          <h2 className="savana1__benefits-title">PROJECT BENEFITS</h2>
         </div>
         
-        <div className="savana1-benefits-content">
-          <div className="savana1-benefits-text">
-            <h3>RPS AURIA</h3>
-            <p>Elevate your lifestyle at RPS Auria, where luxury meets serenity in a prime location. Experience the pinnacle of upscale living with top-notch amenities and impeccable craftsmanship.</p>
-            <h3>RPS SAVANA</h3>
-            <p>Discover the pinnacle of residential excellence at RPS Savana, where prime location meets ultimate comfort and style.</p>
+        <div className="savana1__grid">
+          <div className="savana1__content">
+            <div className="savana1__benefit-item">
+              <h3 className="savana1__benefit-title">RPS AURIA</h3>
+              <div className="savana1__benefit-line"></div>
+              <p className="savana1__text">
+                Elevate your lifestyle at RPS Auria, where luxury meets serenity in a prime location. 
+                Experience the pinnacle of upscale living with top-notch amenities and impeccable craftsmanship.
+              </p>
+            </div>
+            <div className="savana1__benefit-item">
+              <h3 className="savana1__benefit-title">RPS SAVANA</h3>
+              <div className="savana1__benefit-line"></div>
+              <p className="savana1__text">
+                Discover the pinnacle of residential excellence at RPS Savana, where prime location 
+                meets ultimate comfort and style.
+              </p>
+            </div>
           </div>
-          <div className="savana1-benefits-image">
-            <img src="https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-1-1024x683.jpg" alt="Project Overview" />
+
+          <div className="savana1__image-wrapper">
+            <div className="savana1__image-glow"></div>
+            <div className="savana1__image">
+              <img 
+                src="https://rpsgroupindia.com/wp-content/uploads/2024/02/savana-1-1024x683.jpg" 
+                alt="Benefits"
+                className="savana1__img"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 
   const renderLocation = () => (
-    <section id="location" className="savana1-location-section">
-      <div className="savana1-container-inner">
-        <div className="savana1-section-header">
-          <span className="savana1-dots">::::</span>
-          <h2 className="savana1-section-title">PERFECT LOCATION, GREAT CONNECTIVITY</h2>
+    <div className="savana1__location-section">
+      <div className="savana1__container">
+        <div className="savana1__location-header">
+          <h2 className="savana1__location-title">PERFECT LOCATION, GREAT CONNECTIVITY</h2>
         </div>
         
-        <div className="savana1-location-grid">
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>30 MIN. DRIVE FROM NEHRU PLACE</p>
-          </div>
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>10 MIN. DRIVE FROM MAIN MATHURA ROAD</p>
-          </div>
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>5 MIN. DRIVE FROM DEL-MUM EXPRESSWAY</p>
-          </div>
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>10 MIN. DRIVE FROM BADKHAL METRO STATION</p>
-          </div>
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>15 MIN. DRIVE FROM DELHI BORDER</p>
-          </div>
-          <div className="savana1-location-card">
-            <div className="savana1-location-icon">📍</div>
-            <p>WORLD CLASS HOSPITALS & SCHOOLS IN VISINITY</p>
-          </div>
+        <div className="savana1__location-grid">
+          {locationPoints.map((location, idx) => (
+            <div key={idx} className="savana1__location-card">
+              <div className="savana1__location-icon">
+                <MapPin size={32} />
+              </div>
+              <p className="savana1__location-text">{location}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 
   const renderContent = () => {
@@ -439,32 +393,78 @@ const Savana1 = () => {
   };
 
   return (
-    <div className="savana1-container">
+    <div className="savana1">
       {/* Hero Section */}
-      <section className="savana1-hero-section">
-        <div className="savana1-hero-image">
-          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80" alt="RPS Savana Complex" />
+      <div className="savana1__hero-wrapper">
+        <div 
+          className="savana1__hero-background"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        />
+        <div className="savana1__hero-overlay" />
+        
+        <div className="savana1__hero-content">
+          <div className="savana1__hero-text-wrapper">
+            <div className="savana1__hero-subtitle">
+              <span className="savana1__hero-line"></span>
+              <span>PREMIUM LIVING</span>
+              <span className="savana1__hero-line"></span>
+            </div>
+            <h1 className="savana1__hero-title">RPS SAVANA</h1>
+            <p className="savana1__hero-description">Where Luxury Meets Lifestyle</p>
+            <div className="savana1__hero-location">
+              <MapPin size={16} />
+              <span>Faridabad</span>
+            </div>
+          </div>
         </div>
-        <nav className="savana1-main-nav">
+
+        <nav className="savana1__main-nav">
           {navItems.map(item => (
-            <a
+            <button
               key={item.id}
-              href={`#${item.id}`}
-              className={`savana1-nav-link ${activeTab === item.id ? 'savana1-nav-active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveTab(item.id);
-              }}
+              className={`savana1__nav-link ${activeTab === item.id ? 'savana1__nav-link--active' : ''}`}
+              onClick={() => setActiveTab(item.id)}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
-      </section>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="savana1__stats-bar">
+        <div className="savana1__stats-grid">
+          {highlights.map((item, idx) => (
+            <div key={idx} className="savana1__stat-card">
+              <div className="savana1__stat-icon">{item.icon}</div>
+              <div>
+                <div className="savana1__stat-title">{item.title}</div>
+                <div className="savana1__stat-desc">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <main>
         {renderContent()}
       </main>
+
+      {/* Image Modal */}
+      {activeImage && (
+        <div className="savana1__modal" onClick={() => setActiveImage(null)}>
+          <div className="savana1__modal-content">
+            <button className="savana1__modal-close" onClick={() => setActiveImage(null)}>
+              <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img src={activeImage} alt="Full view" className="savana1__modal-image" />
+             
+          </div>
+          
+        </div>
+      )}
     </div>
   );
 };

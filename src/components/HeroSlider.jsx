@@ -47,34 +47,59 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="hero-slider">
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`slide ${index === currentSlide ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${slide.image})` }}
-        >
+    <div className="heroslideerrrrrrr-main-container">
+      {/* Blurred Background Layer */}
+      <div 
+        className="heroslideerrrrrrr-background"
+        style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
+      ></div>
+
+      {/* Content Wrapper */}
+      <div className="heroslideerrrrrrr-content-wrapper">
+        <div className="heroslideerrrrrrr-inner-container">
+          
+          {/* Slides */}
+          <div className="heroslideerrrrrrr-slides-container">
+            {slides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className={`heroslideerrrrrrr-slide ${index === currentSlide ? 'heroslideerrrrrrr-slide-active' : ''}`}
+                style={{ backgroundImage: `url(${slide.image})` }}
+              >
+                {/* Floating particles */}
+                <div className="heroslideerrrrrrr-particle"></div>
+                <div className="heroslideerrrrrrr-particle"></div>
+                <div className="heroslideerrrrrrr-particle"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button className="heroslideerrrrrrr-nav-arrow heroslideerrrrrrr-nav-prev" onClick={prevSlide}>
+            ‹
+          </button>
+          <button className="heroslideerrrrrrr-nav-arrow heroslideerrrrrrr-nav-next" onClick={nextSlide}>
+            ›
+          </button>
+
+          {/* Slide Counter */}
+          <div className="heroslideerrrrrrr-counter">
+            <span className="heroslideerrrrrrr-counter-text">
+              {currentSlide + 1} / {slides.length}
+            </span>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="heroslideerrrrrrr-dots-container">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`heroslideerrrrrrr-dot ${index === currentSlide ? 'heroslideerrrrrrr-dot-active' : ''}`}
+                onClick={() => goToSlide(index)}
+              ></button>
+            ))}
+          </div>
         </div>
-      ))}
-
-      {/* Navigation Arrows */}
-      <button className="nav-arrow prev" onClick={prevSlide}>
-        ‹
-      </button>
-      <button className="nav-arrow next" onClick={nextSlide}>
-        ›
-      </button>
-
-      {/* Dots Navigation */}
-      <div className="dots-container">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          ></button>
-        ))}
       </div>
     </div>
   );

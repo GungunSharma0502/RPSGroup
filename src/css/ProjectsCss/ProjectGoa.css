@@ -1,62 +1,46 @@
+/* ==================== GLOBAL STYLES ==================== */
 .ProjectGoa {
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #fff;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
-.ProjectGoa__hero {
-  position: relative;
-  height: 70vh;
-  min-height: 500px;
-  overflow: hidden;
+.ProjectGoa__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.ProjectGoa__hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.ProjectGoa__hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.ProjectGoa__hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-}
-
-.ProjectGoa__hero-decorations {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.ProjectGoa__decoration {
-  font-size: 32px;
-  color: #d4af37;
-  animation: float 3s ease-in-out infinite;
-}
-
-.ProjectGoa__decoration--left {
-  animation-delay: 0s;
-}
-
-.ProjectGoa__decoration--right {
-  animation-delay: 1.5s;
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 @keyframes float {
@@ -68,87 +52,184 @@
   }
 }
 
-.ProjectGoa__title {
-  font-size: 72px;
-  font-weight: 700;
-  color: #d4af37;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  font-family: 'Georgia', serif;
-  letter-spacing: 2px;
+/* ==================== HERO SECTION ==================== */
+.ProjectGoa__hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Info Section */
-.ProjectGoa__info {
+.ProjectGoa__hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ProjectGoa__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(12, 74, 110, 0.8) 0%, 
+    rgba(15, 23, 42, 0.7) 50%, 
+    rgba(2, 6, 23, 1) 100%
+  );
+  z-index: 1;
+}
+
+.ProjectGoa__hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.ProjectGoa__hero-decorations {
   display: flex;
-  max-width: 1400px;
-  margin: 80px auto;
-  padding: 0 40px;
-  gap: 60px;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 30px;
+}
+
+.ProjectGoa__decoration {
+  font-size: 48px;
+  color: #06b6d4;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.5));
+}
+
+.ProjectGoa__decoration--left {
+  animation-delay: 0s;
+}
+
+.ProjectGoa__decoration--right {
+  animation-delay: 1.5s;
+}
+
+.ProjectGoa__title {
+  font-size: 96px;
+  font-weight: 100;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  letter-spacing: 8px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== INFO SECTION ==================== */
+.ProjectGoa__info {
+  padding: 120px 0;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .ProjectGoa__info-content {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .ProjectGoa__info-title {
-  font-size: 38px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1a1a1a;
+  font-size: 56px;
+  font-weight: 100;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
 }
 
 .ProjectGoa__info-description {
   font-size: 16px;
   line-height: 1.8;
-  color: #555;
-  margin-bottom: 30px;
+  color: #d1d5db;
+  text-align: justify;
+  margin-bottom: 40px;
 }
 
 .ProjectGoa__info-details {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
   position: relative;
 }
 
 .ProjectGoa__info-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
   font-size: 15px;
-  color: #444;
+  color: #e5e7eb;
+}
+
+.ProjectGoa__info-item:last-child {
+  border-bottom: none;
 }
 
 .ProjectGoa__info-icon {
-  font-size: 20px;
+  font-size: 24px;
+  color: #06b6d4;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ProjectGoa__info-badge {
   position: absolute;
-  bottom: -20px;
-  left: 0;
-  background-color: #d4af37;
-  color: #fff;
-  padding: 8px 20px;
+  top: -20px;
+  right: 32px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: #ffffff;
+  padding: 8px 24px;
   font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 14px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
 }
 
 .ProjectGoa__info-image {
-  flex: 1;
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ProjectGoa__info-image::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  border-radius: 24px;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: glow 3s ease-in-out infinite;
 }
 
 .ProjectGoa__featured-image {
+  position: relative;
   width: 100%;
   height: 500px;
   object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
   display: block;
+}
+
+.ProjectGoa__featured-image:hover {
+  transform: scale(1.02);
 }
 
 .ProjectGoa__nav-button {
@@ -156,8 +237,9 @@
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
+  background: rgba(6, 182, 212, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(6, 182, 212, 0.5);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -167,188 +249,257 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+  color: #06b6d4;
+  z-index: 10;
 }
 
 .ProjectGoa__nav-button:hover {
-  background: #d4af37;
-  color: white;
+  background: rgba(6, 182, 212, 0.4);
+  border-color: #06b6d4;
   transform: translateY(-50%) scale(1.1);
+  color: #ffffff;
 }
 
-/* Amenities Section */
+/* ==================== AMENITIES SECTION ==================== */
 .ProjectGoa__amenities {
-  background-color: #f8f8f8;
-  padding: 80px 40px;
-  text-align: center;
+  padding: 120px 0;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
 }
 
 .ProjectGoa__section-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  letter-spacing: 3px;
-  color: #1a1a1a;
+  font-size: 72px;
+  font-weight: 100;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 80px;
+  letter-spacing: 4px;
   position: relative;
-  display: inline-block;
 }
 
 .ProjectGoa__section-title::after {
   content: '';
   position: absolute;
-  bottom: -15px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 100px;
   height: 3px;
-  background-color: #d4af37;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
 }
 
 .ProjectGoa__amenities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .ProjectGoa__amenity-item {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  padding: 40px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
-  transition: transform 0.3s;
+  gap: 20px;
+}
+
+.ProjectGoa__amenity-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0) 0%, rgba(59, 130, 246, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .ProjectGoa__amenity-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+.ProjectGoa__amenity-item:hover::before {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  opacity: 1;
 }
 
 .ProjectGoa__amenity-icon {
   font-size: 48px;
-  background: white;
+  position: relative;
+  z-index: 1;
   width: 100px;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(6, 182, 212, 0.1);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ProjectGoa__amenity-item:hover .ProjectGoa__amenity-icon {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.6);
+  transform: scale(1.1);
 }
 
 .ProjectGoa__amenity-name {
-  font-size: 15px;
-  color: #444;
-  font-weight: 500;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e5e7eb;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
 }
 
-/* Gallery Section */
+/* ==================== GALLERY SECTION ==================== */
 .ProjectGoa__gallery {
-  padding: 80px 40px;
-  text-align: center;
+  padding: 120px 0;
 }
 
 .ProjectGoa__gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .ProjectGoa__gallery-item {
   position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(6, 182, 212, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ProjectGoa__gallery-item:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
 }
 
 .ProjectGoa__gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  display: block;
+  transition: transform 0.7s ease;
 }
 
 .ProjectGoa__gallery-item:hover img {
   transform: scale(1.1);
 }
 
-/* Features Section */
+.ProjectGoa__gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.ProjectGoa__gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* ==================== FEATURES SECTION ==================== */
 .ProjectGoa__features {
-  background: linear-gradient(135deg, #f5f5dc 0%, #faf8f3 100%);
-  padding: 80px 40px;
-  text-align: center;
+  padding: 120px 0;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
 }
 
 .ProjectGoa__features-subtitle {
-  font-size: 16px;
-  color: #666;
+  text-align: center;
+  font-size: 18px;
+  color: #9ca3af;
   margin-bottom: 60px;
+  font-weight: 300;
+  letter-spacing: 1px;
   font-style: italic;
 }
 
 .ProjectGoa__features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
+  gap: 32px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .ProjectGoa__feature-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  text-align: left;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  padding: 40px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+  border-top: 4px solid transparent;
 }
 
 .ProjectGoa__feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.2);
+  border-top-color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.6);
 }
 
 .ProjectGoa__feature-icon {
   font-size: 48px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .ProjectGoa__feature-title {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 15px;
-  color: #1a1a1a;
+  margin-bottom: 16px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
 .ProjectGoa__feature-description {
   font-size: 15px;
   line-height: 1.7;
-  color: #666;
+  color: #d1d5db;
 }
 
-/* Contact Form Section */
+/* ==================== CONTACT FORM SECTION ==================== */
 .ProjectGoa__contact {
-  padding: 80px 40px;
-  background-color: #f8f8f8;
-  text-align: center;
+  padding: 120px 0;
 }
 
 .ProjectGoa__form {
   max-width: 600px;
   margin: 0 auto;
-  background: white;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 58, 138, 0.4) 100%);
   padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-top: 5px solid #06b6d4;
+  backdrop-filter: blur(10px);
 }
 
 .ProjectGoa__form-group {
   margin-bottom: 25px;
-  text-align: left;
 }
 
 .ProjectGoa__form-label {
@@ -356,21 +507,26 @@
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #e5e7eb;
+  letter-spacing: 0.5px;
 }
 
 .ProjectGoa__form-input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 8px;
   font-size: 15px;
-  transition: border-color 0.3s;
+  background: rgba(15, 23, 42, 0.5);
+  color: #ffffff;
+  transition: all 0.3s;
 }
 
 .ProjectGoa__form-input:focus {
   outline: none;
-  border-color: #d4af37;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+  background: rgba(15, 23, 42, 0.7);
 }
 
 .ProjectGoa__phone-input {
@@ -381,34 +537,43 @@
 
 .ProjectGoa__phone-code {
   padding: 12px 16px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
+  color: #06b6d4;
+  white-space: nowrap;
 }
 
 .ProjectGoa__form-select {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 8px;
   font-size: 15px;
-  background-color: white;
+  background: rgba(15, 23, 42, 0.5);
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.3s;
+  transition: all 0.3s;
 }
 
 .ProjectGoa__form-select:focus {
   outline: none;
-  border-color: #d4af37;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.ProjectGoa__form-select option {
+  background: #0f172a;
+  color: #ffffff;
 }
 
 .ProjectGoa__form-checkbox {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  text-align: left;
   margin-bottom: 30px;
 }
 
@@ -417,67 +582,129 @@
   width: 18px;
   height: 18px;
   cursor: pointer;
+  accent-color: #06b6d4;
 }
 
 .ProjectGoa__form-checkbox label {
   font-size: 13px;
-  color: #666;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
 .ProjectGoa__form-link {
-  color: #d4af37;
+  color: #06b6d4;
   text-decoration: underline;
   cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 .ProjectGoa__form-link:hover {
-  color: #b8941f;
+  color: #67e8f9;
 }
 
 .ProjectGoa__form-submit {
   width: 100%;
   padding: 14px;
-  background-color: #d4af37;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
 }
 
 .ProjectGoa__form-submit:hover {
-  background-color: #b8941f;
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
 }
 
-/* Responsive Design */
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
-  .ProjectGoa__info {
-    flex-direction: column;
+  .ProjectGoa__info-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
   }
 
   .ProjectGoa__title {
-    font-size: 56px;
+    font-size: 64px;
+  }
+
+  .ProjectGoa__info-title {
+    font-size: 42px;
+  }
+
+  .ProjectGoa__section-title {
+    font-size: 52px;
   }
 }
 
 @media (max-width: 768px) {
   .ProjectGoa__hero {
-    height: 50vh;
+    height: 70vh;
   }
 
   .ProjectGoa__title {
-    font-size: 42px;
+    font-size: 48px;
+    letter-spacing: 4px;
   }
 
-  .ProjectGoa__info {
-    padding: 0 20px;
-    margin: 40px auto;
+  .ProjectGoa__decoration {
+    font-size: 32px;
+  }
+
+  .ProjectGoa__hero-decorations {
+    gap: 60px;
+  }
+
+  .ProjectGoa__info-title {
+    font-size: 32px;
+  }
+
+  .ProjectGoa__section-title {
+    font-size: 40px;
+  }
+
+  .ProjectGoa__info,
+  .ProjectGoa__amenities,
+  .ProjectGoa__gallery,
+  .ProjectGoa__features,
+  .ProjectGoa__contact {
+    padding: 80px 0;
+  }
+
+  .ProjectGoa__form {
+    padding: 30px 20px;
+  }
+
+  .ProjectGoa__amenities-grid,
+  .ProjectGoa__gallery-grid,
+  .ProjectGoa__features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ProjectGoa__hero {
+    height: 60vh;
+  }
+
+  .ProjectGoa__title {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
+  .ProjectGoa__decoration {
+    font-size: 24px;
+  }
+
+  .ProjectGoa__hero-decorations {
+    gap: 40px;
   }
 
   .ProjectGoa__info-title {
@@ -485,52 +712,17 @@
   }
 
   .ProjectGoa__section-title {
-    font-size: 26px;
-  }
-
-  .ProjectGoa__amenities,
-  .ProjectGoa__gallery,
-  .ProjectGoa__features,
-  .ProjectGoa__contact {
-    padding: 60px 20px;
-  }
-
-  .ProjectGoa__amenities-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-  }
-
-  .ProjectGoa__gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .ProjectGoa__form {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ProjectGoa__title {
     font-size: 32px;
   }
 
-  .ProjectGoa__decoration {
-    font-size: 24px;
-  }
-
-  .ProjectGoa__info-title {
-    font-size: 24px;
-  }
-
-  .ProjectGoa__amenities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ProjectGoa__gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .ProjectGoa__info-content,
+  .ProjectGoa__amenities-grid,
+  .ProjectGoa__gallery-grid,
   .ProjectGoa__features-grid {
-    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .ProjectGoa__form {
+    padding: 25px 15px;
   }
 }
