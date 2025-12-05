@@ -87,13 +87,13 @@ const Savana1 = () => {
             <h2 className="savana1__section-title">Experience Elevated Living</h2>
 
             <p className="savana1__text">
-              RPS Savana stands as an epitome of refined living, set across 41.40 
+              Green Bunch Savana stands as an epitome of refined living, set across 41.40 
               acres of meticulously planned residential expanse. We offers a 
               variety of housing options, from contemporary apartments to 
               opulent villas, ensuring a tailored living experience for each resident.
             </p>
             <p className="savana1__text">
-              Surrounded by picturesque landscapes, RPS Savana provides an 
+              Surrounded by picturesque landscapes, Green Bunch Savana provides an 
               enchanting retreat, marrying spacious living with contemporary 
               amenities. Residents can indulge in the beauty of well-manicured 
               green spaces, recreational facilities, and a vibrant community 
@@ -121,7 +121,7 @@ const Savana1 = () => {
             <div className="savana1__image">
               <img 
                 src="https://rpsgroupindia.com/wp-content/uploads/2024/01/RPS-Savana-1.png" 
-                alt="RPS Savana"
+                alt="Green Bunch Savana"
                 className="savana1__img"
               />
             </div>
@@ -150,7 +150,7 @@ const Savana1 = () => {
             <p className="savana1__building-subtitle">WHERE YOUR JOURNEY TO LUXURY BEGINS</p>
             <h2 className="savana1__building-title">EXCLUSIVE RESIDENTIAL TOWNSHIP</h2>
             <p className="savana1__text">
-              Welcome to RPS Savana where luxury meets security and 
+              Welcome to Green Bunch Savana where luxury meets security and 
               convenience. Our state-of-the-art clubhouse, fully-equipped gym, 
               serene gardens, and safe kids' play area provide the perfect blend of 
               relaxation and recreation.
@@ -305,18 +305,18 @@ const Savana1 = () => {
         <div className="savana1__grid">
           <div className="savana1__content">
             <div className="savana1__benefit-item">
-              <h3 className="savana1__benefit-title">RPS AURIA</h3>
+              <h3 className="savana1__benefit-title">GREEN BUNCH AURIA</h3>
               <div className="savana1__benefit-line"></div>
               <p className="savana1__text">
-                Elevate your lifestyle at RPS Auria, where luxury meets serenity in a prime location. 
+                Elevate your lifestyle at Green Bunch Auria, where luxury meets serenity in a prime location. 
                 Experience the pinnacle of upscale living with top-notch amenities and impeccable craftsmanship.
               </p>
             </div>
             <div className="savana1__benefit-item">
-              <h3 className="savana1__benefit-title">RPS SAVANA</h3>
+              <h3 className="savana1__benefit-title">GREEN BUNCH SAVANA</h3>
               <div className="savana1__benefit-line"></div>
               <p className="savana1__text">
-                Discover the pinnacle of residential excellence at RPS Savana, where prime location 
+                Discover the pinnacle of residential excellence at Green Bunch Savana, where prime location 
                 meets ultimate comfort and style.
               </p>
             </div>
@@ -409,7 +409,7 @@ const Savana1 = () => {
               <span>PREMIUM LIVING</span>
               <span className="savana1__hero-line"></span>
             </div>
-            <h1 className="savana1__hero-title">RPS SAVANA</h1>
+            <h1 className="savana1__hero-title">GREEN BUNCH SAVANA</h1>
             <p className="savana1__hero-description">Where Luxury Meets Lifestyle</p>
             <div className="savana1__hero-location">
               <MapPin size={16} />

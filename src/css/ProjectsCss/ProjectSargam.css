@@ -1,13 +1,13 @@
 /* ==================== GLOBAL STYLES ==================== */
-.ProjectSargam {
+.GreenBunchProjectSargam {
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  color: #1C3637;
+  background: #F4F8F7;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-.ProjectSargam__container {
+.GreenBunchProjectSargam__container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
@@ -36,10 +36,10 @@
 
 @keyframes glow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -55,7 +55,7 @@
 }
 
 /* ==================== HERO SECTION ==================== */
-.ProjectSargam__hero {
+.GreenBunchProjectSargam__hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -64,36 +64,34 @@
   justify-content: center;
 }
 
-.ProjectSargam__hero-bg {
+.GreenBunchProjectSargam__hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.ProjectSargam__hero-image {
+.GreenBunchProjectSargam__hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.85);
 }
 
-.ProjectSargam__hero-overlay {
+.GreenBunchProjectSargam__hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, 
-    rgba(12, 74, 110, 0.8) 0%, 
-    rgba(15, 23, 42, 0.7) 50%, 
-    rgba(2, 6, 23, 1) 100%
-  );
+  background: rgba(28, 54, 55, 0.5);
 }
 
 /* ==================== INFO SECTION ==================== */
-.ProjectSargam__info {
+.GreenBunchProjectSargam__info {
   padding: 120px 0;
   max-width: 1280px;
   margin: 0 auto;
+  background: #ffffff;
 }
 
-.ProjectSargam__info-content {
+.GreenBunchProjectSargam__info-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -101,230 +99,230 @@
   padding: 0 20px;
 }
 
-.ProjectSargam__info-title {
+.GreenBunchProjectSargam__info-title {
   font-size: 56px;
-  font-weight: 100;
-  color: #ffffff;
+  font-weight: 700;
+  color: #1C3637;
   line-height: 1.2;
   margin-bottom: 32px;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
 }
 
-.ProjectSargam__info-description {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d1d5db;
+.GreenBunchProjectSargam__info-description {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
   margin-bottom: 40px;
 }
 
-.ProjectSargam__info-details {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+.GreenBunchProjectSargam__info-details {
+  background: #1C3637;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
   position: relative;
 }
 
-.ProjectSargam__info-item {
+.GreenBunchProjectSargam__info-item {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 232, 205, 0.2);
   font-size: 15px;
-  color: #e5e7eb;
+  color: #F4F8F7;
 }
 
-.ProjectSargam__info-item:last-child {
+.GreenBunchProjectSargam__info-item:last-child {
   border-bottom: none;
 }
 
-.ProjectSargam__info-icon {
-  font-size: 24px;
-  color: #06b6d4;
-  min-width: 32px;
+.GreenBunchProjectSargam__info-icon {
+  font-size: 26px;
+  color: #C48032;
+  min-width: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ProjectSargam__info-badge {
+.GreenBunchProjectSargam__info-badge {
   position: absolute;
   top: -20px;
   right: 32px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  background: #C48032;
   color: #ffffff;
-  padding: 8px 24px;
+  padding: 10px 28px;
   font-weight: 700;
   letter-spacing: 3px;
-  font-size: 12px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+  font-size: 13px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(196, 128, 50, 0.4);
 }
 
-.ProjectSargam__info-image {
+.GreenBunchProjectSargam__info-image {
   position: relative;
 }
 
-.ProjectSargam__info-image::before {
+.GreenBunchProjectSargam__info-image::before {
   content: '';
   position: absolute;
-  inset: -16px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  border-radius: 24px;
-  filter: blur(40px);
+  inset: -20px;
+  background: #C48032;
+  border-radius: 30px;
+  filter: blur(50px);
   opacity: 0.3;
-  animation: glow 3s ease-in-out infinite;
+  animation: glow 4s ease-in-out infinite;
 }
 
-.ProjectSargam__featured-image {
+.GreenBunchProjectSargam__featured-image {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 550px;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
   transition: transform 0.5s ease;
 }
 
-.ProjectSargam__featured-image:hover {
-  transform: scale(1.02);
+.GreenBunchProjectSargam__featured-image:hover {
+  transform: scale(1.03);
 }
 
 /* ==================== AMENITIES SECTION ==================== */
-.ProjectSargam__amenities {
+.GreenBunchProjectSargam__amenities {
   padding: 120px 0;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  background: #1C3637;
 }
 
-.ProjectSargam__section-title {
+.GreenBunchProjectSargam__section-title {
   font-size: 72px;
-  font-weight: 100;
+  font-weight: 700;
   color: #ffffff;
   text-align: center;
   margin-bottom: 80px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   position: relative;
 }
 
-.ProjectSargam__section-title::after {
+.GreenBunchProjectSargam__section-title::after {
   content: '';
   position: absolute;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
-.ProjectSargam__amenities-grid {
+.GreenBunchProjectSargam__amenities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 30px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.ProjectSargam__amenity-item {
+.GreenBunchProjectSargam__amenity-item {
   position: relative;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 40px 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.5s ease;
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
-.ProjectSargam__amenity-item::before {
+.GreenBunchProjectSargam__amenity-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0) 0%, rgba(59, 130, 246, 0) 100%);
+  background: rgba(196, 128, 50, 0);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
-.ProjectSargam__amenity-item:hover {
-  transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
+.GreenBunchProjectSargam__amenity-item:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
 }
 
-.ProjectSargam__amenity-item:hover::before {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+.GreenBunchProjectSargam__amenity-item:hover::before {
+  background: rgba(196, 128, 50, 0.08);
   opacity: 1;
 }
 
-.ProjectSargam__amenity-icon {
-  font-size: 48px;
+.GreenBunchProjectSargam__amenity-icon {
+  font-size: 52px;
   position: relative;
   z-index: 1;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(6, 182, 212, 0.1);
+  background: #F4F8F7;
   border-radius: 50%;
-  border: 2px solid rgba(6, 182, 212, 0.3);
-  transition: all 0.3s ease;
+  border: 3px solid #C48032;
+  transition: all 0.4s ease;
 }
 
-.ProjectSargam__amenity-item:hover .ProjectSargam__amenity-icon {
-  background: rgba(6, 182, 212, 0.2);
-  border-color: rgba(6, 182, 212, 0.6);
-  transform: scale(1.1);
+.GreenBunchProjectSargam__amenity-item:hover .GreenBunchProjectSargam__amenity-icon {
+  background: #C48032;
+  transform: scale(1.15) rotate(5deg);
 }
 
-.ProjectSargam__amenity-name {
+.GreenBunchProjectSargam__amenity-name {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  color: #e5e7eb;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  color: #1C3637;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
   position: relative;
   z-index: 1;
 }
 
 /* ==================== GALLERY SECTION ==================== */
-.ProjectSargam__gallery {
+.GreenBunchProjectSargam__gallery {
   padding: 120px 0;
+  background: #ffffff;
 }
 
-.ProjectSargam__gallery-grid {
+.GreenBunchProjectSargam__gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.ProjectSargam__gallery-item {
+.GreenBunchProjectSargam__gallery-item {
   position: relative;
   aspect-ratio: 4/3;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid rgba(6, 182, 212, 0.2);
-  transition: all 0.3s ease;
+  border: 4px solid #1C3637;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(28, 54, 55, 0.2);
 }
 
-.ProjectSargam__gallery-item:hover {
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
+.GreenBunchProjectSargam__gallery-item:hover {
+  border-color: #C48032;
+  box-shadow: 0 15px 50px rgba(196, 128, 50, 0.3);
+  transform: translateY(-5px);
 }
 
-.ProjectSargam__gallery-item img {
+.GreenBunchProjectSargam__gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -332,354 +330,370 @@
   transition: transform 0.7s ease;
 }
 
-.ProjectSargam__gallery-item:hover img {
-  transform: scale(1.1);
+.GreenBunchProjectSargam__gallery-item:hover img {
+  transform: scale(1.15);
 }
 
-.ProjectSargam__gallery-item::before {
+.GreenBunchProjectSargam__gallery-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: rgba(196, 128, 50, 0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   z-index: 1;
 }
 
-.ProjectSargam__gallery-item:hover::before {
+.GreenBunchProjectSargam__gallery-item:hover::before {
   opacity: 1;
 }
 
 /* ==================== FEATURES SECTION ==================== */
-.ProjectSargam__features {
+.GreenBunchProjectSargam__features {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #C48032;
 }
 
-.ProjectSargam__features-header {
+.GreenBunchProjectSargam__features-header {
   text-align: center;
   margin-bottom: 60px;
   padding: 0 20px;
 }
 
-.ProjectSargam__features-title {
-  font-size: 56px;
-  font-weight: 100;
-  color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: 2px;
-}
-
-.ProjectSargam__features-subtitle {
-  font-size: 18px;
-  color: #9ca3af;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.ProjectSargam__features-highlight {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  padding: 40px;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 58, 138, 0.4) 100%);
-  border-radius: 16px;
-  border-left: 5px solid #06b6d4;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.ProjectSargam__features-highlight-title {
-  font-size: 28px;
+.GreenBunchProjectSargam__features-title {
+  font-size: 58px;
   font-weight: 700;
-  color: #06b6d4;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
 }
 
-.ProjectSargam__features-highlight-subtitle {
-  font-size: 22px;
+.GreenBunchProjectSargam__features-subtitle {
+  font-size: 20px;
+  color: #F4F8F7;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.GreenBunchProjectSargam__features-highlight {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  padding: 50px;
+  background: #F4F8F7;
+  border-radius: 20px;
+  border-left: 6px solid #1C3637;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.GreenBunchProjectSargam__features-highlight-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1C3637;
+  margin-bottom: 12px;
+  letter-spacing: 0px;
+}
+
+.GreenBunchProjectSargam__features-highlight-subtitle {
+  font-size: 24px;
   font-weight: 600;
-  color: #67e8f9;
+  color: #8fb560;
   margin-bottom: 20px;
 }
 
-.ProjectSargam__features-highlight-text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d1d5db;
+.GreenBunchProjectSargam__features-highlight-text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
 }
 
-.ProjectSargam__features-grid {
+.GreenBunchProjectSargam__features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.ProjectSargam__feature-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 40px 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+.GreenBunchProjectSargam__feature-card {
+  background: #F4F8F7;
+  padding: 45px 35px;
+  border-radius: 20px;
   transition: all 0.5s ease;
-  border-top: 4px solid transparent;
+  border-top: 5px solid #1C3637;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
 }
 
-.ProjectSargam__feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.2);
-  border-top-color: #06b6d4;
-  border-color: rgba(6, 182, 212, 0.6);
+.GreenBunchProjectSargam__feature-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
 }
 
-.ProjectSargam__feature-icon {
-  font-size: 48px;
-  margin-bottom: 24px;
+.GreenBunchProjectSargam__feature-icon {
+  font-size: 54px;
+  margin-bottom: 28px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: #8fb560;
 }
 
-.ProjectSargam__feature-title {
-  font-size: 22px;
+.GreenBunchProjectSargam__feature-title {
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 16px;
-  color: #ffffff;
-  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  color: #1C3637;
+  letter-spacing: 0px;
 }
 
-.ProjectSargam__feature-description {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #d1d5db;
+.GreenBunchProjectSargam__feature-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #606E6F;
 }
 
 /* ==================== CONTACT FORM SECTION ==================== */
-.ProjectSargam__contact {
+.GreenBunchProjectSargam__contact {
   padding: 120px 0;
+  background: #88A3AF;
 }
 
-.ProjectSargam__form {
-  max-width: 600px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 58, 138, 0.4) 100%);
-  padding: 50px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  border-top: 5px solid #06b6d4;
-  backdrop-filter: blur(10px);
-}
-
-.ProjectSargam__form-group {
-  margin-bottom: 25px;
-}
-
-.ProjectSargam__form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #e5e7eb;
-  letter-spacing: 0.5px;
-}
-
-.ProjectSargam__form-input {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: 8px;
-  font-size: 15px;
-  background: rgba(15, 23, 42, 0.5);
+.GreenBunchProjectSargam__contact .GreenBunchProjectSargam__section-title {
   color: #ffffff;
+}
+
+.GreenBunchProjectSargam__form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 25px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+  border-top: 6px solid #C48032;
+}
+
+.GreenBunchProjectSargam__form-group {
+  margin-bottom: 28px;
+}
+
+/* Two column layout for form fields */
+.GreenBunchProjectSargam__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.GreenBunchProjectSargam__form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 0.3px;
+}
+
+.GreenBunchProjectSargam__form-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #D6E8CD;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #F4F8F7;
+  color: #1C3637;
   transition: all 0.3s;
+  font-weight: 500;
 }
 
-.ProjectSargam__form-input:focus {
+.GreenBunchProjectSargam__form-input:focus {
   outline: none;
-  border-color: #06b6d4;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
-  background: rgba(15, 23, 42, 0.7);
+  border-color: #C48032;
+  box-shadow: 0 0 0 4px rgba(196, 128, 50, 0.1);
+  background: #ffffff;
 }
 
-.ProjectSargam__phone-input {
+.GreenBunchProjectSargam__phone-input {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 }
 
-.ProjectSargam__phone-code {
-  padding: 12px 16px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #06b6d4;
+.GreenBunchProjectSargam__phone-code {
+  padding: 14px 18px;
+  background: #1C3637;
+  border: 2px solid #1C3637;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
   white-space: nowrap;
 }
 
-.ProjectSargam__form-select {
+.GreenBunchProjectSargam__form-select {
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: 8px;
-  font-size: 15px;
-  background: rgba(15, 23, 42, 0.5);
-  color: #ffffff;
+  padding: 14px 18px;
+  border: 2px solid #D6E8CD;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #F4F8F7;
+  color: #1C3637;
   cursor: pointer;
   transition: all 0.3s;
+  font-weight: 500;
 }
 
-.ProjectSargam__form-select:focus {
+.GreenBunchProjectSargam__form-select:focus {
   outline: none;
-  border-color: #06b6d4;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
-  background: rgba(15, 23, 42, 0.7);
+  border-color: #C48032;
+  box-shadow: 0 0 0 4px rgba(196, 128, 50, 0.1);
+  background: #ffffff;
 }
 
-.ProjectSargam__form-select option {
-  background: #0f172a;
-  color: #ffffff;
+.GreenBunchProjectSargam__form-select option {
+  background: #ffffff;
+  color: #1C3637;
 }
 
-.ProjectSargam__form-checkbox {
+.GreenBunchProjectSargam__form-checkbox {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
-.ProjectSargam__form-checkbox input {
+.GreenBunchProjectSargam__form-checkbox input {
   margin-top: 4px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: #06b6d4;
+  accent-color: #C48032;
 }
 
-.ProjectSargam__form-checkbox label {
-  font-size: 13px;
-  color: #d1d5db;
-  line-height: 1.6;
+.GreenBunchProjectSargam__form-checkbox label {
+  font-size: 14px;
+  color: #606E6F;
+  line-height: 1.7;
+  font-weight: 500;
 }
 
-.ProjectSargam__form-link {
-  color: #06b6d4;
+.GreenBunchProjectSargam__form-link {
+  color: #C48032;
   text-decoration: underline;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   transition: color 0.3s;
 }
 
-.ProjectSargam__form-link:hover {
-  color: #67e8f9;
+.GreenBunchProjectSargam__form-link:hover {
+  color: #1C3637;
 }
 
-.ProjectSargam__form-submit {
+.GreenBunchProjectSargam__form-submit {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  padding: 16px;
+  background: #C48032;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 6px 20px rgba(196, 128, 50, 0.4);
 }
 
-.ProjectSargam__form-submit:hover {
-  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+.GreenBunchProjectSargam__form-submit:hover {
+  background: #1C3637;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(28, 54, 55, 0.4);
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
-  .ProjectSargam__info-content {
+  .GreenBunchProjectSargam__info-content {
     grid-template-columns: 1fr;
     gap: 60px;
   }
 
-  .ProjectSargam__info-title {
-    font-size: 42px;
+  .GreenBunchProjectSargam__info-title {
+    font-size: 46px;
   }
 
-  .ProjectSargam__section-title {
-    font-size: 52px;
+  .GreenBunchProjectSargam__section-title {
+    font-size: 56px;
   }
 
-  .ProjectSargam__features-title {
-    font-size: 42px;
+  .GreenBunchProjectSargam__features-title {
+    font-size: 46px;
   }
 }
 
 @media (max-width: 768px) {
-  .ProjectSargam__hero {
+  .GreenBunchProjectSargam__hero {
     height: 70vh;
   }
 
-  .ProjectSargam__info-title {
-    font-size: 32px;
+  .GreenBunchProjectSargam__info-title {
+    font-size: 36px;
   }
 
-  .ProjectSargam__section-title {
-    font-size: 40px;
+  .GreenBunchProjectSargam__section-title {
+    font-size: 42px;
   }
 
-  .ProjectSargam__features-title {
-    font-size: 32px;
+  .GreenBunchProjectSargam__features-title {
+    font-size: 36px;
   }
 
-  .ProjectSargam__info,
-  .ProjectSargam__amenities,
-  .ProjectSargam__gallery,
-  .ProjectSargam__features,
-  .ProjectSargam__contact {
+  .GreenBunchProjectSargam__info,
+  .GreenBunchProjectSargam__amenities,
+  .GreenBunchProjectSargam__gallery,
+  .GreenBunchProjectSargam__features,
+  .GreenBunchProjectSargam__contact {
     padding: 80px 0;
   }
 
-  .ProjectSargam__form {
-    padding: 30px 20px;
+  .GreenBunchProjectSargam__form {
+    padding: 40px 25px;
   }
 
-  .ProjectSargam__amenities-grid,
-  .ProjectSargam__gallery-grid,
-  .ProjectSargam__features-grid {
+  .GreenBunchProjectSargam__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .GreenBunchProjectSargam__amenities-grid,
+  .GreenBunchProjectSargam__gallery-grid,
+  .GreenBunchProjectSargam__features-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .ProjectSargam__hero {
+  .GreenBunchProjectSargam__hero {
     height: 60vh;
   }
 
-  .ProjectSargam__info-title {
-    font-size: 28px;
+  .GreenBunchProjectSargam__info-title {
+    font-size: 30px;
   }
 
-  .ProjectSargam__section-title {
-    font-size: 32px;
+  .GreenBunchProjectSargam__section-title {
+    font-size: 34px;
   }
 
-  .ProjectSargam__features-title {
-    font-size: 28px;
+  .GreenBunchProjectSargam__features-title {
+    font-size: 30px;
   }
 
-  .ProjectSargam__info-content,
-  .ProjectSargam__amenities-grid,
-  .ProjectSargam__gallery-grid,
-  .ProjectSargam__features-grid {
+  .GreenBunchProjectSargam__info-content,
+  .GreenBunchProjectSargam__amenities-grid,
+  .GreenBunchProjectSargam__gallery-grid,
+  .GreenBunchProjectSargam__features-grid {
     padding: 0 15px;
   }
 
-  .ProjectSargam__form {
-    padding: 25px 15px;
+  .GreenBunchProjectSargam__form {
+    padding: 30px 20px;
   }
 }

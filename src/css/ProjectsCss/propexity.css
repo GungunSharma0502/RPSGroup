@@ -1,10 +1,16 @@
 /* ==================== GLOBAL STYLES ==================== */
 .propexity-container {
-  width: 100%;
-  overflow-x: hidden;
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  color: #1C3637;
+  background: #F4F8F7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.propexity-max-width {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* ==================== ANIMATIONS ==================== */
@@ -30,691 +36,820 @@
 
 @keyframes glow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
-/* ==================== HEADER STYLES ==================== */
-.propexity-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(6, 182, 212, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
-}
-
-.propexity-logo h1 {
-  color: #06b6d4;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.propexity-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.propexity-nav button {
-  background: none;
-  border: none;
-  color: #d1d5db;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-.propexity-nav button:hover {
-  color: #06b6d4;
-  background: rgba(6, 182, 212, 0.1);
-  transform: translateY(-2px);
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==================== HERO SECTION ==================== */
 .propexity-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: #1C3637;
+  padding: 0 20px;
+  gap: 40px;
 }
 
 .propexity-hero-content {
-  max-width: 600px;
-  animation: fadeIn 1s ease-out;
+  flex: 1;
+  /* max-width: 600px; */
+  z-index: 1;
 }
 
 .propexity-hero-title {
-  font-size: 3.5rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  font-weight: 100;
-  letter-spacing: 4px;
-  line-height: 1.2;
+  font-size: 72px;
+  font-weight: 700;
+  color: #C48032;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease;
 }
 
 .propexity-hero-subtitle {
-  font-size: 1.8rem;
-  color: #06b6d4;
-  margin-bottom: 1rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-size: 32px;
+  color: #D6E8CD;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation: fadeIn 1.2s ease;
 }
 
 .propexity-hero-description {
-  font-size: 1.1rem;
-  color: #9ca3af;
-  margin-bottom: 1.5rem;
+  font-size: 20px;
+  color: #F4F8F7;
+  margin-bottom: 25px;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  animation: fadeIn 1.4s ease;
 }
 
 .propexity-hero-text {
-  font-size: 1rem;
-  color: #d1d5db;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+  font-size: 16px;
   line-height: 1.8;
+  color: #D6E8CD;
+  text-align: justify;
+  margin-bottom: 20px;
+  animation: fadeIn 1.6s ease;
 }
 
 .propexity-tagline {
-  color: #67e8f9;
-  font-size: 1.2rem;
+  font-size: 18px;
+  color: #C48032;
+  font-weight: 600;
+  margin-bottom: 30px;
   font-style: italic;
-  margin-bottom: 2rem;
-  font-weight: 500;
+  animation: fadeIn 1.8s ease;
 }
 
 .propexity-cta-button {
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  background: #C48032;
   color: #ffffff;
+  padding: 16px 45px;
+  font-size: 16px;
+  font-weight: 700;
   border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-  letter-spacing: 1px;
+  box-shadow: 0 5px 20px rgba(196, 128, 50, 0.4);
+  animation: fadeIn 2s ease;
 }
 
 .propexity-cta-button:hover {
-  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
+  background: #8fb560;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 8px 30px rgba(143, 181, 96, 0.5);
 }
 
 .propexity-hero-image {
-  height: 500px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  flex: 1;
+  max-width: 600px;
+  height: 80vh;
   position: relative;
+  z-index: 1;
 }
 
-.propexity-hero-image::before {
-  content: '';
-  position: absolute;
-  inset: -16px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  border-radius: 24px;
-  filter: blur(40px);
-  opacity: 0.3;
-  animation: glow 3s ease-in-out infinite;
-  z-index: -1;
+.propexity-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease;
 }
 
-/* ==================== ABOUT SECTION ==================== */
+/* ==================== INFO/ABOUT SECTION ==================== */
 .propexity-about {
+  padding: 120px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #ffffff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  gap: 80px;
   align-items: center;
 }
 
-.propexity-about-image {
-  height: 450px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-.propexity-about-image::before {
-  content: '';
-  position: absolute;
-  inset: -16px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  border-radius: 24px;
-  filter: blur(40px);
-  opacity: 0.3;
-  animation: glow 3s ease-in-out infinite;
-  z-index: -1;
-}
-
 .propexity-section-title {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  font-weight: 100;
-  letter-spacing: 2px;
+  font-size: 56px;
+  font-weight: 700;
+  color: #1C3637;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
 }
 
 .propexity-about-intro {
-  font-size: 1.1rem;
-  color: #d1d5db;
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
+  margin-bottom: 40px;
 }
 
 .propexity-features-list {
+  background: #1C3637;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
+  position: relative;
   list-style: none;
-  margin-bottom: 2rem;
 }
 
 .propexity-features-list li {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-  color: #e5e7eb;
-  padding: 0.8rem 1rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 8px;
-  border-left: 3px solid #06b6d4;
-  transition: all 0.3s ease;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 232, 205, 0.2);
+  font-size: 15px;
+  color: #F4F8F7;
 }
 
-.propexity-features-list li:hover {
-  transform: translateX(5px);
-  border-left-width: 5px;
+.propexity-features-list li:last-child {
+  border-bottom: none;
 }
 
 .propexity-icon {
-  font-size: 1.5rem;
-  color: #06b6d4;
+  font-size: 26px;
+  color: #C48032;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .propexity-motto {
-  color: #67e8f9;
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 600;
-  margin-top: 2rem;
-  letter-spacing: 0.5px;
+  position: absolute;
+  top: -20px;
+  right: 32px;
+  background: #C48032;
+  color: #ffffff;
+  padding: 10px 28px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 13px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(196, 128, 50, 0.4);
+  font-style: normal;
+}
+
+.propexity-about-image {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+.propexity-about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  transition: transform 0.5s ease;
+}
+
+.propexity-about-image:hover img {
+  transform: scale(1.03);
 }
 
 /* ==================== LOCATION SECTION ==================== */
 .propexity-location {
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  padding: 120px 20px;
+  background: #1C3637;
 }
 
 .propexity-location-header {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+}
+
+.propexity-location-header .propexity-section-title {
+  font-size: 72px;
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 .propexity-subsection-title {
-  font-size: 1.5rem;
-  color: #06b6d4;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  letter-spacing: 1px;
+  font-size: 20px;
+  color: #F4F8F7;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .propexity-location-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 80px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .propexity-location-map {
-  height: 500px;
-  border-radius: 24px;
+  position: relative;
+  width: 100%;
+  height: 550px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-.propexity-location-details h4 {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+.propexity-location-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .propexity-distance-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.propexity-location-details h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+  letter-spacing: 0px;
 }
 
 .propexity-distance-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 8px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(28, 54, 55, 0.1);
+  font-size: 15px;
+  color: #1C3637;
 }
 
-.propexity-distance-item:hover {
-  transform: translateX(5px);
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+.propexity-distance-item:last-child {
+  border-bottom: none;
 }
 
 .propexity-place {
   font-weight: 500;
-  color: #e5e7eb;
+  color: #1C3637;
 }
 
 .propexity-km {
-  color: #06b6d4;
+  font-size: 16px;
   font-weight: 700;
-  font-size: 1.1rem;
+  color: #C48032;
+}
+
+.propexity-location-advantage {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.propexity-location-advantage h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1C3637;
+  margin-bottom: 20px;
 }
 
 .propexity-location-advantage p {
-  font-size: 1rem;
-  color: #d1d5db;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
+  margin-bottom: 30px;
 }
 
 .propexity-connectivity-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .propexity-connectivity-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 8px;
-  border-left: 4px solid #06b6d4;
-  backdrop-filter: blur(10px);
+  padding: 18px 20px;
+  background: #F4F8F7;
+  border-radius: 10px;
+  border-left: 4px solid #C48032;
   transition: all 0.3s ease;
 }
 
 .propexity-connectivity-item:hover {
   transform: translateX(5px);
   border-left-width: 6px;
+  box-shadow: 0 5px 15px rgba(196, 128, 50, 0.2);
 }
 
 .propexity-conn-name {
-  font-size: 0.95rem;
-  color: #e5e7eb;
-  font-weight: 500;
+  font-size: 14px;
+  color: #1C3637;
+  font-weight: 600;
 }
 
 .propexity-conn-time {
-  color: #06b6d4;
+  color: #C48032;
   font-weight: 700;
+  font-size: 15px;
 }
 
 /* ==================== ADDRESS SECTION ==================== */
 .propexity-address {
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  padding: 120px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.propexity-address .propexity-section-title {
   text-align: center;
 }
 
 .propexity-address-description {
-  max-width: 900px;
-  margin: 2rem auto;
-  font-size: 1.1rem;
-  color: #d1d5db;
-  line-height: 1.8;
+  /* max-width: 900px; */
+  margin: 0 auto 60px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
 }
 
 .propexity-address-image {
-  height: 450px;
-  border-radius: 24px;
-  overflow: hidden;
-  margin: 3rem auto;
-  max-width: 1200px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 550px;
+}
+
+.propexity-address-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  transition: transform 0.5s ease;
+}
+
+.propexity-address-image:hover img {
+  transform: scale(1.03);
 }
 
 /* ==================== MASTER PLAN SECTION ==================== */
 .propexity-masterplan {
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  padding: 120px 20px;
+  background: #C48032;
+}
+
+.propexity-masterplan .propexity-section-title {
+  font-size: 58px;
+  color: #ffffff;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .propexity-masterplan-image {
+  max-width: 1280px;
+  margin: 0 auto 70px;
   height: 600px;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  margin: 3rem auto;
-  max-width: 1400px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.propexity-masterplan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .propexity-phase-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 900px;
-  margin: 3rem auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .propexity-phase-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  border-top: 4px solid transparent;
+  background: #F4F8F7;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  border-top: 5px solid #1C3637;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .propexity-phase-card:hover {
-  transform: translateY(-10px);
-  border-top-color: #06b6d4;
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
 }
 
 .propexity-phase-card h4 {
-  color: #06b6d4;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 32px;
   font-weight: 700;
+  color: #C48032;
+  margin-bottom: 18px;
+  letter-spacing: 0px;
 }
 
 .propexity-phase-card p {
-  color: #e5e7eb;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 18px;
   line-height: 1.6;
+  color: #1C3637;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.propexity-phase-card p:last-child {
+  color: #606E6F;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 /* ==================== AMENITIES SECTION ==================== */
 .propexity-amenities {
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  padding: 120px 20px;
+  background: #1C3637;
+}
+
+.propexity-amenities .propexity-section-title {
+  font-size: 72px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.propexity-amenities .propexity-subsection-title {
+  margin-bottom: 80px;
 }
 
 .propexity-amenities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 3rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1280px;
+  margin: 0 auto 60px;
 }
 
 .propexity-amenity-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 16px;
+  position: relative;
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
   overflow: hidden;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.propexity-amenity-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 128, 50, 0);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .propexity-amenity-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.2);
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
+}
+
+.propexity-amenity-card:hover::before {
+  background: rgba(196, 128, 50, 0.08);
+  opacity: 1;
 }
 
 .propexity-amenity-image {
-  height: 200px;
-  width: 100%;
-  border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+  width: 110px;
+  height: 110px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F4F8F7;
+  border-radius: 50%;
+  border: 3px solid #C48032;
+  transition: all 0.4s ease;
+  font-size: 48px;
+}
+
+.propexity-placeholder-small {
+  font-size: 48px;
+}
+
+.propexity-amenity-card:hover .propexity-amenity-image {
+  background: #C48032;
+  transform: scale(1.15) rotate(5deg);
 }
 
 .propexity-amenity-card p {
-  padding: 1rem;
-  font-weight: 600;
-  color: #e5e7eb;
-  font-size: 1.05rem;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
 }
 
 .propexity-amenities-list {
-  margin: 3rem 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px;
+  background: #F4F8F7;
+  border-radius: 20px;
+  border-left: 6px solid #C48032;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .propexity-amenities-list ul {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .propexity-amenities-list li {
-  padding: 0.8rem 1rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 8px;
-  color: #e5e7eb;
-  font-size: 1rem;
-  border-left: 4px solid #06b6d4;
-  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  color: #1C3637;
+  font-size: 15px;
+  border-left: 4px solid #8fb560;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .propexity-amenities-list li:hover {
   transform: translateX(5px);
   border-left-width: 6px;
+  box-shadow: 0 5px 15px rgba(143, 181, 96, 0.2);
 }
 
 .propexity-amenity-showcase {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  /* max-width: 1280px; */
+  margin: 0 auto;
 }
 
 .propexity-showcase-image {
-  height: 350px;
-  border-radius: 24px;
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(6, 182, 212, 0.3);
-  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 4px solid #F4F8F7;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.propexity-showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .propexity-showcase-image:hover {
-  transform: scale(1.02);
-  border-color: rgba(6, 182, 212, 0.6);
+  border-color: #C48032;
+  box-shadow: 0 15px 50px rgba(196, 128, 50, 0.3);
+  transform: translateY(-5px);
 }
 
 /* ==================== CONTACT SECTION ==================== */
 .propexity-contact {
+  padding: 120px 20px;
+  background: #88A3AF;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 5rem 5%;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  gap: 80px;
+  /* max-width: 1280px; */
+  margin: 0 auto;
   align-items: center;
 }
 
 .propexity-contact-image {
-  height: 500px;
-  border-radius: 24px;
+  position: relative;
+  width: 100%;
+  height: 550px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.propexity-contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.propexity-contact-info {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+  border-top: 6px solid #C48032;
 }
 
 .propexity-logo-large {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #D6E8CD;
 }
 
 .propexity-logo-large h2 {
-  font-size: 3rem;
-  color: #ffffff;
-  font-weight: 100;
-  letter-spacing: 3px;
-  background: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 .propexity-logo-tagline {
-  font-size: 1.5rem;
-  color: #06b6d4;
+  font-size: 24px;
+  color: #C48032;
   font-weight: 600;
-  margin-top: 0.5rem;
   letter-spacing: 1px;
 }
 
 .propexity-office-details h4 {
-  color: #ffffff;
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1C3637;
+  margin-bottom: 12px;
+  margin-top: 25px;
   letter-spacing: 0.5px;
 }
 
 .propexity-office-details p {
-  color: #d1d5db;
+  font-size: 15px;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  color: #606E6F;
+  margin-bottom: 20px;
 }
 
 .propexity-contact-details {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  padding: 25px;
+  background: #F4F8F7;
+  border-radius: 15px;
+  border-left: 4px solid #C48032;
 }
 
 .propexity-contact-details p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #e5e7eb;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #1C3637;
+  font-weight: 600;
+}
+
+.propexity-contact-details p strong {
+  color: #C48032;
+  font-weight: 700;
 }
 
 .propexity-registration {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  color: #9ca3af;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #606E6F;
   font-style: italic;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #D6E8CD;
 }
 
 /* ==================== FOOTER ==================== */
 .propexity-footer {
-  background: rgba(15, 23, 42, 0.95);
-  color: #d1d5db;
+  background: #1C3637;
+  color: #F4F8F7;
   text-align: center;
-  padding: 3rem 5%;
-  border-top: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 40px 20px;
+  border-top: 3px solid #C48032;
 }
 
 .propexity-footer p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   letter-spacing: 0.5px;
-}
-
-/* ==================== PLACEHOLDER IMAGES ==================== */
-.propexity-placeholder-image,
-.propexity-placeholder-small {
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  height: 100%;
-  width: 100%;
-}
-
-.propexity-placeholder-small {
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
-  .propexity-hero,
+  .propexity-hero {
+    flex-direction: column;
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .propexity-hero-image {
+    max-width: 100%;
+    height: 400px;
+  }
+
   .propexity-about,
   .propexity-location-content,
-  .propexity-contact,
-  .propexity-amenity-showcase {
+  .propexity-contact {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .propexity-amenities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .propexity-phase-info {
-    grid-template-columns: 1fr;
-  }
-
-  .propexity-hero-title {
-    font-size: 2.8rem;
+    gap: 60px;
   }
 
   .propexity-section-title {
-    font-size: 2rem;
+    font-size: 46px;
+  }
+
+  .propexity-location-header .propexity-section-title,
+  .propexity-amenities .propexity-section-title {
+    font-size: 56px;
+  }
+
+  .propexity-masterplan .propexity-section-title {
+    font-size: 46px;
   }
 }
 
 @media (max-width: 768px) {
-  .propexity-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .propexity-hero-title {
-    font-size: 2.2rem;
+    font-size: 48px;
   }
 
   .propexity-section-title {
-    font-size: 1.8rem;
+    font-size: 36px;
+  }
+
+  .propexity-location-header .propexity-section-title,
+  .propexity-amenities .propexity-section-title {
+    font-size: 42px;
+  }
+
+  .propexity-masterplan .propexity-section-title {
+    font-size: 36px;
+  }
+
+  .propexity-about,
+  .propexity-location,
+  .propexity-address,
+  .propexity-masterplan,
+  .propexity-amenities,
+  .propexity-contact {
+    padding: 80px 20px;
+  }
+
+  .propexity-contact-info {
+    padding: 40px 25px;
   }
 
   .propexity-amenities-grid {
@@ -725,45 +860,50 @@
     grid-template-columns: 1fr;
   }
 
-  .propexity-distance-grid {
+  .propexity-amenities-list {
+    padding: 40px 25px;
+  }
+
+  .propexity-phase-info {
     grid-template-columns: 1fr;
-  }
-
-  .propexity-hero,
-  .propexity-about,
-  .propexity-location,
-  .propexity-address,
-  .propexity-masterplan,
-  .propexity-amenities,
-  .propexity-contact {
-    padding: 4rem 5%;
-  }
-
-  .propexity-logo-large h2 {
-    font-size: 2rem;
-  }
-
-  .propexity-logo-tagline {
-    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .propexity-hero-title {
-    font-size: 1.8rem;
+    font-size: 36px;
+  }
+
+  .propexity-hero-subtitle {
+    font-size: 24px;
   }
 
   .propexity-section-title {
-    font-size: 1.5rem;
+    font-size: 30px;
   }
 
-  .propexity-hero-image,
-  .propexity-about-image,
-  .propexity-contact-image {
-    height: 300px;
+  .propexity-location-header .propexity-section-title,
+  .propexity-amenities .propexity-section-title {
+    font-size: 34px;
   }
 
-  .propexity-masterplan-image {
-    height: 400px;
+  .propexity-masterplan .propexity-section-title {
+    font-size: 30px;
+  }
+
+  .propexity-contact-info {
+    padding: 30px 20px;
+  }
+
+  .propexity-amenities-list {
+    padding: 30px 20px;
+  }
+
+  .propexity-logo-large h2 {
+    font-size: 36px;
+  }
+
+  .propexity-logo-tagline {
+    font-size: 18px;
   }
 }

@@ -11,7 +11,6 @@ const ProjectGoa = () => {
     'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800',
     'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800',
     'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800',
-    'https://rpsgroupindia.com/wp-content/uploads/2023/05/g2-1.jpg',
     'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800'
   ];
 

@@ -1,14 +1,14 @@
 /* ==================== GLOBAL STYLES ==================== */
 .savana1 {
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  color: #1C3637;
+  background: #F4F8F7;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 .savana1__container {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -36,10 +36,21 @@
 
 @keyframes glow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -57,16 +68,13 @@
   background-size: cover;
   background-position: center;
   transition: transform 0.1s ease-out;
+  filter: brightness(0.85);
 }
 
 .savana1__hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, 
-    rgba(12, 74, 110, 0.8) 0%, 
-    rgba(15, 23, 42, 0.7) 50%, 
-    rgba(2, 6, 23, 1) 100%
-  );
+  background: rgba(28, 54, 55, 0.5);
 }
 
 .savana1__hero-content {
@@ -90,7 +98,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 4px;
@@ -100,12 +108,12 @@
 .savana1__hero-line {
   width: 48px;
   height: 1px;
-  background: #06b6d4;
+  background: #C48032;
 }
 
 .savana1__hero-title {
   font-size: 96px;
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 8px;
   color: #ffffff;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
@@ -115,7 +123,7 @@
 
 .savana1__hero-description {
   font-size: 28px;
-  color: #d1d5db;
+  color: #F4F8F7;
   font-weight: 300;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -126,7 +134,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #67e8f9;
+  color: #C48032;
   font-size: 14px;
 }
 
@@ -136,13 +144,13 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, #1e3a8a 0%, #0e7490 100%);
+  background: #1C3637;
   display: flex;
   gap: 0;
   padding: 0;
   box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   z-index: 100;
 }
 
@@ -164,19 +172,19 @@
 }
 
 .savana1__nav-link:hover {
-  color: #67e8f9;
-  background: rgba(103, 232, 249, 0.1);
+  color: #C48032;
+  background: rgba(196, 128, 50, 0.1);
 }
 
 .savana1__nav-link--active {
-  color: #67e8f9;
-  border-bottom-color: #67e8f9;
-  background: rgba(103, 232, 249, 0.1);
+  color: #C48032;
+  border-bottom-color: #C48032;
+  background: rgba(196, 128, 50, 0.1);
 }
 
 /* ==================== STATS BAR ==================== */
 .savana1__stats-bar {
-  background: linear-gradient(90deg, #1e3a8a 0%, #0e7490 100%);
+  background: #1C3637;
   padding: 24px 0;
   margin-top: -1px;
 }
@@ -185,7 +193,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -203,12 +211,12 @@
 }
 
 .savana1__stat-card:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(196, 128, 50, 0.2);
   transform: translateY(-2px);
 }
 
 .savana1__stat-icon {
-  color: #67e8f9;
+  color: #C48032;
 }
 
 .savana1__stat-title {
@@ -219,12 +227,13 @@
 
 .savana1__stat-desc {
   font-size: 13px;
-  color: #d1d5db;
+  color: #F4F8F7;
 }
 
 /* ==================== SECTIONS ==================== */
 .savana1__section {
   padding: 120px 0;
+  background: #ffffff;
 }
 
 .savana1__grid {
@@ -252,15 +261,15 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #06b6d4;
+  background: #C48032;
 }
 
 .savana1__dot:nth-child(2) {
-  background: #3b82f6;
+  background: #8fb560;
 }
 
 .savana1__section-subtitle {
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
   letter-spacing: 3px;
   font-weight: 600;
@@ -268,35 +277,37 @@
 
 .savana1__section-title {
   font-size: 56px;
-  font-weight: 100;
-  color: #ffffff;
+  font-weight: 700;
+  color: #1C3637;
   line-height: 1.2;
   margin-bottom: 32px;
+  letter-spacing: -1px;
 }
 
 .savana1__text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
   margin-bottom: 20px;
 }
 
 .savana1__details-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+  background: #1C3637;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
   margin-top: 40px;
+  position: relative;
 }
 
 .savana1__detail-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 232, 205, 0.2);
+  font-size: 15px;
 }
 
 .savana1__detail-row--last {
@@ -304,14 +315,14 @@
 }
 
 .savana1__detail-label {
-  color: #06b6d4;
+  color: #C48032;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .savana1__detail-value {
-  color: #e5e7eb;
+  color: #F4F8F7;
   font-weight: 300;
 }
 
@@ -322,24 +333,24 @@
 
 .savana1__image-glow {
   position: absolute;
-  inset: -16px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  border-radius: 24px;
-  filter: blur(40px);
+  inset: -20px;
+  background: #C48032;
+  border-radius: 30px;
+  filter: blur(50px);
   opacity: 0.3;
-  animation: glow 3s ease-in-out infinite;
+  animation: glow 4s ease-in-out infinite;
 }
 
 .savana1__image {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
   transition: transform 0.5s ease;
 }
 
 .savana1__image:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .savana1__img {
@@ -355,7 +366,7 @@
 
 /* ==================== BUILDING SECTION ==================== */
 .savana1__building-subtitle {
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
   letter-spacing: 3px;
   font-weight: 600;
@@ -364,8 +375,8 @@
 
 .savana1__building-title {
   font-size: 56px;
-  font-weight: 100;
-  color: #ffffff;
+  font-weight: 700;
+  color: #1C3637;
   line-height: 1.2;
   margin-bottom: 24px;
 }
@@ -373,7 +384,7 @@
 /* ==================== AMENITIES SECTION ==================== */
 .savana1__amenities-section {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #1C3637;
 }
 
 .savana1__amenities-header {
@@ -383,14 +394,26 @@
 
 .savana1__amenities-title {
   font-size: 72px;
-  font-weight: 100;
+  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: 4px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.savana1__amenities-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
 .savana1__amenities-description {
-  color: #9ca3af;
+  color: #D6E8CD;
   max-width: 800px;
   margin: 0 auto;
   font-size: 15px;
@@ -400,68 +423,83 @@
 .savana1__amenities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 30px;
 }
 
 .savana1__amenity-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 40px 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.5s ease;
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
 .savana1__amenity-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0) 0%, rgba(59, 130, 246, 0) 100%);
+  background: rgba(196, 128, 50, 0);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 .savana1__amenity-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
 }
 
 .savana1__amenity-card:hover .savana1__amenity-bg {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  background: rgba(196, 128, 50, 0.08);
   opacity: 1;
 }
 
 .savana1__amenity-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .savana1__amenity-icon {
-  color: #06b6d4;
-  margin-bottom: 20px;
+  color: #1C3637;
+  width: 110px;
+  height: 110px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  transition: color 0.3s ease;
+  background: #F4F8F7;
+  border-radius: 50%;
+  border: 3px solid #C48032;
+  transition: all 0.4s ease;
 }
 
 .savana1__amenity-card:hover .savana1__amenity-icon {
-  color: #67e8f9;
+  background: #C48032;
+  color: #ffffff;
+  transform: scale(1.15) rotate(5deg);
 }
 
 .savana1__amenity-label {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  color: #e5e7eb;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  color: #1C3637;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
   margin: 0;
 }
 
 /* ==================== LAYOUT SECTION ==================== */
 .savana1__layout-section {
   padding: 120px 0;
+  background: #ffffff;
 }
 
 .savana1__layout-header {
@@ -471,9 +509,9 @@
 
 .savana1__layout-title {
   font-size: 72px;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 4px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
 }
 
 .savana1__layout-tabs {
@@ -485,25 +523,26 @@
 
 .savana1__layout-tab {
   padding: 20px 60px;
-  border: 2px solid rgba(6, 182, 212, 0.3);
+  border: 2px solid #D6E8CD;
   background: transparent;
-  color: #ffffff;
+  color: #1C3637;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .savana1__layout-tab:hover {
-  border-color: rgba(6, 182, 212, 0.6);
+  border-color: #C48032;
+  color: #C48032;
 }
 
 .savana1__layout-tab--active {
-  background: #06b6d4;
-  border-color: #06b6d4;
-  color: #020617;
+  background: #C48032;
+  border-color: #C48032;
+  color: #ffffff;
 }
 
 .savana1__layout-plans {
@@ -520,8 +559,9 @@
 .savana1__layout-image-wrapper {
   background: white;
   padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  border: 4px solid #1C3637;
 }
 
 .savana1__layout-image {
@@ -538,25 +578,25 @@
 
 .savana1__features-title {
   font-size: 72px;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 4px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
 }
 
 .savana1__features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 35px;
 }
 
 .savana1__feature-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 40px 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+  background: #F4F8F7;
+  padding: 45px 35px;
+  border-radius: 20px;
   transition: all 0.5s ease;
+  border-top: 5px solid #1C3637;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -567,18 +607,19 @@
 .savana1__feature-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0) 0%, rgba(59, 130, 246, 0) 100%);
+  background: rgba(196, 128, 50, 0);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .savana1__feature-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
 }
 
 .savana1__feature-card:hover .savana1__feature-bg {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  background: rgba(196, 128, 50, 0.08);
   opacity: 1;
 }
 
@@ -589,15 +630,19 @@
 }
 
 .savana1__feature-icon {
-  font-size: 56px;
-  margin-bottom: 24px;
+  font-size: 54px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8fb560;
 }
 
 .savana1__feature-title {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #e5e7eb;
+  color: #1C3637;
   line-height: 1.8;
   white-space: pre-line;
   margin: 0;
@@ -606,7 +651,7 @@
 /* ==================== GALLERY SECTION ==================== */
 .savana1__gallery-section {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #ffffff;
 }
 
 .savana1__gallery-header {
@@ -616,23 +661,38 @@
 
 .savana1__gallery-title {
   font-size: 72px;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 4px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.savana1__gallery-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
 .savana1__gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .savana1__gallery-item {
   position: relative;
   aspect-ratio: 4/3;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+  border: 4px solid #1C3637;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(28, 54, 55, 0.2);
 }
 
 .savana1__gallery-image {
@@ -646,9 +706,9 @@
 .savana1__gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: rgba(196, 128, 50, 0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   z-index: 1;
 }
 
@@ -664,7 +724,7 @@
 }
 
 .savana1__gallery-icon-bg {
-  background: #06b6d4;
+  background: #C48032;
   padding: 16px;
   border-radius: 50%;
   color: #ffffff;
@@ -673,8 +733,14 @@
   justify-content: center;
 }
 
+.savana1__gallery-item:hover {
+  border-color: #C48032;
+  box-shadow: 0 15px 50px rgba(196, 128, 50, 0.3);
+  transform: translateY(-5px);
+}
+
 .savana1__gallery-item:hover .savana1__gallery-image {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .savana1__gallery-item:hover .savana1__gallery-overlay,
@@ -690,9 +756,9 @@
 
 .savana1__benefits-title {
   font-size: 72px;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 4px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
 }
 
 .savana1__benefit-item {
@@ -701,23 +767,23 @@
 
 .savana1__benefit-title {
   font-size: 32px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  color: #06b6d4;
-  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #1C3637;
+  margin-bottom: 12px;
 }
 
 .savana1__benefit-line {
   width: 80px;
   height: 3px;
-  background: #06b6d4;
-  margin-bottom: 24px;
+  background: #C48032;
+  margin-bottom: 20px;
 }
 
 /* ==================== LOCATION SECTION ==================== */
 .savana1__location-section {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #88A3AF;
 }
 
 .savana1__location-header {
@@ -727,9 +793,9 @@
 
 .savana1__location-title {
   font-size: 72px;
-  font-weight: 100;
+  font-weight: 700;
   color: #ffffff;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .savana1__location-grid {
@@ -743,20 +809,20 @@
   align-items: center;
   gap: 24px;
   padding: 40px;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 20px;
   transition: all 0.4s ease;
-  box-shadow: 0 10px 30px rgba(10, 25, 47, 0.2);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-left: 6px solid #C48032;
 }
 
 .savana1__location-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
 }
 
 .savana1__location-icon {
-  color: #06b6d4;
+  color: #C48032;
   flex-shrink: 0;
 }
 
@@ -764,7 +830,7 @@
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: #e5e7eb;
+  color: #1C3637;
   line-height: 1.6;
   margin: 0;
 }
@@ -800,7 +866,7 @@
 }
 
 .savana1__modal-close:hover {
-  color: #06b6d4;
+  color: #C48032;
 }
 
 .savana1__modal-image {
@@ -823,7 +889,7 @@
 
   .savana1__section-title,
   .savana1__building-title {
-    font-size: 42px;
+    font-size: 46px;
   }
 
   .savana1__amenities-title,
@@ -832,7 +898,7 @@
   .savana1__benefits-title,
   .savana1__location-title,
   .savana1__layout-title {
-    font-size: 52px;
+    font-size: 56px;
   }
 }
 
@@ -848,7 +914,7 @@
 
   .savana1__section-title,
   .savana1__building-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .savana1__amenities-title,
@@ -857,7 +923,7 @@
   .savana1__benefits-title,
   .savana1__location-title,
   .savana1__layout-title {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .savana1__stats-grid {
@@ -891,6 +957,10 @@
   .savana1__layout-plan {
     grid-template-columns: 1fr;
   }
+
+  .savana1__location-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -905,7 +975,7 @@
 
   .savana1__section-title,
   .savana1__building-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .savana1__amenities-title,
@@ -914,7 +984,7 @@
   .savana1__benefits-title,
   .savana1__location-title,
   .savana1__layout-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .savana1__container {

@@ -3,7 +3,6 @@ import '../css/Contact.css';
 import Map from './Map';
 
 const Contact = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,36 +10,11 @@ const Contact = () => {
     message: ''
   });
 
-  const contactSections = [
-    {
-      id: 1,
-      title: "SALES ENQUIRY",
-      phone: "+91 9010 444 000",
-      email: "info@rpsgroupindia.com",
-      description: "Connect with our sales team for property inquiries"
-    },
-    {
-      id: 2,
-      title: "MEDIA ENQUIRY",
-      phone: "+91 7419 519 1225",
-      email: "mocom@rpsgroupindia.com",
-      description: "Press releases and media collaborations"
-    },
-    {
-      id: 3,
-      title: "CUSTOMER CARE",
-      phone: "+91 9 4044 4040",
-      email: "customercare@rpsgroupindia.com",
-      description: "24/7 support for all your queries"
-    },
-    {
-      id: 4,
-      title: "HR",
-      phone: "",
-      email: "hr@rpsgroupindia.com",
-      description: "Join our growing team of professionals"
-    }
-  ];
+  const contactInfo = {
+    address: "Plot no. 48, Propex City Phase- 1, Sector 8, Sohna Road Palwal -121102",
+    phone: "+91-8814007414",
+    email: "Greenbunchadvisor@gmail.com"
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,52 +45,58 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Contact Cards Section */}
+      {/* Contact Info Section */}
       <div className="contact-section">
         <div className="contact-container">
-          <div className="contact-grid">
-            {contactSections.map((section, index) => (
-              <div
-                key={section.id}
-                className={`contact-card ${hoveredCard === section.id ? 'contact-card-hovered' : ''}`}
-                onMouseEnter={() => setHoveredCard(section.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="contact-card-glow"></div>
-                <div className="contact-card-content">
-                  <div className="contact-card-header">
-                    <div className="contact-card-text">
-                      <h3 className="contact-card-title">{section.title}</h3>
-                      <p className="contact-card-description">{section.description}</p>
+          <div className="contact-info-single">
+            <div className="contact-card contact-card-single">
+              <div className="contact-card-glow"></div>
+              <div className="contact-card-content">
+                <div className="contact-info-grid">
+                  <div className="contact-info-item">
+                    <div className="contact-icon-box">
+                      <svg className="contact-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <circle cx="12" cy="10" r="3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </div>
-                    <div className="contact-card-icon">→</div>
+                    <div>
+                      <h3 className="contact-info-label">Address</h3>
+                      <p className="contact-info-text">{contactInfo.address}</p>
+                    </div>
                   </div>
-                  
-                  <div className="contact-card-details">
-                    {section.phone && (
-                      <a href={`tel:${section.phone.replace(/\s/g, '')}`} className="contact-item">
-                        <div className="contact-icon-box">
-                          <svg className="contact-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M22 16.92v3A2 2 0 0 1 20 22a20 20 0 0 1-8.71-3.1 19.79 19.79 0 0 1-6.06-6.06A20 20 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <span className="contact-text">{section.phone}</span>
+
+                  <div className="contact-info-item">
+                    <div className="contact-icon-box">
+                      <svg className="contact-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 16.92v3A2 2 0 0 1 20 22a20 20 0 0 1-8.71-3.1 19.79 19.79 0 0 1-6.06-6.06A20 20 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="contact-info-label">Phone</h3>
+                      <a href={`tel:${contactInfo.phone.replace(/[\s-]/g, '')}`} className="contact-info-text contact-info-link">
+                        {contactInfo.phone}
                       </a>
-                    )}
-                    <a href={`mailto:${section.email}`} className="contact-item">
-                      <div className="contact-icon-box">
-                        <svg className="contact-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <polyline points="22,6 12,13 2,6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      <span className="contact-text">{section.email}</span>
-                    </a>
+                    </div>
+                  </div>
+
+                  <div className="contact-info-item">
+                    <div className="contact-icon-box">
+                      <svg className="contact-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="22,6 12,13 2,6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="contact-info-label">Email</h3>
+                      <a href={`mailto:${contactInfo.email}`} className="contact-info-text contact-info-link">
+                        {contactInfo.email}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Form and Map Section */}

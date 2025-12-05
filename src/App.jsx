@@ -18,6 +18,9 @@ import TwelfthAvenue from "./pages/TwelfthAvenue";
 import ProjectSargam from "./pages/ProjectSargam";
 import ProjectGoa from "./pages/ProjectGoa";
 import Propexity from "./pages/Propexity";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+
 
 const App = () => {
   return (
@@ -31,18 +34,20 @@ const App = () => {
         <Route path="/all-projects" element={<AllProjects />} />
 
         {/* Residential */}
-        <Route path="/rps-auria" element={<Auria />} />
-        <Route path="/rps-savana" element={<Savana />} />
-        <Route path="/rps-palm-drive" element={<PalmDrive />} />
-        <Route path="/rps-palms" element={<Palms />} />
-        <Route path="/rps-green-valley" element={<GreenValley />} />
+        <Route path="/greenbunch-auria" element={<Auria />} />
+        <Route path="/greenbunch-savana" element={<Savana />} />
+        <Route path="/greenbunch-palm-drive" element={<PalmDrive />} />
+        <Route path="/greenbunch-palms" element={<Palms />} />
+        <Route path="/greenbunch-green-valley" element={<GreenValley />} />
 
         <Route path="/the-elements-goa" element={<ProjectGoa />} />
-        <Route path="/rps-Sargam" element={<ProjectSargam />} />
+        <Route path="/greenbunch-Sargam" element={<ProjectSargam />} />
         <Route path="/propex-city" element={<Propexity/>} />
 
         {/* Commercial */}
-        <Route path="/rps-12th-avenue" element={<TwelfthAvenue />} />
+        <Route path="/greenbunch-12th-avenue" element={<TwelfthAvenue />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
       </Routes>
       <Footer />
     </Router>

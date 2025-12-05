@@ -1,935 +1,1079 @@
-/* 12thAvenue.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.Avenue-container {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+/* ==================== GLOBAL STYLES ==================== */
+.avenue {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #1C3637;
+  background: #F4F8F7;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Hero Section */
-.Avenue-hero {
+.avenue__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== HERO SECTION ==================== */
+.avenue__hero-wrapper {
   position: relative;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80');
+  overflow: hidden;
+}
+
+.avenue__hero-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80');
   background-size: cover;
   background-position: center;
+  transition: transform 0.1s ease-out;
+  filter: brightness(0.85);
+}
+
+.avenue__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 54, 55, 0.5);
+}
+
+.avenue__hero-content {
+  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-}
-
-.Avenue-hero-overlay {
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.Avenue-hero-title {
-  font-size: 4rem;
-  font-weight: 300;
-  letter-spacing: 8px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.Avenue-hero-subtitle {
-  font-size: 5rem;
-  font-weight: 700;
-  letter-spacing: 12px;
-  text-transform: uppercase;
-}
-
-.Avenue-nav {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px 0;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.Avenue-nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
-.Avenue-nav-link:hover {
-  color: #ff6b00;
-}
-
-/* Overview Section */
-.Avenue-overview {
-  padding: 80px 5%;
-  background: #f8f8f8;
-}
-
-.Avenue-overview-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-  position: relative;
-}
-
-.Avenue-overview-text {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 0 20px;
   z-index: 1;
 }
 
-.Avenue-title-wrapper {
+.avenue__hero-text-wrapper {
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.avenue__hero-subtitle {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 15px;
-}
-
-.Avenue-title-icon {
-  color: #ff6b00;
-  font-size: 0.5rem;
-}
-
-.Avenue-section-title {
-  font-size: 2rem;
-  color: #333;
+  justify-content: center;
+  gap: 10px;
+  color: #C48032;
+  font-size: 12px;
   font-weight: 300;
-  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.avenue__hero-line {
+  width: 48px;
+  height: 1px;
+  background: #C48032;
+}
+
+.avenue__hero-title {
+  font-size: 96px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+}
+
+.avenue__hero-description {
+  font-size: 28px;
+  color: #F4F8F7;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.avenue__hero-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #C48032;
+  font-size: 14px;
+}
+
+/* ==================== NAVIGATION ==================== */
+.avenue__main-nav {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1C3637;
+  display: flex;
+  gap: 0;
+  padding: 0;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 1400px;
+  z-index: 100;
+}
+
+.avenue__nav-link {
+  flex: 1;
+  padding: 25px 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+}
+
+.avenue__nav-link:hover {
+  color: #C48032;
+  background: rgba(196, 128, 50, 0.1);
+}
+
+.avenue__nav-link--active {
+  color: #C48032;
+  border-bottom-color: #C48032;
+  background: rgba(196, 128, 50, 0.1);
+}
+
+/* ==================== STATS BAR ==================== */
+.avenue__stats-bar {
+  background: #1C3637;
+  padding: 24px 0;
+  margin-top: -1px;
+}
+
+.avenue__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.avenue__stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.avenue__stat-card:hover {
+  background: rgba(196, 128, 50, 0.2);
+  transform: translateY(-2px);
+}
+
+.avenue__stat-icon {
+  color: #C48032;
+}
+
+.avenue__stat-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.avenue__stat-desc {
+  font-size: 13px;
+  color: #F4F8F7;
+}
+
+/* ==================== SECTIONS ==================== */
+.avenue__section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.avenue__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.avenue__content {
+  width: 100%;
+}
+
+.avenue__section-header {
+  margin-bottom: 24px;
+}
+
+.avenue__dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.avenue__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #C48032;
+}
+
+.avenue__dot:nth-child(2) {
+  background: #8fb560;
+}
+
+.avenue__section-subtitle {
+  color: #C48032;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.avenue__section-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #1C3637;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
+}
+
+.avenue__text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.avenue__details-card {
+  background: #1C3637;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
+  margin-top: 40px;
+  position: relative;
+}
+
+.avenue__detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 232, 205, 0.2);
+  font-size: 15px;
+}
+
+.avenue__detail-row--last {
+  border-bottom: none;
+}
+
+.avenue__detail-label {
+  color: #C48032;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
-.Avenue-overview-description {
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 40px;
-  text-align: justify;
+.avenue__detail-value {
+  color: #F4F8F7;
+  font-weight: 300;
 }
 
-.Avenue-overview-details {
-  border-top: 2px solid #ddd;
-}
-
-.Avenue-detail-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.Avenue-detail-label {
-  font-weight: 600;
-  color: #333;
-}
-
-.Avenue-detail-value {
-  color: #666;
-  text-align: right;
-}
-
-.Avenue-overview-image {
-  position: relative;
-  z-index: 2;
-}
-
-.Avenue-image-placeholder {
-  width: 100%;
-  height: 500px;
-  margin-top: 30px;
-  background: transparent;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); */
-  position: relative;
-  overflow: visible;
-}
-
-.Avenue-building-mockup {
-  width: 90%;
-  height: 85%;
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/View_01.jpg') center/cover;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  transform: translateY(-40px);
-}
-
-/* Offerings Section */
-.Avenue-offerings {
-  padding: 80px 5%;
-  background: white;
-}
-
-.Avenue-offerings-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.Avenue-offerings-title {
-  font-size: 2.5rem;
-  color: #ff6b00;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.Avenue-offerings-subtitle {
-  font-size: 2.5rem;
-  color: #ff6b00;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.Avenue-offerings-description {
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 40px;
-  text-align: justify;
-}
-
-.Avenue-offerings-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.Avenue-offering-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.Avenue-offering-icon {
-  width: 60px;
-  height: 60px;
-  background: #ff6b00;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  flex-shrink: 0;
-}
-
-.Avenue-icon-orange {
-  background: #ff6b00;
-}
-
-.Avenue-offering-text {
-  color: #2563eb;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-.Avenue-aerial-view {
-  background: url('https://images.unsplash.com/photo-1448630360428-65456885c650?w=1200&h=800&fit=crop') center/cover;
-  height: 450px;
-}
-
-/* Advantages Section */
-.Avenue-advantages {
-  padding: 80px 5%;
-  background: linear-gradient(to bottom, #f0f4f8, #d9e8f5);
-}
-
-.Avenue-advantages-header {
-  text-align: center;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.Avenue-advantages-icon {
-  color: #ff6b00;
-  font-size: 1.2rem;
-}
-
-.Avenue-advantages-title {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.Avenue-advantages-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.Avenue-advantage-card {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.Avenue-advantage-card:hover {
-  transform: translateY(-5px);
-}
-
-.Avenue-advantage-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.Avenue-advantage-text {
-  color: #333;
-  font-weight: 600;
-  line-height: 1.6;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-/* Infrastructure Section */
-.Avenue-infrastructure {
-  padding: 80px 5%;
-  background: linear-gradient(to right, #ff6b00, #ff8c42);
-}
-
-.Avenue-infrastructure-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.Avenue-infrastructure-title {
-  font-size: 3rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.Avenue-infrastructure-subtitle {
-  font-size: 3rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.Avenue-infrastructure-subtitle-alt {
-  font-size: 3rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.Avenue-infrastructure-description {
-  color: white;
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-
-.Avenue-infrastructure-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.Avenue-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: white;
-}
-
-.Avenue-feature-icon {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.Avenue-rooftop-view {
-  background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&h=800&fit=crop') center/cover;
-  height: 400px;
-}
-
-/* Why Choose Us Section */
-.Avenue-choose {
-  padding: 80px 5%;
-  background: #f8f8f8;
+/* ==================== IMAGE WRAPPER ==================== */
+.avenue__image-wrapper {
   position: relative;
 }
 
-.Avenue-choose-header {
-  text-align: center;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.Avenue-choose-icon {
-  color: #ff6b00;
-  font-size: 1.2rem;
-}
-
-.Avenue-choose-title {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.Avenue-choose-grid {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.Avenue-choose-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.Avenue-choose-card:hover {
-  transform: translateY(-5px);
-}
-
-.Avenue-choose-card-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.Avenue-choose-card-title {
-  color: #333;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-.Avenue-choose-card-text {
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.Avenue-choose-badge {
-  max-width: 400px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.Avenue-badge-circle {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(45deg, #ff6b00, #ff4444);
-  border-radius: 50%;
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 40px rgba(255, 107, 0, 0.4);
-}
-
-.Avenue-badge-top,
-.Avenue-badge-right,
-.Avenue-badge-bottom,
-.Avenue-badge-left {
+.avenue__image-glow {
   position: absolute;
-  color: white;
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 5px 15px;
-  border-radius: 20px;
+  inset: -20px;
+  background: #C48032;
+  border-radius: 30px;
+  filter: blur(50px);
+  opacity: 0.3;
+  animation: glow 4s ease-in-out infinite;
 }
 
-.Avenue-badge-top {
-  top: 20px;
-}
-
-.Avenue-badge-right {
-  right: 20px;
-}
-
-.Avenue-badge-bottom {
-  bottom: 20px;
-}
-
-.Avenue-badge-left {
-  left: 20px;
-}
-
-.Avenue-badge-center {
-  text-align: center;
-  color: white;
-}
-
-.Avenue-badge-the {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-.Avenue-badge-power {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 5px 0;
-}
-
-.Avenue-badge-of {
-  font-size: 1.2rem;
-  font-weight: 300;
-  margin-bottom: 5px;
-}
-
-.Avenue-badge-number {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-/* Gallery Section */
-.Avenue-gallery {
-  padding: 80px 5%;
-  background: white;
-}
-
-.Avenue-gallery-grid {
-  max-width: 1400px;
-  margin: 0 auto 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.Avenue-gallery-item {
-  aspect-ratio: 4/3;
-  background: #f0f0f0;
-  border-radius: 10px;
+.avenue__image {
+  position: relative;
+  border-radius: 24px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  transition: transform 0.5s ease;
 }
 
-.Avenue-gallery-item:hover {
+.avenue__image:hover {
+  transform: scale(1.03);
+}
+
+.avenue__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.avenue__image:hover .avenue__img {
   transform: scale(1.05);
 }
 
-.Avenue-gallery-placeholder {
-  width: 100%;
-  height: 100%;
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/High-Street_01.jpg') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
+/* ==================== BUILDING SECTION ==================== */
+.avenue__building-subtitle {
+  color: #C48032;
+  font-size: 12px;
+  letter-spacing: 3px;
   font-weight: 600;
+  margin-bottom: 16px;
 }
 
-.Avenue-gallery-item:nth-child(1) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/Elevation-View-New.jpg') center/cover;
-}
-
-.Avenue-gallery-item:nth-child(2) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/exter1-2.jpg') center/cover;
-}
-
-.Avenue-gallery-item:nth-child(3) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/Night-View.jpg') center/cover;
-}
-
-.Avenue-gallery-item:nth-child(4) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/Pods-View.jpg') center/cover;
-}
-
-.Avenue-gallery-item:nth-child(5) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/View_07.jpg') center/cover;
-}
-
-.Avenue-gallery-item:nth-child(6) .Avenue-gallery-placeholder {
-  background: url('https://rpsgroupindia.com/wp-content/uploads/2024/02/View_06.jpg') center/cover;
-}
-
-.Avenue-gallery-load-more {
-  display: block;
-  margin: 0 auto;
-  padding: 15px 50px;
-  background: #d4a23e;
-  color: white;
-  border: none;
-  border-radius: 5px;
+.avenue__building-title {
+  font-size: 56px;
   font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  text-transform: uppercase;
+  color: #1C3637;
+  line-height: 1.2;
+  margin-bottom: 24px;
 }
 
-.Avenue-gallery-load-more:hover {
-  background: #c49331;
+/* ==================== AMENITIES SECTION ==================== */
+.avenue__amenities-section {
+  padding: 120px 0;
+  background: #1C3637;
 }
 
-/* Location Section */
-.Avenue-location {
-  padding: 80px 5%;
-  background: #2c3e50;
-}
-
-.Avenue-location-header {
+.avenue__amenities-header {
   text-align: center;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  margin-bottom: 80px;
 }
 
-.Avenue-location-icon {
-  color: #ff6b00;
-  font-size: 1.2rem;
-}
-
-.Avenue-location-title {
-  font-size: 2.5rem;
-  color: white;
+.avenue__amenities-title {
+  font-size: 72px;
   font-weight: 700;
-  text-transform: uppercase;
-}
-
-.Avenue-location-content {
-  max-width: 1400px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.Avenue-location-subtitle {
-  font-size: 2rem;
-  color: white;
-  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
 }
 
-.Avenue-location-description {
-  color: #ecf0f1;
-  line-height: 1.8;
+.avenue__amenities-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
-.Avenue-location-map-placeholder {
-  width: 100%;
-  height: 400px;
-  background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=800&fit=crop') center/cover;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.Avenue-connectivity-header {
-  text-align: center;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.Avenue-connectivity-icon {
-  color: #ff6b00;
-  font-size: 1.2rem;
-}
-
-.Avenue-connectivity-title {
-  font-size: 2rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.Avenue-connectivity-grid {
-  max-width: 1200px;
+.avenue__amenities-description {
+  color: #D6E8CD;
+  max-width: 800px;
   margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.avenue__amenities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
-.Avenue-connectivity-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.Avenue-connectivity-card:hover {
-  transform: translateY(-5px);
-}
-
-.Avenue-connectivity-card .Avenue-connectivity-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.Avenue-connectivity-card p {
-  color: #333;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  line-height: 1.5;
-}
-
-/* Contact Section */
-.Avenue-contact {
-  padding: 80px 5%;
-  background: #f8f8f8;
-}
-
-.Avenue-contact-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.Avenue-contact-map {
-  width: 100%;
-  height: 500px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+.avenue__amenity-card {
+  position: relative;
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
-.Avenue-map-placeholder {
+.avenue__amenity-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 128, 50, 0);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.avenue__amenity-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
+}
+
+.avenue__amenity-card:hover .avenue__amenity-bg {
+  background: rgba(196, 128, 50, 0.08);
+  opacity: 1;
+}
+
+.avenue__amenity-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.avenue__amenity-icon {
+  color: #1C3637;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F4F8F7;
+  border-radius: 50%;
+  border: 3px solid #C48032;
+  transition: all 0.4s ease;
+  font-size: 54px;
+}
+
+.avenue__amenity-card:hover .avenue__amenity-icon {
+  background: #C48032;
+  color: #ffffff;
+  transform: scale(1.15) rotate(5deg);
+}
+
+.avenue__amenity-label {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==================== LAYOUT SECTION ==================== */
+.avenue__layout-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.avenue__layout-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.avenue__layout-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+}
+
+.avenue__layout-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.avenue__layout-tab {
+  padding: 20px 60px;
+  border: 2px solid #D6E8CD;
+  background: transparent;
+  color: #1C3637;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.avenue__layout-tab:hover {
+  border-color: #C48032;
+  color: #C48032;
+}
+
+.avenue__layout-tab--active {
+  background: #C48032;
+  border-color: #C48032;
+  color: #ffffff;
+}
+
+.avenue__layout-plans {
+  margin-top: 60px;
+}
+
+.avenue__layout-plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.avenue__layout-image-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  border: 4px solid #1C3637;
+}
+
+.avenue__layout-image {
   width: 100%;
-  height: 100%;
-  background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=800&fit=crop') center/cover;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ==================== FEATURES SECTION ==================== */
+.avenue__features-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.avenue__features-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+}
+
+.avenue__features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+}
+
+.avenue__feature-card {
+  position: relative;
+  background: #F4F8F7;
+  padding: 45px 35px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  border-top: 5px solid #1C3637;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+}
+
+.avenue__feature-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 128, 50, 0);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.avenue__feature-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+}
+
+.avenue__feature-card:hover .avenue__feature-bg {
+  background: rgba(196, 128, 50, 0.08);
+  opacity: 1;
+}
+
+.avenue__feature-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.avenue__feature-icon {
+  font-size: 54px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8fb560;
+}
+
+.avenue__feature-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1C3637;
+  line-height: 1.8;
+  white-space: pre-line;
+  margin: 0;
+}
+
+.avenue__feature-desc {
+  font-size: 13px;
+  color: #606E6F;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+/* ==================== GALLERY SECTION ==================== */
+.avenue__gallery-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.avenue__gallery-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.avenue__gallery-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
   position: relative;
 }
 
-.Avenue-map-marker {
-  font-size: 4rem;
-  margin-bottom: 20px;
+.avenue__gallery-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
-.Avenue-map-label {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.6;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.avenue__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.Avenue-contact-title {
-  font-size: 2rem;
-  color: #333;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.Avenue-form-wrapper {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.Avenue-form-input,
-.Avenue-form-select {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-
-.Avenue-form-input:focus,
-.Avenue-form-select:focus {
-  outline: none;
-  border-color: #ff6b00;
-}
-
-.Avenue-form-group {
-  margin-bottom: 20px;
-}
-
-.Avenue-form-label {
-  display: block;
-  color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.Avenue-form-submit {
-  width: 100%;
-  padding: 15px;
-  background: #d4a23e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 1rem;
+.avenue__gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
-  transition: background 0.3s;
+  border: 4px solid #1C3637;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(28, 54, 55, 0.2);
+}
+
+.avenue__gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.avenue__gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 128, 50, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.avenue__gallery-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.avenue__gallery-icon-bg {
+  background: #C48032;
+  padding: 16px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avenue__gallery-item:hover {
+  border-color: #C48032;
+  box-shadow: 0 15px 50px rgba(196, 128, 50, 0.3);
+  transform: translateY(-5px);
+}
+
+.avenue__gallery-item:hover .avenue__gallery-image {
+  transform: scale(1.15);
+}
+
+.avenue__gallery-item:hover .avenue__gallery-overlay,
+.avenue__gallery-item:hover .avenue__gallery-icon {
+  opacity: 1;
+}
+
+/* ==================== BENEFITS SECTION ==================== */
+.avenue__benefits-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.avenue__benefits-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+}
+
+.avenue__benefit-item {
+  margin-bottom: 50px;
+}
+
+.avenue__benefit-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #1C3637;
+  margin-bottom: 12px;
+}
+
+.avenue__benefit-line {
+  width: 80px;
+  height: 3px;
+  background: #C48032;
+  margin-bottom: 20px;
+}
+
+/* ==================== LOCATION SECTION ==================== */
+.avenue__location-section {
+  padding: 120px 0;
+  background: #88A3AF;
+}
+
+.avenue__location-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.avenue__location-title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.avenue__location-subtitle {
+  font-size: 24px;
+  color: #C48032;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.avenue__location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.avenue__location-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-left: 6px solid #C48032;
+}
+
+.avenue__location-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
+}
+
+.avenue__location-icon {
+  color: #C48032;
+  flex-shrink: 0;
+}
+
+.avenue__location-text {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1C3637;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==================== CONTACT FORM ==================== */
+.avenue__contact-form {
+  background: #F4F8F7;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
+}
+
+.avenue__form-input,
+.avenue__form-select {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 2px solid #D6E8CD;
+  border-radius: 8px;
+  color: #1C3637;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.avenue__form-input::placeholder {
+  color: #606E6F;
+}
+
+.avenue__form-input:focus,
+.avenue__form-select:focus {
+  outline: none;
+  border-color: #C48032;
+  background: #ffffff;
+}
+
+.avenue__form-select {
+  cursor: pointer;
+}
+
+.avenue__form-select option {
+  background: #ffffff;
+  color: #1C3637;
+}
+
+.avenue__form-submit {
+  width: 100%;
+  padding: 18px;
+  background: #C48032;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-transform: uppercase;
 }
 
-.Avenue-form-submit:hover {
-  background: #c49331;
+.avenue__form-submit:hover {
+  background: #a66b28;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(196, 128, 50, 0.4);
 }
 
-/* Responsive Design */
+/* ==================== MODAL ==================== */
+.avenue__modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.avenue__modal-content {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.avenue__modal-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.avenue__modal-close:hover {
+  color: #C48032;
+}
+
+.avenue__modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 1024px) {
-  .Avenue-overview-content,
-  .Avenue-offerings-content,
-  .Avenue-infrastructure-content,
-  .Avenue-location-content,
-  .Avenue-contact-content {
+  .avenue__grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 
-  .Avenue-choose-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .avenue__hero-title {
+    font-size: 64px;
   }
 
-  .Avenue-connectivity-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .avenue__section-title,
+  .avenue__building-title {
+    font-size: 46px;
   }
 
-  .Avenue-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .avenue__amenities-title,
+  .avenue__features-title,
+  .avenue__gallery-title,
+  .avenue__benefits-title,
+  .avenue__location-title,
+  .avenue__layout-title {
+    font-size: 56px;
   }
 }
 
 @media (max-width: 768px) {
-  .Avenue-hero-title {
-    font-size: 2.5rem;
+  .avenue__hero-title {
+    font-size: 48px;
+    letter-spacing: 4px;
   }
 
-  .Avenue-hero-subtitle {
-    font-size: 3rem;
+  .avenue__hero-description {
+    font-size: 20px;
   }
 
-  .Avenue-nav {
+  .avenue__section-title,
+  .avenue__building-title {
+    font-size: 36px;
+  }
+
+  .avenue__amenities-title,
+  .avenue__features-title,
+  .avenue__gallery-title,
+  .avenue__benefits-title,
+  .avenue__location-title,
+  .avenue__layout-title {
+    font-size: 42px;
+  }
+
+  .avenue__stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avenue__amenities-grid,
+  .avenue__features-grid,
+  .avenue__gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avenue__section,
+  .avenue__amenities-section,
+  .avenue__layout-section,
+  .avenue__gallery-section,
+  .avenue__location-section {
+    padding: 80px 0;
+  }
+
+  .avenue__main-nav {
     flex-wrap: wrap;
-    padding: 15px;
+    width: 100%;
   }
 
-  .Avenue-nav-link {
-    font-size: 0.75rem;
-    padding: 5px 10px;
+  .avenue__nav-link {
+    font-size: 11px;
+    padding: 20px 15px;
   }
 
-  .Avenue-section-title,
-  .Avenue-offerings-title,
-  .Avenue-offerings-subtitle,
-  .Avenue-advantages-title,
-  .Avenue-infrastructure-title,
-  .Avenue-infrastructure-subtitle,
-  .Avenue-infrastructure-subtitle-alt,
-  .Avenue-location-title,
-  .Avenue-choose-title {
-    font-size: 1.8rem;
+  .avenue__layout-plan {
+    grid-template-columns: 1fr;
   }
 
-  .Avenue-offerings-grid,
-  .Avenue-infrastructure-features,
-  .Avenue-advantages-grid,
-  .Avenue-choose-grid,
-  .Avenue-connectivity-grid,
-  .Avenue-gallery-grid {
+  .avenue__location-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .Avenue-hero-title {
-    font-size: 1.8rem;
-    letter-spacing: 4px;
+  .avenue__hero-title {
+    font-size: 32px;
+    letter-spacing: 2px;
   }
 
-  .Avenue-hero-subtitle {
-    font-size: 2rem;
-    letter-spacing: 6px;
+  .avenue__hero-description {
+    font-size: 16px;
   }
 
-  .Avenue-section-title,
-  .Avenue-offerings-title,
-  .Avenue-offerings-subtitle {
-    font-size: 1.5rem;
+  .avenue__section-title,
+  .avenue__building-title {
+    font-size: 30px;
   }
 
-  .Avenue-nav {
-    flex-direction: column;
-    gap: 10px;
+  .avenue__amenities-title,
+  .avenue__features-title,
+  .avenue__gallery-title,
+  .avenue__benefits-title,
+  .avenue__location-title,
+  .avenue__layout-title {
+    font-size: 34px;
+  }
+
+  .avenue__container {
+    padding: 0 15px;
+  }
+
+  .avenue__grid {
+    gap: 40px;
+  }
+
+  .avenue__location-grid {
+    grid-template-columns: 1fr;
   }
 }

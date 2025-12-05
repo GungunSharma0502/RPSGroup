@@ -9,65 +9,65 @@ const AllProjects = () => {
     {
       id: 1,
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-      title: "RPS 12th Avenue",
+      title: "Green Bunch 12th Avenue",
       description: "A Unique Blend of Office & Modern Retail",
       location: "0 KM from Delhi Faridabad Toll",
       status: "ON-GOING",
-      link: "/rps-12th-avenue"
+      link: "/greenbunch-12th-avenue"
     },
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-      title: "RPS - Auria",
+      title: "Green Bunch - Auria",
       description: "Ultra Luxurious 3 BHK & 5 BHK Residences",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       status: "ON-GOING",
-      link: "/rps-auria"
+      link: "/greenbunch-auria"
     },
     {
       id: 3,
       image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
-      title: "RPS - Savana",
+      title: "Green Bunch - Savana",
       description: "Residential Group Housing",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       status: "COMPLETED",
-      link: "/rps-savana"
+      link: "/greenbunch-savana"
     },
     {
       id: 4,
       image: "https://rpsgroupindia.com/wp-content/uploads/2023/05/Park-view-Hires-1024x577.jpg",
-      title: "RPS - Palm Drive",
+      title: "Green Bunch - Palm Drive",
       description: "Low Rise Floors",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       status: "COMPLETED",
-      link: "/rps-palm-drive"
+      link: "/greenbunch-palm-drive"
     },
     {
       id: 5,
       image: "https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&q=80",
-      title: "RPS - Palms",
+      title: "Green Bunch - Palms",
       description: "Low Rise Floors",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       status: "COMPLETED",
-      link: "/rps-palms"
+      link: "/greenbunch-palms"
     },
     {
       id: 6,
       image: "https://rpsgroupindia.com/wp-content/uploads/elementor/thumbs/VILA-new-copy-scaled-e1684588849696-qbn5ofw6x7ktkovrgarhp6852clltl03p6gf84zqe0.jpg",
-      title: "RPS - Green Valley",
+      title: "Green Bunch - Green Valley",
       description: "Villas & High Rise Apartments Sec 42,",
       location: "Faridabad",
       status: "COMPLETED",
-      link: "/rps-green-valley"
+      link: "/greenbunch-green-valley"
     },
     {
       id: 7,
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
-      title: "RPS - Saragram",
+      title: "Green Bunch - Saragram",
       description: "Villas & High Rise Apartments Sec 42,",
       location: "Faridabad",
       status: "COMPLETED",
-      link: "/rps-Sargam"
+      link: "/greenbunch-Sargam"
     },
     {
       id: 8,
@@ -90,29 +90,29 @@ const AllProjects = () => {
     {
       id: 10,
       image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80",
-      title: "RPS - Mint Homes",
+      title: "Green Bunch - Mint Homes",
       description: "Affordable 2 & 3 BHK Apartments",
       location: "Sector 95, Faridabad",
       status: "ON-GOING",
-      link: "/rps-mint-homes"
+      link: "/greenbunch-mint-homes"
     },
     {
       id: 11,
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      title: "RPS - Sky Gardens",
+      title: "Green Bunch - Sky Gardens",
       description: "High Rise Luxury Towers",
       location: "Sector 77, Faridabad",
       status: "UPCOMING",
-      link: "/rps-sky-gardens"
+      link: "/greenbunch-sky-gardens"
     },
     {
       id: 12,
       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-      title: "RPS - Heritage Villas",
+      title: "Green Bunch - Heritage Villas",
       description: "Premium Independent Villas",
       location: "Sector 85, Faridabad",
       status: "UPCOMING",
-      link: "/rps-heritage-villas"
+      link: "/greenbunch-heritage-villas"
     }
   ];
 

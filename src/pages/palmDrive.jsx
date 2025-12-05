@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import '../css/ProjectsCss/palmDrive.css';
 import Map from './Map';
+
 const PalmDrive = () => {
   const [activeTab, setActiveTab] = useState('ground');
   const [activeLocation, setActiveLocation] = useState(null);
 
   const locationData = {
     auria: {
-      title: "RPS AURIA",
-      description: "Experience luxury living at its finest with RPS Auria, the upcoming residential masterpiece. These exquisite apartments redefine elegance and comfort, offering a haven of tranquility in a prime location. With meticulous craftsmanship and top-notch amenities, RPS Auria sets a new standard for upscale living."
+      title: "GREEN BUNCH AURIA",
+      description: "Experience luxury living at its finest with Green Bunch Auria, the upcoming residential masterpiece. These exquisite apartments redefine elegance and comfort, offering a haven of tranquility in a prime location. With meticulous craftsmanship and top-notch amenities, Green Bunch Auria sets a new standard for upscale living."
     },
     savana: {
-      title: "RPS SAVANA",
-      description: "Experience the epitome of residential excellence at RPS Savana, a completed apartment complex that has been delighting residents for years. Nestled in a prime location, these residential apartments offer a harmonious blend of comfort, convenience, and style. With its exceptional amenities and well-designed living spaces, RPS Savana is the perfect place to call home."
+      title: "GREEN BUNCH SAVANA",
+      description: "Experience the epitome of residential excellence at Green Bunch Savana, a completed apartment complex that has been delighting residents for years. Nestled in a prime location, these residential apartments offer a harmonious blend of comfort, convenience, and style. With its exceptional amenities and well-designed living spaces, Green Bunch Savana is the perfect place to call home."
     },
     palms: {
-      title: "RPS PALMS",
-      description: "Discover the timeless charm of RPS Palms, a completed residential apartment complex that has stood the test of time. Offering a serene living environment, these apartments have been providing residents with a comfortable and luxurious lifestyle for years. With its impeccable design and array of amenities, RPS Palms continues to be a sought-after address for those seeking quality living spaces."
+      title: "GREEN BUNCH PALMS",
+      description: "Discover the timeless charm of Green Bunch Palms, a completed residential apartment complex that has stood the test of time. Offering a serene living environment, these apartments have been providing residents with a comfortable and luxurious lifestyle for years. With its impeccable design and array of amenities, Green Bunch Palms continues to be a sought-after address for those seeking quality living spaces."
     },
     central: {
-      title: "RPS CENTRAL",
-      description: "Experience the ultimate in recreational luxury at RPS Central, where the completed club has been catering to members for years. This exquisite facility offers a wide range of amenities, including state-of-the-art fitness centers, swimming pools, and leisure activities. Whether you seek relaxation or active pursuits, RPS Central provides the perfect setting for indulging in a vibrant and fulfilling lifestyle."
+      title: "GREEN BUNCH CENTRAL",
+      description: "Experience the ultimate in recreational luxury at Green Bunch Central, where the completed club has been catering to members for years. This exquisite facility offers a wide range of amenities, including state-of-the-art fitness centers, swimming pools, and leisure activities. Whether you seek relaxation or active pursuits, Green Bunch Central provides the perfect setting for indulging in a vibrant and fulfilling lifestyle."
     },
     palmDrive: {
-      title: "RPS PALM DRIVE",
-      description: "Current project location - RPS City, Sector 88, Faridabad, HR"
+      title: "GREEN BUNCH PALM DRIVE",
+      description: "Current project location - Green Bunch City, Sector 88, Faridabad, HR"
     },
     hospital: {
       title: "AMRITA HOSPITAL",
@@ -39,8 +40,8 @@ const PalmDrive = () => {
         <div className="palmDrive__heroOverlay">
           <div className="palmDrive__heroContent">
             <p className="palmDrive__heroCode">HRERA-PKL-FBD-116-2019</p>
-            <h1 className="palmDrive__heroTitle">RPS PALM DRIVE</h1>
-            <p className="palmDrive__heroLocation">RPS CITY, SECTOR 88, FARIDABAD, HR</p>
+            <h1 className="palmDrive__heroTitle">GREEN BUNCH PALM DRIVE</h1>
+            <p className="palmDrive__heroLocation">GREEN BUNCH CITY, SECTOR 88, FARIDABAD, HR</p>
             <p className="palmDrive__heroSubtitle">LOW RISE FLOOR (G+3)</p>
             <p className="palmDrive__heroConfig">2 BHK & 3 BHK</p>
             <button className="palmDrive__heroButton">VIEW MORE</button>
@@ -65,7 +66,7 @@ const PalmDrive = () => {
             <div className="palmDrive__overviewText">
               <h2 className="palmDrive__sectionTitle">PROJECT OVERVIEW</h2>
               <p className="palmDrive__description">
-                Introducing Palm Drive, the latest illustrious project by the renowned RPS Group, situated in the thriving Sector-88 of Faridabad. This development epitomizes the excellence that the developers are known for in the infrastructure industry, characterized by their unwavering commitment to world-class quality and ethical practices.
+                Introducing Palm Drive, the latest illustrious project by the renowned Green Bunch Group, situated in the thriving Sector-88 of Faridabad. This development epitomizes the excellence that the developers are known for in the infrastructure industry, characterized by their unwavering commitment to world-class quality and ethical practices.
               </p>
               <p className="palmDrive__description">
                 Palm Drive offers an array of meticulously designed apartments, including 1BHK and 2BHK configurations, with each apartment ranging from 630 Sq. Ft. to 720 Sq. Ft. Promising an exceptional living experience for all who call Palm Drive home.
@@ -74,7 +75,7 @@ const PalmDrive = () => {
               <div className="palmDrive__specs">
                 <div className="palmDrive__specItem">
                   <span className="palmDrive__specLabel">LOCATION</span>
-                  <span className="palmDrive__specValue">RPS City, Sec-88, Faridabad</span>
+                  <span className="palmDrive__specValue">Green Bunch City, Sec-88, Faridabad</span>
                 </div>
                 <div className="palmDrive__specItem">
                   <span className="palmDrive__specLabel">TYPE</span>
@@ -156,7 +157,7 @@ const PalmDrive = () => {
               
               <div className="palmDrive__layoutSpec">
                 <span className="palmDrive__layoutLabel">Location</span>
-                <span className="palmDrive__layoutValue">RPS City, Sec-88, FBD</span>
+                <span className="palmDrive__layoutValue">Green Bunch City, Sec-88, FBD</span>
               </div>
               <div className="palmDrive__layoutSpec">
                 <span className="palmDrive__layoutLabel">Type</span>
@@ -195,7 +196,7 @@ const PalmDrive = () => {
                     className={`palmDrive__accordionHeader ${activeLocation === 'auria' ? 'palmDrive__accordionHeader--active' : ''}`}
                     onClick={() => setActiveLocation(activeLocation === 'auria' ? null : 'auria')}
                   >
-                    <span>RPS AURIA</span>
+                    <span>GREEN BUNCH AURIA</span>
                     <span className="palmDrive__accordionIcon">{activeLocation === 'auria' ? '−' : '+'}</span>
                   </button>
                   {activeLocation === 'auria' && (
@@ -210,7 +211,7 @@ const PalmDrive = () => {
                     className={`palmDrive__accordionHeader ${activeLocation === 'savana' ? 'palmDrive__accordionHeader--active' : ''}`}
                     onClick={() => setActiveLocation(activeLocation === 'savana' ? null : 'savana')}
                   >
-                    <span>RPS SAVANA</span>
+                    <span>GREEN BUNCH SAVANA</span>
                     <span className="palmDrive__accordionIcon">{activeLocation === 'savana' ? '−' : '+'}</span>
                   </button>
                   {activeLocation === 'savana' && (
@@ -225,7 +226,7 @@ const PalmDrive = () => {
                     className={`palmDrive__accordionHeader ${activeLocation === 'palms' ? 'palmDrive__accordionHeader--active' : ''}`}
                     onClick={() => setActiveLocation(activeLocation === 'palms' ? null : 'palms')}
                   >
-                    <span>RPS PALMS</span>
+                    <span>GREEN BUNCH PALMS</span>
                     <span className="palmDrive__accordionIcon">{activeLocation === 'palms' ? '−' : '+'}</span>
                   </button>
                   {activeLocation === 'palms' && (
@@ -240,7 +241,7 @@ const PalmDrive = () => {
                     className={`palmDrive__accordionHeader ${activeLocation === 'central' ? 'palmDrive__accordionHeader--active' : ''}`}
                     onClick={() => setActiveLocation(activeLocation === 'central' ? null : 'central')}
                   >
-                    <span>RPS CENTRAL</span>
+                    <span>GREEN BUNCH CENTRAL</span>
                     <span className="palmDrive__accordionIcon">{activeLocation === 'central' ? '−' : '+'}</span>
                   </button>
                   {activeLocation === 'central' && (
@@ -255,7 +256,7 @@ const PalmDrive = () => {
                     className={`palmDrive__accordionHeader ${activeLocation === 'palmDrive' ? 'palmDrive__accordionHeader--active' : ''}`}
                     onClick={() => setActiveLocation(activeLocation === 'palmDrive' ? null : 'palmDrive')}
                   >
-                    <span>RPS PALM DRIVE</span>
+                    <span>GREEN BUNCH PALM DRIVE</span>
                     <span className="palmDrive__accordionIcon">{activeLocation === 'palmDrive' ? '−' : '+'}</span>
                   </button>
                   {activeLocation === 'palmDrive' && (

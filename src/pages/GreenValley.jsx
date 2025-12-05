@@ -53,7 +53,7 @@ const GreenValley = () => {
               <span>PREMIUM LIVING</span>
               <span className="GreenValley__hero-line"></span>
             </div>
-            <h1 className="GreenValley__hero-title">RPS GREEN VALLEY</h1>
+            <h1 className="GreenValley__hero-title">GREEN BUNCH GREEN VALLEY</h1>
             <p className="GreenValley__hero-description">Where Luxury Meets Nature</p>
             <div className="GreenValley__hero-location">
               <MapPin size={16} />
@@ -102,7 +102,7 @@ const GreenValley = () => {
               <h2 className="GreenValley__section-title">Experience Elevated Living</h2>
 
               <p className="GreenValley__overview-text">
-                Explore RPS – Green Valley, a prestigious residential project in Faridabad's Sector 42, offering a range of 2 BHK and 3 BHK apartments for sale. This Ready to Move project by RPS Infrastructure Ltd. spans across 25 acres and boasts a wide array of modern amenities. With unit sizes ranging from 1150.0 to 2690 Sq. Ft., RPS Green Valley presents a perfect blend of comfort and luxury. Launched in April 2005, the project was completed in August 2008, featuring a total of 628 meticulously designed units.
+                Explore Green Bunch – Green Valley, a prestigious residential project in Faridabad's Sector 42, offering a range of 2 BHK and 3 BHK apartments for sale. This Ready to Move project by Green Bunch Infrastructure Ltd. spans across 25 acres and boasts a wide array of modern amenities. With unit sizes ranging from 1150.0 to 2690 Sq. Ft., Green Bunch Green Valley presents a perfect blend of comfort and luxury. Launched in April 2005, the project was completed in August 2008, featuring a total of 628 meticulously designed units.
               </p>
 
               <div className="GreenValley__details-card">
@@ -126,7 +126,7 @@ const GreenValley = () => {
               <div className="GreenValley__overview-image">
                 <img 
                   src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Project-Photo-11-RPS-Green-Valley-Faridabad-5072696_972_1296-1024x917.jpg" 
-                  alt="RPS Green Valley"
+                  alt="Green Bunch Green Valley"
                 />
               </div>
             </div>
@@ -152,7 +152,7 @@ const GreenValley = () => {
               <p className="GreenValley__building-subtitle">TAKE A DEEP BREATH</p>
               <h2 className="GreenValley__building-title">And Forget All Your Worries</h2>
               <p className="GreenValley__building-text">
-                At RPS Green Valley, residents enjoy a multitude of amenities designed to enhance their quality of life. From a fully equipped gymnasium to a reliable RO water system and uninterrupted power backup, we've thought of every detail. Families with children will appreciate the dedicated children's play area, while the swimming pool, sports area, and recreation facilities provide ample entertainment options. Sports enthusiasts can make use of the tennis court and cycling & jogging track.
+                At Green Bunch Green Valley, residents enjoy a multitude of amenities designed to enhance their quality of life. From a fully equipped gymnasium to a reliable RO water system and uninterrupted power backup, we've thought of every detail. Families with children will appreciate the dedicated children's play area, while the swimming pool, sports area, and recreation facilities provide ample entertainment options. Sports enthusiasts can make use of the tennis court and cycling & jogging track.
               </p>
             </div>
           </div>

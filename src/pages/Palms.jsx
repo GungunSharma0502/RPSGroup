@@ -37,13 +37,13 @@ const Palms = () => {
   const projects = [
     {
       id: 'auria',
-      name: 'RPS AURIA',
-      description: 'Experience luxury living at its finest with RPS Auria, the upcoming residential masterpiece. These exquisite apartments redefine elegance and comfort, offering a haven of tranquility in a prime location. With meticulous craftsmanship and top-notch amenities, RPS Auria sets a new standard for upscale living.'
+      name: 'GREEN BUNCH AURIA',
+      description: 'Experience luxury living at its finest with Green Bunch Auria, the upcoming residential masterpiece. These exquisite apartments redefine elegance and comfort, offering a haven of tranquility in a prime location. With meticulous craftsmanship and top-notch amenities, Green Bunch Auria sets a new standard for upscale living.'
     },
     {
       id: 'savana',
-      name: 'RPS SAVANA',
-      description: 'Experience the epitome of residential excellence at RPS Savana, a completed apartment complex that has been delighting residents for years. Nestled in a prime location, RPS Savana offers a harmonious blend of comfort and convenience.'
+      name: 'GREEN BUNCH SAVANA',
+      description: 'Experience the epitome of residential excellence at Green Bunch Savana, a completed apartment complex that has been delighting residents for years. Nestled in a prime location, Green Bunch Savana offers a harmonious blend of comfort and convenience.'
     }
   ];
 
@@ -56,7 +56,7 @@ const Palms = () => {
       {/* Hero Section */}
       <div className="Palms__hero-section">
         <div className="Palms__hero-overlay"></div>
-        <h1 className="Palms__hero-title">RPS - PALMS</h1>
+        <h1 className="Palms__hero-title">GREEN BUNCH - PALMS</h1>
       </div>
 
       {/* Overview Section */}
@@ -68,7 +68,7 @@ const Palms = () => {
                 <span className="Palms__title-icon">⚈⚈⚈</span> OVERVIEW
               </h2>
               <p className="Palms__overview-text">
-                RPS Palms represents the finest in contemporary residency by redefining style and elegance along with an aesthetic design for a sophisticated visual symmetry. This esteemed project establishes the concept of complete serviced apartments and home stay that is now known to be the best alternative to hotel accommodations in the global hospitality industry. Your chance to live a life bigger than your imagination and excel your own dreams is here in the hot and happening environs at RPS Palms.
+                Green Bunch Palms represents the finest in contemporary residency by redefining style and elegance along with an aesthetic design for a sophisticated visual symmetry. This esteemed project establishes the concept of complete serviced apartments and home stay that is now known to be the best alternative to hotel accommodations in the global hospitality industry. Your chance to live a life bigger than your imagination and excel your own dreams is here in the hot and happening environs at Green Bunch Palms.
               </p>
 
               <div className="Palms__project-details">
@@ -90,7 +90,7 @@ const Palms = () => {
             <div className="Palms__overview-image">
               <img 
                 src="https://rpsgroupindia.com/wp-content/uploads/elementor/thumbs/VILA-new-copy-scaled-e1684588849696-qbn5ofw6x7ktkovrgarhp6852clltl03p6gf84zqe0.jpg" 
-                alt="RPS Palms"
+                alt="Green Bunch Palms"
               />
             </div>
           </div>
@@ -111,7 +111,7 @@ const Palms = () => {
               <h2 className="Palms__building-title">GROUP HOUSING SOCIETY</h2>
               <div className="Palms__building-divider">⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈⚈</div>
               <p className="Palms__building-description">
-                RPS Palms gives you an advantage of the best facilities like Power Back Up, Multipurpose Courts, Kids Play Area, Intercom Facility, Vaastu Compilant, Security, Reserved Parking, Gymnasium, Swimming Pool, Club House. At RPS Palms, you can enjoy a modern lifestyle as all conveniences are easily available.
+                Green Bunch Palms gives you an advantage of the best facilities like Power Back Up, Multipurpose Courts, Kids Play Area, Intercom Facility, Vaastu Compilant, Security, Reserved Parking, Gymnasium, Swimming Pool, Club House. At Green Bunch Palms, you can enjoy a modern lifestyle as all conveniences are easily available.
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ const Palms = () => {
               <div className="Palms__layout-info">
                 <div className="Palms__layout-row">
                   <span className="Palms__layout-label">Location</span>
-                  <span className="Palms__layout-value">RPS City, Sec-88, Faridabad</span>
+                  <span className="Palms__layout-value">Green Bunch City, Sec-88, Faridabad</span>
                 </div>
                 <div className="Palms__layout-row">
                   <span className="Palms__layout-label">Type</span>
@@ -270,12 +270,11 @@ const Palms = () => {
           <div className="Palms__location-map">
             <img 
               src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1000&h=700&fit=crop" 
-              alt="Aerial view of RPS Palms location"
+              alt="Aerial view of Green Bunch Palms location"
             />
             <div className="Palms__map-marker" style={{ top: '30%', left: '45%' }}></div>
             <div className="Palms__map-marker" style={{ top: '35%', left: '52%' }}></div>
             <div className="Palms__map-marker" style={{ top: '42%', right: '25%' }}></div>
-            <div className="Palms__map-marker" style={{ top: '48%', right: '35%' }}></div>
             <div className="Palms__map-marker" style={{ bottom: '25%', left: '40%' }}></div>
             <div className="Palms__map-marker" style={{ bottom: '30%', right: '30%' }}></div>
             <div className="Palms__map-marker" style={{ bottom: '15%', left: '50%' }}></div>

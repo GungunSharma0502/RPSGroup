@@ -1,20 +1,17 @@
-// import React, { useState } from 'react';
+import React from 'react';
 import '../css/ProjectsCss/propexity.css';
 
+// Import images
+import gallery from '../assets/propex/gallery.png';
+import gallery2 from '../assets/propex/gallery2.png';
+import garden from '../assets/propex/garden.png';
+import herosectionRight from '../assets/propex/herosection_right.png';
+import herosectionLeft from '../assets/propex/herosection-left.png';
+import layout from '../assets/propex/layout.png';
+
 const Propexity = () => {
-//   const [activeSection, setActiveSection] = useState('home');
-
-//   const scrollToSection = (sectionId) => {
-//     setActiveSection(sectionId);
-//     const element = document.getElementById(sectionId);
-//     element?.scrollIntoView({ behavior: 'smooth' });
-//   };
-
   return (
     <div className="propexity-container">
-     
-    
-
       {/* Hero Section */}
       <section id="home" className="propexity-hero">
         <div className="propexity-hero-content">
@@ -24,29 +21,29 @@ const Propexity = () => {
             An Exclusive Community of Premium Plots & Signature Villas
           </p>
           <p className="propexity-hero-text">
-            Nestled in the serene surroundings of Palwal, RPS RUDROM Group invites you to discover 
+            Nestled in the serene surroundings of Palwal, Green Bunch RUDROM Group invites you to discover 
             a life where nature, elegance, and modern comfort come together. Our thoughtfully planned 
             residential community is not just about living—it's about living well. Whether you're a 
             growing family, a working professional, or someone looking for a peaceful place to retire, 
-            RPS RUDROM Group is your destination for quality living.
+            Green Bunch RUDROM Group is your destination for quality living.
           </p>
           <p className="propexity-tagline">Live the lifestyle you've always wanted</p>
           <button className="propexity-cta-button">Explore Now</button>
         </div>
         <div className="propexity-hero-image">
-          <div className="propexity-placeholder-image">Modern Villa Entrance</div>
+          <img src={herosectionRight} alt="Modern Villa Entrance" />
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="propexity-about">
         <div className="propexity-about-image">
-          <div className="propexity-placeholder-image">Villa Exterior View</div>
+          <img src={herosectionLeft} alt="Villa Exterior View" />
         </div>
         <div className="propexity-about-content">
           <h2 className="propexity-section-title">Inspired by Palwal, delivering quality of life</h2>
           <p className="propexity-about-intro">
-            At RPS RUDROM Group, We intend to create a community worthy of our city—one that sets 
+            At Green Bunch RUDROM Group, We intend to create a community worthy of our city—one that sets 
             a new benchmark for how community life needs to be fostered.
           </p>
           <ul className="propexity-features-list">
@@ -80,7 +77,7 @@ const Propexity = () => {
         
         <div className="propexity-location-content">
           <div className="propexity-location-map">
-            <div className="propexity-placeholder-image">Location Map</div>
+            <img src={gallery} alt="Location Map" />
           </div>
           
           <div className="propexity-location-details">
@@ -168,12 +165,12 @@ const Propexity = () => {
         <h3 className="propexity-subsection-title">A Perfect Blend of Architecture, Amenities & Nature</h3>
         <p className="propexity-address-description">
           A Neo Premium residential society developed by Propex Realty Services Pvt. Ltd & CBG 
-          Realtech LLP under the brand name RPS RUDROM Group, lush, beautifully landscaped land. 
+          Realtech LLP under the brand name Green Bunch RUDROM Group, lush, beautifully landscaped land. 
           With a vision to provide peaceful yet connected living, this gated community features a 
           mix of Plots & Independent Villas designed to meet your needs and exceed your expectations.
         </p>
         <div className="propexity-address-image">
-          <div className="propexity-placeholder-image">Community Street View</div>
+          <img src={gallery2} alt="Community Street View" />
         </div>
       </section>
 
@@ -181,7 +178,7 @@ const Propexity = () => {
       <section className="propexity-masterplan">
         <h2 className="propexity-section-title">Master Plan</h2>
         <div className="propexity-masterplan-image">
-          <div className="propexity-placeholder-image">Site Layout Plan</div>
+          <img src={layout} alt="Site Layout Plan" />
         </div>
         <div className="propexity-phase-info">
           <div className="propexity-phase-card">
@@ -205,55 +202,55 @@ const Propexity = () => {
         <div className="propexity-amenities-grid">
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Entrance Gate</div>
+              <div className="propexity-placeholder-small">🏛️</div>
             </div>
             <p>Gated Community</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Cycling Path</div>
+              <div className="propexity-placeholder-small">🚴</div>
             </div>
             <p>Cycling Track</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Parking Area</div>
+              <div className="propexity-placeholder-small">🅿️</div>
             </div>
             <p>Ample Parking</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Security Guard</div>
+              <div className="propexity-placeholder-small">🛡️</div>
             </div>
             <p>24/7 Security</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Fitness Area</div>
+              <div className="propexity-placeholder-small">🏃</div>
             </div>
             <p>Jogging Track</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Gardens</div>
+              <div className="propexity-placeholder-small">🌺</div>
             </div>
             <p>Landscaped Gardens</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">CCTV Camera</div>
+              <div className="propexity-placeholder-small">📹</div>
             </div>
             <p>CCTV Surveillance</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Meditation Space</div>
+              <div className="propexity-placeholder-small">🧘</div>
             </div>
             <p>Yoga & Meditation</p>
           </div>
           <div className="propexity-amenity-card">
             <div className="propexity-amenity-image">
-              <div className="propexity-placeholder-small">Community Hub</div>
+              <div className="propexity-placeholder-small">🏢</div>
             </div>
             <p>Community Center</p>
           </div>
@@ -276,10 +273,10 @@ const Propexity = () => {
 
         <div className="propexity-amenity-showcase">
           <div className="propexity-showcase-image">
-            <div className="propexity-placeholder-image">Park Area</div>
+            <img src={garden} alt="Park Area" />
           </div>
           <div className="propexity-showcase-image">
-            <div className="propexity-placeholder-image">Community Entrance</div>
+            <img src={gallery} alt="Community Entrance" />
           </div>
         </div>
       </section>
@@ -287,17 +284,17 @@ const Propexity = () => {
       {/* Contact Section */}
       <section id="contact" className="propexity-contact">
         <div className="propexity-contact-image">
-          <div className="propexity-placeholder-image">Villa Front View</div>
+          <img src={herosectionLeft} alt="Villa Front View" />
         </div>
         <div className="propexity-contact-info">
           <div className="propexity-logo-large">
-            <h2>RPS RUDROM</h2>
+            <h2>GREEN BUNCH RUDROM</h2>
             <p className="propexity-logo-tagline">GROUP</p>
           </div>
           
           <div className="propexity-office-details">
             <h4>Head Office</h4>
-            <p>RPS 12/G Milestone, Main Mathura Road, Podier G, Sector 27C, Faridabad, Haryana-121001, India</p>
+            <p>Green Bunch 12/G Milestone, Main Mathura Road, Podier G, Sector 27C, Faridabad, Haryana-121001, India</p>
             
             <h4>Branch Office</h4>
             <p>4th Floor, M3m Urbana Premium, Golf Course Ext Rd, Premium, Sector 67, Gurugram, Haryana-122002, India</p>
@@ -307,8 +304,8 @@ const Propexity = () => {
           </div>
 
           <div className="propexity-contact-details">
-            <p><strong>Email:</strong> info@rpsrudrom.com</p>
-            <p><strong>Website:</strong> www.rpsrudrom.com</p>
+            <p><strong>Email:</strong> info@greenbunchrudrom.com</p>
+            <p><strong>Website:</strong> www.greenbunchrudrom.com</p>
             <p><strong>Contact:</strong> 93-9477110000</p>
           </div>
 
@@ -318,13 +315,10 @@ const Propexity = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="propexity-footer">
-        <p>&copy; 2025 RPS RUDROM Group. All rights reserved.</p>
-        <p>Designed with excellence for quality living</p>
-      </footer>
+    
     </div>
   );
 };
+
 
 export default Propexity;

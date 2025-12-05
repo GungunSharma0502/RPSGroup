@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/navbar.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,9 +32,12 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        {/* Logo */}
+        {/* Logo with Image */}
         <div className="navbar-logo">
-          <Link to="/">RPS GROUP</Link>
+          <Link to="/">
+            <img src={logo} alt="Green Bunch Group" className="navbar-logo-image" />
+            <span className="navbar-logo-text">GREEN BUNCH GROUP</span>
+          </Link>
         </div>
 
         {/* Hamburger Menu */}
@@ -76,16 +80,14 @@ const Navbar = () => {
                   <span className="section-arrow">▼</span>
                 </div>
                 <ul className="section-list">
-                  <li><Link to="/rps-auria" onClick={closeMobileMenu}>RPS Auria</Link></li>
-                  <li><Link to="/rps-savana" onClick={closeMobileMenu}>RPS Savana</Link></li>
-                  <li><Link to="/rps-palm-drive" onClick={closeMobileMenu}>RPS Palm Drive</Link></li>
-                  <li><Link to="/rps-palms" onClick={closeMobileMenu}>RPS Palms</Link></li>
-                  <li><Link to="/rps-green-valley" onClick={closeMobileMenu}>RPS Green Valley</Link></li>
-                  <li><Link to="/rps-Sargam" onClick={closeMobileMenu}>RPS Sargam Farmland Naugoan</Link></li>
+                  <li><Link to="/greenbunch-auria" onClick={closeMobileMenu}>Green Bunch Auria</Link></li>
+                  <li><Link to="/greenbunch-savana" onClick={closeMobileMenu}>Green Bunch Savana</Link></li>
+                  <li><Link to="/greenbunch-palm-drive" onClick={closeMobileMenu}>Green Bunch Palm Drive</Link></li>
+                  <li><Link to="/greenbunch-palms" onClick={closeMobileMenu}>Green Bunch Palms</Link></li>
+                  <li><Link to="/greenbunch-green-valley" onClick={closeMobileMenu}>Green Bunch Green Valley</Link></li>
+                  <li><Link to="/greenbunch-Sargam" onClick={closeMobileMenu}>Green Bunch Sargam Farmland Naugoan</Link></li>
                   <li><Link to="/the-elements-goa" onClick={closeMobileMenu}>The Elements, Goa</Link></li>
                   <li><Link to="/propex-city" onClick={closeMobileMenu}>PropexCity</Link></li>
-                  
-                   
                 </ul>
               </div>
 
@@ -96,7 +98,7 @@ const Navbar = () => {
                   <span className="section-arrow">▼</span>
                 </div>
                 <ul className="section-list">
-                  <li><Link to="/rps-12th-avenue" onClick={closeMobileMenu}>RPS 12th Avenue</Link></li>
+                  <li><Link to="/greenbunch-12th-avenue" onClick={closeMobileMenu}>Green Bunch 12th Avenue</Link></li>
                 </ul>
               </div>
 

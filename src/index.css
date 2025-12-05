@@ -18,7 +18,7 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  background: linear-gradient(180deg, #cfd2e0 0%, #dee1ea 50%, #a3a5af 100%);
 }
 
 /* Prevent white space on scroll */

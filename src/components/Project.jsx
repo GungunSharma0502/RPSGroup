@@ -9,65 +9,65 @@ const Projects = () => {
     {
       id: 1,
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-      title: "RPS 12th Avenue",
+      title: "Green Bunch 12th Avenue",
       subtitle: "A Unique Blend of Office & Modern Retail",
       location: "0 KM from Delhi Faridabad Toll",
       description: "Experience the perfect fusion of commercial excellence and modern retail spaces. Strategically located at the Delhi-Faridabad border, this project offers premium office spaces with world-class amenities and contemporary design.",
-      link: "/rps-12th-avenue"
+      link: "/greenbunch-12th-avenue"
     },
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-      title: "RPS - Auria",
+      title: "Green Bunch - Auria",
       subtitle: "Ultra Luxurious 3 BHK & 5 BHK Residences",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       description: "Indulge in ultra-luxurious living with spacious 3 BHK and 5 BHK residences. Featuring state-of-the-art amenities, elegant interiors, and premium finishes that redefine modern luxury living in Faridabad.",
-      link: "/rps-auria"
+      link: "/greenbunch-auria"
     },
     {
       id: 3,
       image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
-      title: "RPS - Savana",
+      title: "Green Bunch - Savana",
       subtitle: "Residential Group Housing",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       description: "A beautifully designed residential group housing project offering modern homes with excellent connectivity. Enjoy a perfect blend of comfort, convenience, and contemporary lifestyle amenities.",
-      link: "/rps-savana"
+      link: "/greenbunch-savana"
     },
     {
       id: 4,
       image: "https://rpsgroupindia.com/wp-content/uploads/2023/05/Park-view-Hires-1024x577.jpg",
-      title: "RPS - Palm Drive",
+      title: "Green Bunch - Palm Drive",
       subtitle: "Low Rise Floors",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       description: "Exclusive low-rise floors offering privacy and spacious living. Each unit is designed with attention to detail, providing residents with a serene and comfortable living environment amidst lush green surroundings.",
-      link: "/rps-palm-drive"
+      link: "/greenbunch-palm-drive"
     },
     {
       id: 5,
       image: "https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&q=80",
-      title: "RPS - Palms",
+      title: "Green Bunch - Palms",
       subtitle: "Low Rise Floors",
-      location: "RPS City, Sec 88, Faridabad",
+      location: "Green Bunch City, Sec 88, Faridabad",
       description: "Premium low-rise residential floors designed for those who appreciate finer living. Experience tranquility and elegance with modern architecture and high-quality construction standards.",
-      link: "/rps-palms"
+      link: "/greenbunch-palms"
     },
     {
       id: 6,
       image: "https://rpsgroupindia.com/wp-content/uploads/elementor/thumbs/VILA-new-copy-scaled-e1684588849696-qbn5ofw6x7ktkovrgarhp6852clltl03p6gf84zqe0.jpg",
-      title: "RPS - Green Valley",
+      title: "Green Bunch - Green Valley",
       subtitle: "Villas & High Rise Apartments Sec 42",
       location: "Faridabad",
       description: "Discover the perfect harmony of villas and high-rise apartments in a green valley setting. This project combines luxury living with nature, offering residents a peaceful retreat within the city.",
-      link: "/rps-green-valley"
+      link: "/greenbunch-green-valley"
     },
     {
       id: 7,
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
-      title: "RPS - Saragram",
+      title: "Green Bunch - Saragram",
       subtitle: "Villas & High Rise Apartments Sec 42",
       location: "Faridabad",
       description: "A premium residential development featuring luxurious villas and modern apartments. Designed to offer the best of both worlds with excellent amenities and thoughtful planning.",
-      link: "/rps-Sargam"
+      link: "/greenbunch-Sargam"
     },
     {
       id: 8,
@@ -114,34 +114,24 @@ const Projects = () => {
               key={project.id} 
               style={styles.cardContainer}
               onClick={() => handleCardClick(project.link)}
-              className="card-container"
+              className="greenbunch-card-container"
             >
-              <div style={styles.cardInner} className="card-inner">
-                {/* Front Side */}
-                <div style={styles.cardFront} className="card-front">
-                  <div style={styles.imageContainer}>
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      style={styles.image}
-                    />
-                    <div style={styles.imageOverlay}></div>
-                  </div>
-                  <div style={styles.frontInfo}>
-                    <h3 style={styles.projectTitle}>{project.title}</h3>
-                    <p style={styles.location}>📍 {project.location}</p>
-                  </div>
+              <div style={styles.cardInner} className="greenbunch-card-inner">
+                <div style={styles.imageContainer}>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    style={styles.image}
+                  />
                 </div>
-
-                {/* Back Side */}
-                <div style={styles.cardBack} className="card-back">
-                  <div style={styles.backContent}>
-                    <h3 style={styles.backTitle}>{project.title}</h3>
-                    <div style={styles.divider}></div>
-                    <p style={styles.backSubtitle}>{project.subtitle}</p>
-                    <p style={styles.description}>{project.description}</p>
-                    <p style={styles.backLocation}>📍 {project.location}</p>
+                <div style={styles.cardContent}>
+                  <div style={styles.iconWrapper}>
+                    <div style={styles.icon}></div>
                   </div>
+                  <h3 style={styles.projectTitle}>{project.title}</h3>
+                  <p style={styles.subtitle}>{project.subtitle}</p>
+                  <p style={styles.description}>{project.description}</p>
+                  <p style={styles.location}>📍 {project.location}</p>
                 </div>
               </div>
             </div>
@@ -152,7 +142,7 @@ const Projects = () => {
           <button 
             onClick={() => setShowAll(!showAll)} 
             style={styles.btn}
-            className="btn"
+            className="greenbunch-btn"
           >
             {showAll ? 'SHOW LESS' : 'VIEW ALL PROJECTS'}
           </button>
@@ -166,27 +156,19 @@ const Projects = () => {
             50% { transform: translateY(-30px) rotate(5deg); }
           }
 
-          .card-container:hover .card-inner {
-            transform: rotateY(180deg);
+          .greenbunch-card-container:hover .greenbunch-card-inner {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
           }
 
-          .card-front,
-          .card-back {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
+          .greenbunch-card-container:hover img {
+            transform: scale(1.05);
           }
 
-          .card-back {
-            transform: rotateY(180deg);
-          }
-
-          .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6) !important;
-          }
-
-          .card-container:hover .card-front img {
-            transform: scale(1.1);
+          .greenbunch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4) !important;
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%) !important;
           }
         `}
       </style>
@@ -197,8 +179,8 @@ const Projects = () => {
 const styles = {
   wrapper: {
     width: '100%',
-    background: 'linear-gradient(180deg, #1a2744 0%, #0d1b3e 50%, #0a1628 100%)',
-    padding: '100px 0',
+    background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',
+    padding: '80px 0',
     fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     position: 'relative',
     overflow: 'hidden',
@@ -210,7 +192,7 @@ const styles = {
     width: '600px',
     height: '600px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%)',
+    background: 'radial-gradient(circle, rgba(251, 146, 60, 0.08) 0%, transparent 70%)',
     animation: 'float 10s ease-in-out infinite',
   },
   bgCircle2: {
@@ -220,7 +202,7 @@ const styles = {
     width: '500px',
     height: '500px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, transparent 70%)',
+    background: 'radial-gradient(circle, rgba(249, 115, 22, 0.06) 0%, transparent 70%)',
     animation: 'float 12s ease-in-out infinite reverse',
   },
   bgCircle3: {
@@ -230,7 +212,7 @@ const styles = {
     width: '400px',
     height: '400px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%)',
+    background: 'radial-gradient(circle, rgba(251, 146, 60, 0.05) 0%, transparent 70%)',
     animation: 'float 14s ease-in-out infinite',
   },
   container: {
@@ -244,73 +226,51 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '20px',
-    marginBottom: '70px',
+    marginBottom: '60px',
     position: 'relative',
   },
   headerIcon: {
     fontSize: '28px',
     fontWeight: 'bold',
     letterSpacing: '3px',
-    background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
+    background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
-    textShadow: '0 0 30px rgba(59, 130, 246, 0.5)',
   },
   title: {
     fontSize: '48px',
     fontWeight: '800',
     letterSpacing: '4px',
-    background: 'linear-gradient(135deg, #ffffff 0%, #60a5fa 100%)',
+    background: 'linear-gradient(135deg, #1f2937 0%, #4b5563 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     margin: 0,
-    textShadow: '0 0 40px rgba(59, 130, 246, 0.3)',
   },
   grid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
     gap: '35px',
-    marginBottom: '70px',
+    marginBottom: '60px',
   },
   cardContainer: {
-    perspective: '1000px',
-    height: '420px',
+    height: '480px',
     cursor: 'pointer',
   },
   cardInner: {
-    position: 'relative',
     width: '100%',
     height: '100%',
-    transition: 'transform 0.8s',
-    transformStyle: 'preserve-3d',
-  },
-  cardFront: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    background: 'rgba(30, 64, 175, 0.15)',
-    backdropFilter: 'blur(20px)',
-    borderRadius: '16px',
+    background: '#ffffff',
+    borderRadius: '20px',
     overflow: 'hidden',
-    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)',
-    border: '1px solid rgba(59, 130, 246, 0.3)',
-  },
-  cardBack: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    background: 'linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%)',
-    backdropFilter: 'blur(20px)',
-    borderRadius: '16px',
-    overflow: 'hidden',
-    boxShadow: '0 8px 30px rgba(59, 130, 246, 0.4)',
-    border: '1px solid rgba(96, 165, 250, 0.4)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+    border: '1px solid rgba(0, 0, 0, 0.05)',
+    transition: 'all 0.3s ease',
   },
   imageContainer: {
     width: '100%',
-    height: '260px',
+    height: '180px',
     overflow: 'hidden',
     position: 'relative',
   },
@@ -318,93 +278,77 @@ const styles = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    transition: 'transform 0.6s ease',
+    transition: 'transform 0.4s ease',
   },
-  imageOverlay: {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(to bottom, transparent 0%, rgba(13, 27, 62, 0.3) 100%)',
-    pointerEvents: 'none',
+  cardContent: {
+    padding: '30px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
   },
-  frontInfo: {
-    padding: '25px',
-    background: 'rgba(13, 27, 62, 0.8)',
-    backdropFilter: 'blur(10px)',
+  iconWrapper: {
+    width: '60px',
+    height: '60px',
+    borderRadius: '16px',
+    background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '10px',
+    boxShadow: '0 4px 15px rgba(249, 115, 22, 0.3)',
+  },
+  icon: {
+    width: '30px',
+    height: '30px',
+    borderRadius: '8px',
+    background: 'rgba(255, 255, 255, 0.3)',
   },
   projectTitle: {
     fontSize: '20px',
     fontWeight: '700',
-    color: '#ffffff',
-    margin: '0 0 10px 0',
-    letterSpacing: '0.5px',
-    textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-  },
-  location: {
-    fontSize: '13px',
-    color: '#94a3b8',
+    color: '#1f2937',
     margin: 0,
+    letterSpacing: '0.3px',
   },
-  backContent: {
-    padding: '35px',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-  backTitle: {
-    fontSize: '24px',
-    fontWeight: '800',
-    color: '#fff',
-    margin: '0 0 15px 0',
-    letterSpacing: '0.5px',
-    textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-  },
-  divider: {
-    width: '60px',
-    height: '3px',
-    background: '#fff',
-    margin: '0 0 20px 0',
-    borderRadius: '2px',
-    boxShadow: '0 0 15px rgba(255, 255, 255, 0.5)',
-  },
-  backSubtitle: {
-    fontSize: '14px',
+  subtitle: {
+    fontSize: '13px',
     fontWeight: '600',
-    color: 'rgba(255, 255, 255, 0.95)',
-    margin: '0 0 15px 0',
+    color: '#6b7280',
+    margin: 0,
     lineHeight: '1.5',
   },
   description: {
     fontSize: '13px',
-    color: 'rgba(255, 255, 255, 0.85)',
-    lineHeight: '1.7',
-    margin: '0 0 20px 0',
-    flex: 1,
-  },
-  backLocation: {
-    fontSize: '13px',
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: '#9ca3af',
+    lineHeight: '1.6',
     margin: 0,
+    display: '-webkit-box',
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+  },
+  location: {
+    fontSize: '12px',
+    color: '#9ca3af',
+    margin: '5px 0 0 0',
     fontWeight: '500',
   },
   btnContainer: {
     textAlign: 'center',
-    marginTop: '70px',
+    marginTop: '60px',
   },
   btn: {
-    background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+    background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
     color: '#fff',
-    border: '1px solid rgba(59, 130, 246, 0.5)',
-    padding: '18px 50px',
-    fontSize: '14px',
-    fontWeight: '700',
-    letterSpacing: '2px',
+    border: 'none',
+    padding: '16px 45px',
+    fontSize: '13px',
+    fontWeight: '600',
+    letterSpacing: '1.5px',
     cursor: 'pointer',
     borderRadius: '50px',
-    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 10px 30px rgba(30, 64, 175, 0.5)',
-    backdropFilter: 'blur(10px)',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(249, 115, 22, 0.25)',
   },
 };
 

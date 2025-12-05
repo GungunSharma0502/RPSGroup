@@ -34,7 +34,7 @@ const AboutUs = () => {
   const testimonials = [
     {
       name: 'RAJENDER TYAGI',
-      text: 'Shifted to Faridabad to set up my business and was looking for a shop in RPS Central. I was convinced with the word of mouth of this project.',
+      text: 'Shifted to Faridabad to set up my business and was looking for a shop in Green Bunch Central. I was convinced with the word of mouth of this project.',
       image: '/api/placeholder/60/60'
     },
     {
@@ -44,7 +44,7 @@ const AboutUs = () => {
     },
     {
       name: 'AJAY BAGGA',
-      text: 'Faridabad always had the potential of a modern city and RPS through this township set an example on thinking and making possible this dream. This township is an Epitome of thing.',
+      text: 'Faridabad always had the potential of a modern city and Green Bunch through this township set an example on thinking and making possible this dream. This township is an Epitome of thing.',
       image: '/api/placeholder/60/60'
     }
   ];
@@ -104,7 +104,7 @@ const AboutUs = () => {
                 </p>
                 <div className="aboutus-divider" />
                 <p className="aboutus-text">
-                  Following the outstanding success of their first two projects, the RPS Group was formally established in 2005. Subsequently, RPS Group embarked on a series of exceptional projects, including RPS Auria, RPS Savana, RPS Palms, RPS Palm Drive, and RPS Paras Apartment. Furthermore, RPS Group is actively engaged in an ongoing commercial venture, 12th Avenue, a notable project, which is a KM from Delhi-Faridabad toll progressing towards completion by 2024.
+                  Following the outstanding success of their first two projects, the Green Bunch Group was formally established in 2005. Subsequently, Green Bunch Group embarked on a series of exceptional projects, including Green Bunch Auria, Green Bunch Savana, Green Bunch Palms, Green Bunch Palm Drive, and Green Bunch Paras Apartment. Furthermore, Green Bunch Group is actively engaged in an ongoing commercial venture, 12th Avenue, a notable project, which is a KM from Delhi-Faridabad toll progressing towards completion by 2024.
                 </p>
               </div>
             </div>
@@ -113,7 +113,7 @@ const AboutUs = () => {
               <div className="aboutus-gradient-border aboutus-floating">
                 <img 
                   src="https://rpsgroupindia.com/wp-content/uploads/2023/05/nite-copy-1024x768.jpg" 
-                  alt="RPS Overview" 
+                  alt="Green Bunch Overview" 
                   className="aboutus-image"
                 />
               </div>
@@ -159,7 +159,7 @@ const AboutUs = () => {
               <div className="aboutus-gradient-border aboutus-floating" style={{animationDelay: '1s'}}>
                 <img 
                   src="https://rpsgroupindia.com/wp-content/uploads/2023/05/Entrance-View-Hires-1024x576.jpg" 
-                  alt="RPS Vision" 
+                  alt="Green Bunch Vision" 
                   className="aboutus-image"
                 />
               </div>
@@ -177,7 +177,7 @@ const AboutUs = () => {
 
               <div className="aboutus-glass-card">
                 <p className="aboutus-text">
-                  Our Vision at <span className="aboutus-highlight">RPS Group</span> is to be the leading force in the real estate industry, recognized for our excellence, innovation, and client-centric approach. We aim to set new standards in real estate services, driven by a passion for creating valuable and enduring connections between people and their ideal properties.
+                  Our Vision at <span className="aboutus-highlight">Green Bunch Group</span> is to be the leading force in the real estate industry, recognized for our excellence, innovation, and client-centric approach. We aim to set new standards in real estate services, driven by a passion for creating valuable and enduring connections between people and their ideal properties.
                 </p>
               </div>
             </div>
@@ -200,7 +200,7 @@ const AboutUs = () => {
 
             <div className="aboutus-glass-card aboutus-mission-card">
               <p className="aboutus-text aboutus-mission-text">
-                Our Mission at <span className="aboutus-highlight">RPS Group</span> is to transform dreams into realities. We are dedicated to providing exceptional real estate services that empower our clients to achieve their property goals, whether it's finding the perfect home, making profitable investments, or optimizing property management.
+                Our Mission at <span className="aboutus-highlight">Green Bunch Group</span> is to transform dreams into realities. We are dedicated to providing exceptional real estate services that empower our clients to achieve their property goals, whether it's finding the perfect home, making profitable investments, or optimizing property management.
               </p>
             </div>
           </div>

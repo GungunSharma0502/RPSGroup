@@ -1,8 +1,8 @@
 /* ==================== GLOBAL STYLES ==================== */
 .GreenValley {
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+  color: #1C3637;
+  background: #F4F8F7;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -36,10 +36,21 @@
 
 @keyframes glow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -48,6 +59,9 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .GreenValley__hero-background {
@@ -56,17 +70,13 @@
   background-image: url('https://rpsgroupindia.com/wp-content/uploads/elementor/thumbs/VILA-new-copy-scaled-e1684588849696-qbn5ofw6x7ktkovrgarhp6852clltl03p6gf84zqe0.jpg');
   background-size: cover;
   background-position: center;
-  transition: transform 0.1s ease-out;
+  z-index: 0;
 }
 
 .GreenValley__hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, 
-    rgba(12, 74, 110, 0.8) 0%, 
-    rgba(15, 23, 42, 0.7) 50%, 
-    rgba(2, 6, 23, 1) 100%
-  );
+  background: rgba(28, 54, 55, 0.5);
 }
 
 .GreenValley__hero-content {
@@ -90,23 +100,23 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 4px;
   margin-bottom: 20px;
 }
 
 .GreenValley__hero-line {
   width: 48px;
-  height: 1px;
-  background: #06b6d4;
+  height: 2px;
+  background: #C48032;
 }
 
 .GreenValley__hero-title {
   font-size: 96px;
-  font-weight: 100;
-  letter-spacing: 8px;
+  font-weight: 700;
+  letter-spacing: 4px;
   color: #ffffff;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
   margin: 0 0 24px 0;
@@ -115,9 +125,9 @@
 
 .GreenValley__hero-description {
   font-size: 28px;
-  color: #d1d5db;
-  font-weight: 300;
-  letter-spacing: 2px;
+  color: #F4F8F7;
+  font-weight: 400;
+  letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
@@ -126,8 +136,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #67e8f9;
+  color: #8fb560;
   font-size: 14px;
+  font-weight: 600;
 }
 
 .GreenValley__scroll-indicator {
@@ -141,7 +152,7 @@
 .GreenValley__scroll-mouse {
   width: 24px;
   height: 40px;
-  border: 2px solid #06b6d4;
+  border: 2px solid #C48032;
   border-radius: 20px;
   display: flex;
   align-items: flex-start;
@@ -152,58 +163,86 @@
 .GreenValley__scroll-wheel {
   width: 4px;
   height: 12px;
-  background: #06b6d4;
+  background: #C48032;
   border-radius: 2px;
 }
 
 /* ==================== STATS BAR ==================== */
 .GreenValley__stats-bar {
-  background: linear-gradient(90deg, #1e3a8a 0%, #0e7490 100%);
-  padding: 24px 0;
+  background: #1C3637;
+  padding: 40px 0;
   margin-top: -1px;
 }
 
 .GreenValley__stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .GreenValley__stat-card {
+  position: relative;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 20px;
-  transition: all 0.3s ease;
+  gap: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.GreenValley__stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 128, 50, 0);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .GreenValley__stat-card:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(196, 128, 50, 0.3);
+}
+
+.GreenValley__stat-card:hover::before {
+  background: rgba(196, 128, 50, 0.08);
+  opacity: 1;
 }
 
 .GreenValley__stat-icon {
-  color: #67e8f9;
+  color: #C48032;
+  font-size: 40px;
 }
 
 .GreenValley__stat-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: #1C3637;
+  position: relative;
+  z-index: 1;
 }
 
 .GreenValley__stat-desc {
-  font-size: 13px;
-  color: #d1d5db;
+  font-size: 14px;
+  color: #606E6F;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ==================== OVERVIEW SECTION ==================== */
 .GreenValley__overview-section {
   padding: 120px 0;
+  background: #ffffff;
 }
 
 .GreenValley__overview-grid {
@@ -211,6 +250,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .GreenValley__section-header {
@@ -227,50 +269,52 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #06b6d4;
+  background: #C48032;
 }
 
 .GreenValley__dot:nth-child(2) {
-  background: #3b82f6;
+  background: #8fb560;
 }
 
 .GreenValley__section-subtitle {
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
   letter-spacing: 3px;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .GreenValley__section-title {
   font-size: 56px;
-  font-weight: 100;
-  color: #ffffff;
+  font-weight: 700;
+  color: #1C3637;
   line-height: 1.2;
   margin-bottom: 32px;
+  letter-spacing: -1px;
 }
 
 .GreenValley__overview-text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #606E6F;
   text-align: justify;
   margin-bottom: 40px;
 }
 
 .GreenValley__details-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+  background: #1C3637;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.3);
+  position: relative;
 }
 
 .GreenValley__detail-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(214, 232, 205, 0.2);
 }
 
 .GreenValley__detail-row:last-child {
@@ -278,15 +322,16 @@
 }
 
 .GreenValley__detail-label {
-  color: #06b6d4;
-  font-size: 13px;
+  color: #C48032;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .GreenValley__detail-value {
-  color: #e5e7eb;
-  font-weight: 300;
+  color: #F4F8F7;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .GreenValley__overview-image-wrapper {
@@ -295,24 +340,24 @@
 
 .GreenValley__image-glow {
   position: absolute;
-  inset: -16px;
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  border-radius: 24px;
-  filter: blur(40px);
+  inset: -20px;
+  background: #C48032;
+  border-radius: 30px;
+  filter: blur(50px);
   opacity: 0.3;
-  animation: glow 3s ease-in-out infinite;
+  animation: glow 4s ease-in-out infinite;
 }
 
 .GreenValley__overview-image {
   position: relative;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
   transition: transform 0.5s ease;
 }
 
 .GreenValley__overview-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .GreenValley__overview-image img {
@@ -329,7 +374,7 @@
 /* ==================== BUILDING SECTION ==================== */
 .GreenValley__building-section {
   padding: 120px 0;
-  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  background: #1C3637;
 }
 
 .GreenValley__building-grid {
@@ -337,22 +382,36 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .GreenValley__building-image-wrapper {
   position: relative;
 }
 
+.GreenValley__building-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: #C48032;
+  border-radius: 30px;
+  filter: blur(50px);
+  opacity: 0.3;
+  animation: glow 4s ease-in-out infinite;
+}
+
 .GreenValley__building-image {
   position: relative;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease;
 }
 
 .GreenValley__building-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .GreenValley__building-image img {
@@ -367,31 +426,34 @@
 }
 
 .GreenValley__building-subtitle {
-  color: #06b6d4;
+  color: #C48032;
   font-size: 12px;
   letter-spacing: 3px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .GreenValley__building-title {
   font-size: 56px;
-  font-weight: 100;
+  font-weight: 700;
   color: #ffffff;
   line-height: 1.2;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
 }
 
 .GreenValley__building-text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #F4F8F7;
   text-align: justify;
 }
 
 /* ==================== AMENITIES SECTION ==================== */
 .GreenValley__amenities-section {
   padding: 120px 0;
+  background: #C48032;
 }
 
 .GreenValley__amenities-header {
@@ -401,85 +463,108 @@
 
 .GreenValley__amenities-title {
   font-size: 72px;
-  font-weight: 100;
+  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: 4px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.GreenValley__amenities-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #ffffff;
 }
 
 .GreenValley__amenities-description {
-  color: #9ca3af;
+  color: #F4F8F7;
   max-width: 800px;
   margin: 0 auto;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-top: 40px;
 }
 
 .GreenValley__amenities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .GreenValley__amenity-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
-  padding: 40px 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  backdrop-filter: blur(10px);
+  background: #F4F8F7;
+  padding: 45px 35px;
+  border-radius: 20px;
   transition: all 0.5s ease;
+  border-top: 5px solid #1C3637;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 .GreenValley__amenity-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0) 0%, rgba(59, 130, 246, 0) 100%);
+  background: rgba(196, 128, 50, 0);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 .GreenValley__amenity-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(6, 182, 212, 0.6);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
 }
 
 .GreenValley__amenity-card:hover .GreenValley__amenity-bg {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  background: rgba(196, 128, 50, 0.08);
   opacity: 1;
 }
 
 .GreenValley__amenity-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .GreenValley__amenity-icon {
-  color: #06b6d4;
-  margin-bottom: 20px;
+  color: #8fb560;
+  font-size: 54px;
   display: flex;
   justify-content: center;
-  transition: color 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .GreenValley__amenity-card:hover .GreenValley__amenity-icon {
-  color: #67e8f9;
+  color: #C48032;
+  transform: scale(1.15);
 }
 
 .GreenValley__amenity-label {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  color: #e5e7eb;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  color: #1C3637;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
 
 /* ==================== GALLERY SECTION ==================== */
 .GreenValley__gallery-section {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  background: #ffffff;
 }
 
 .GreenValley__gallery-header {
@@ -489,23 +574,48 @@
 
 .GreenValley__gallery-title {
   font-size: 72px;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 4px;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.GreenValley__gallery-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: #C48032;
 }
 
 .GreenValley__gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1280px;
+  margin: 80px auto 0;
+  padding: 0 20px;
 }
 
 .GreenValley__gallery-item {
   position: relative;
   aspect-ratio: 4/3;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+  border: 4px solid #1C3637;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 30px rgba(28, 54, 55, 0.2);
+}
+
+.GreenValley__gallery-item:hover {
+  border-color: #C48032;
+  box-shadow: 0 15px 50px rgba(196, 128, 50, 0.3);
+  transform: translateY(-5px);
 }
 
 .GreenValley__gallery-item img {
@@ -516,13 +626,21 @@
   transition: transform 0.7s ease;
 }
 
+.GreenValley__gallery-item:hover img {
+  transform: scale(1.15);
+}
+
 .GreenValley__gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: rgba(196, 128, 50, 0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   z-index: 1;
+}
+
+.GreenValley__gallery-item:hover .GreenValley__gallery-overlay {
+  opacity: 1;
 }
 
 .GreenValley__gallery-icon {
@@ -537,20 +655,16 @@
 }
 
 .GreenValley__gallery-icon-bg {
-  background: #06b6d4;
+  background: #C48032;
   padding: 16px;
   border-radius: 50%;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 20px rgba(196, 128, 50, 0.4);
 }
 
-.GreenValley__gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.GreenValley__gallery-item:hover .GreenValley__gallery-overlay,
 .GreenValley__gallery-item:hover .GreenValley__gallery-icon {
   opacity: 1;
 }
@@ -559,7 +673,7 @@
 .GreenValley__modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(28, 54, 55, 0.95);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -578,22 +692,30 @@
   position: absolute;
   top: -48px;
   right: 0;
-  background: none;
+  background: #C48032;
   border: none;
   color: #ffffff;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 12px 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(196, 128, 50, 0.4);
 }
 
 .GreenValley__modal-close:hover {
-  color: #06b6d4;
+  background: #8fb560;
+  transform: scale(1.1);
 }
 
 .GreenValley__modal-image {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
+  border: 4px solid #C48032;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -610,12 +732,12 @@
 
   .GreenValley__section-title,
   .GreenValley__building-title {
-    font-size: 42px;
+    font-size: 46px;
   }
 
   .GreenValley__amenities-title,
   .GreenValley__gallery-title {
-    font-size: 52px;
+    font-size: 56px;
   }
 
   .GreenValley__amenities-grid {
@@ -626,7 +748,7 @@
 @media (max-width: 768px) {
   .GreenValley__hero-title {
     font-size: 48px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
   }
 
   .GreenValley__hero-description {
@@ -635,12 +757,12 @@
 
   .GreenValley__section-title,
   .GreenValley__building-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .GreenValley__amenities-title,
   .GreenValley__gallery-title {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .GreenValley__stats-grid {
@@ -663,7 +785,7 @@
 @media (max-width: 480px) {
   .GreenValley__hero-title {
     font-size: 32px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .GreenValley__hero-description {
@@ -672,12 +794,12 @@
 
   .GreenValley__section-title,
   .GreenValley__building-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .GreenValley__amenities-title,
   .GreenValley__gallery-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .GreenValley__container {
@@ -687,5 +809,11 @@
   .GreenValley__overview-grid,
   .GreenValley__building-grid {
     gap: 40px;
+  }
+
+  .GreenValley__stats-grid,
+  .GreenValley__amenities-grid,
+  .GreenValley__gallery-grid {
+    padding: 0 15px;
   }
 }

@@ -1,4 +1,4 @@
-/* Keyframe Animations */
+/* ==================== KEYFRAME ANIMATIONS ==================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -70,13 +70,34 @@
   }
 }
 
-/* Main Container */
-.aboutus-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #020617 0%, #1e3a8a 50%, #0f172a 100%);
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* Animation Classes */
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ==================== MAIN CONTAINER ==================== */
+.aboutus-container {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #1C3637;
+  background: #F4F8F7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==================== ANIMATION CLASSES ==================== */
 .aboutus-animate-on-scroll.aboutus-visible {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -93,7 +114,7 @@
   animation: scaleIn 0.6s ease-out forwards;
 }
 
-/* Hero Section */
+/* ==================== HERO SECTION ==================== */
 .aboutus-hero {
   position: relative;
   height: 100vh;
@@ -108,13 +129,13 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.4);
+  filter: brightness(0.85);
 }
 
 .aboutus-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.8) 50%, rgba(15, 23, 42, 0.9) 100%);
+  background: rgba(28, 54, 55, 0.5);
 }
 
 .aboutus-hero-content {
@@ -132,20 +153,23 @@
 .aboutus-hero-line {
   height: 4px;
   width: 80px;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  background: #C48032;
   margin: 0 auto;
   border-radius: 9999px;
+  box-shadow: 0 0 20px rgba(196, 128, 50, 0.5);
 }
 
 .aboutus-hero-title {
   font-size: 5rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
 
 .aboutus-shimmer-text {
-  background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #60a5fa 100%);
+  background: linear-gradient(90deg, #C48032 0%, #F4F8F7 50%, #C48032 100%);
   background-size: 1000px 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -154,7 +178,7 @@
 }
 
 .aboutus-hero-subtitle {
-  color: #bfdbfe;
+  color: #F4F8F7;
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.2em;
@@ -170,11 +194,11 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #60a5fa;
+  background-color: #C48032;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Section Container */
+/* ==================== SECTION CONTAINER ==================== */
 .aboutus-section-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -182,7 +206,7 @@
   z-index: 10;
 }
 
-/* Background Blur Effects */
+/* ==================== BACKGROUND BLUR EFFECTS ==================== */
 .aboutus-bg-blur {
   position: absolute;
   width: 384px;
@@ -195,35 +219,35 @@
 .aboutus-bg-blur-top-left {
   top: 0;
   left: 0;
-  background-color: #3b82f6;
+  background-color: #C48032;
 }
 
 .aboutus-bg-blur-bottom-right {
   bottom: 0;
   right: 0;
-  background-color: #8b5cf6;
+  background-color: #1C3637;
 }
 
 .aboutus-bg-blur-top-right {
   top: 0;
   right: 0;
-  background-color: #3b82f6;
+  background-color: #C48032;
 }
 
 .aboutus-bg-blur-bottom-left {
   bottom: 0;
   left: 0;
-  background-color: #8b5cf6;
+  background-color: #1C3637;
 }
 
 .aboutus-bg-blur-center {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #8b5cf6;
+  background-color: #C48032;
 }
 
-/* Section Headers */
+/* ==================== SECTION HEADERS ==================== */
 .aboutus-section-header {
   margin-bottom: 4rem;
   text-align: center;
@@ -244,61 +268,63 @@
 .aboutus-header-line {
   width: 4px;
   height: 32px;
-  background: linear-gradient(to bottom, #60a5fa, #8b5cf6);
+  background: #C48032;
   border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(196, 128, 50, 0.3);
 }
 
 .aboutus-header-line-purple {
-  background: linear-gradient(to bottom, #a78bfa, #3b82f6);
+  background: #1C3637;
 }
 
 .aboutus-section-title {
   font-size: 3rem;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #1C3637;
+  letter-spacing: 0.05em;
 }
 
-/* Glass Card */
+/* ==================== GLASS CARD ==================== */
 .aboutus-glass-card {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  background: #ffffff;
+  border: 2px solid #D6E8CD;
   padding: 2rem;
   border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.15);
 }
 
-/* Gradient Border */
+/* ==================== GRADIENT BORDER ==================== */
 .aboutus-gradient-border {
   position: relative;
-  background: rgba(15, 23, 42, 0.8);
+  background: #ffffff;
   border-radius: 1rem;
   padding: 1px;
+  border: 3px solid #C48032;
+  box-shadow: 0 10px 40px rgba(196, 128, 50, 0.2);
 }
 
 .aboutus-gradient-border::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -3px;
   border-radius: 1rem;
-  padding: 2px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  background: linear-gradient(135deg, #C48032, #1C3637, #C48032);
+  z-index: -1;
+  opacity: 0.3;
 }
 
-/* Floating Animation */
+/* ==================== FLOATING ANIMATION ==================== */
 .aboutus-floating {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Text Styles */
+/* ==================== TEXT STYLES ==================== */
 .aboutus-text {
-  color: #cbd5e1;
+  color: #606E6F;
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.9;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .aboutus-text:last-child {
@@ -306,29 +332,36 @@
 }
 
 .aboutus-highlight {
-  color: #60a5fa;
-  font-weight: 600;
+  color: #C48032;
+  font-weight: 700;
 }
 
 .aboutus-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #3b82f6, transparent);
+  height: 2px;
+  background: linear-gradient(to right, transparent, #C48032, transparent);
   margin: 1.5rem 0;
 }
 
-/* Image */
+/* ==================== IMAGE ==================== */
 .aboutus-image {
   width: 100%;
   height: auto;
   border-radius: 1rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(28, 54, 55, 0.25);
+  border: 4px solid #C48032;
+  transition: transform 0.5s ease;
 }
 
-/* Overview Section */
+.aboutus-image:hover {
+  transform: scale(1.03);
+}
+
+/* ==================== OVERVIEW SECTION ==================== */
 .aboutus-overview-section {
   position: relative;
   padding: 8rem 1rem;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .aboutus-overview-grid {
@@ -338,16 +371,21 @@
   align-items: center;
 }
 
-/* Stats Section */
+/* ==================== STATS SECTION (BLACK BACKGROUND) ==================== */
 .aboutus-stats-section {
   position: relative;
   padding: 6rem 1rem;
+  background: #000000;
 }
 
 .aboutus-stats-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #1e3a8a, #0f172a, #1e3a8a);
+  background: #000000;
+}
+
+.aboutus-stats-section .aboutus-section-title {
+  color: #ffffff;
 }
 
 .aboutus-stats-grid {
@@ -358,10 +396,16 @@
 
 .aboutus-stat-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border: 3px solid #C48032;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(196, 128, 50, 0.3);
 }
 
 .aboutus-stat-card:hover {
   transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(196, 128, 50, 0.5);
+  border-color: #F4F8F7;
 }
 
 .aboutus-stat-content {
@@ -379,31 +423,30 @@
 
 .aboutus-stat-value {
   font-size: 3.75rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  color: #C48032 !important;
 }
 
 .aboutus-stat-unit {
   font-size: 2.25rem;
   font-weight: 300;
-  color: #93c5fd;
+  color: #1C3637 !important;
   margin-left: 0.5rem;
 }
 
 .aboutus-stat-description {
-  color: #94a3b8;
+  color: #606E6F !important;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
+  font-weight: 600;
 }
 
-/* Vision Section */
+/* ==================== VISION SECTION ==================== */
 .aboutus-vision-section {
   position: relative;
   padding: 8rem 1rem;
   overflow: hidden;
+  background: #F4F8F7;
 }
 
 .aboutus-vision-grid {
@@ -413,11 +456,15 @@
   align-items: center;
 }
 
-/* Mission Section */
+/* ==================== MISSION SECTION ==================== */
 .aboutus-mission-section {
   position: relative;
   padding: 8rem 1rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+  background: #1C3637;
+}
+
+.aboutus-mission-section .aboutus-section-title {
+  color: #ffffff;
 }
 
 .aboutus-mission-container {
@@ -428,17 +475,24 @@
 .aboutus-mission-card {
   padding: 3rem;
   margin-top: 2rem;
+  background: #ffffff;
+  border: 3px solid #C48032;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .aboutus-mission-text {
   font-size: 1.25rem;
+  color: #606E6F;
+  line-height: 1.9;
 }
 
-/* Testimonials Section */
+/* ==================== TESTIMONIALS SECTION ==================== */
 .aboutus-testimonials-section {
   position: relative;
   padding: 8rem 1rem;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .aboutus-testimonials-header {
@@ -447,9 +501,10 @@
 }
 
 .aboutus-testimonials-subtitle {
-  color: #94a3b8;
+  color: #606E6F;
   font-size: 1.125rem;
   margin-top: 1rem;
+  font-weight: 400;
 }
 
 .aboutus-testimonials-grid {
@@ -460,11 +515,16 @@
 
 .aboutus-testimonial-card {
   transition: all 0.4s ease;
+  background: #ffffff;
+  border: 2px solid #D6E8CD;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(28, 54, 55, 0.15);
 }
 
 .aboutus-testimonial-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 60px rgba(196, 128, 50, 0.3);
+  border-color: #C48032;
 }
 
 .aboutus-testimonial-content {
@@ -479,16 +539,17 @@
 }
 
 .aboutus-star {
-  color: #facc15;
+  color: #C48032;
   font-size: 1.5rem;
 }
 
 .aboutus-testimonial-text {
-  color: #cbd5e1;
+  color: #606E6F;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.9;
   margin-bottom: 2rem;
   min-height: 128px;
+  text-align: justify;
 }
 
 .aboutus-testimonial-author {
@@ -496,34 +557,36 @@
   align-items: center;
   gap: 1rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #334155;
+  border-top: 2px solid #D6E8CD;
 }
 
 .aboutus-author-image {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 2px solid #3b82f6;
+  border: 3px solid #C48032;
+  box-shadow: 0 4px 15px rgba(196, 128, 50, 0.3);
 }
 
 .aboutus-author-name {
-  color: white;
-  font-weight: 600;
+  color: #1C3637;
+  font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 .aboutus-author-label {
-  color: #64748b;
+  color: #606E6F;
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
-/* Footer Accent */
+/* ==================== FOOTER ACCENT ==================== */
 .aboutus-footer-accent {
   height: 8px;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #3b82f6);
+  background: linear-gradient(to right, #C48032, #1C3637, #C48032);
 }
 
-/* Responsive Design */
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (min-width: 768px) {
   .aboutus-hero-title {
     font-size: 8rem;
@@ -550,5 +613,66 @@
 @media (min-width: 1024px) {
   .aboutus-stats-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutus-hero {
+    height: 70vh;
+  }
+
+  .aboutus-hero-title {
+    font-size: 3rem;
+  }
+
+  .aboutus-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .aboutus-section-title {
+    font-size: 2rem;
+  }
+
+  .aboutus-overview-section,
+  .aboutus-stats-section,
+  .aboutus-vision-section,
+  .aboutus-mission-section,
+  .aboutus-testimonials-section {
+    padding: 5rem 1rem;
+  }
+
+  .aboutus-mission-card {
+    padding: 2rem;
+  }
+
+  .aboutus-mission-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-hero {
+    height: 60vh;
+  }
+
+  .aboutus-hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aboutus-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .aboutus-section-title {
+    font-size: 1.75rem;
+  }
+
+  .aboutus-stat-value {
+    font-size: 2.5rem;
+  }
+
+  .aboutus-stat-unit {
+    font-size: 1.5rem;
   }
 }

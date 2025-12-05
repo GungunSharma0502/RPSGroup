@@ -80,13 +80,13 @@ const Auria1 = () => {
           <div className="auria1-section-marker">⬥⬥⬥</div>
           <h2 className="auria1-section-title">PROJECT OVERVIEW</h2>
           <p className="auria1-description">
-            RPS Auria is a Residential space that has been designed to be Faridabad's new landmark residence through stunning architecture, Spacious layouts, and a slew of unbeatable features. The project is located in the prestigious RPS City which spans over 100 Acres in Sector 88, Faridabad.
+            GreenBunch Auria is a Residential space that has been designed to be Faridabad's new landmark residence through stunning architecture, Spacious layouts, and a slew of unbeatable features. The project is located in the prestigious GreenBunch City which spans over 100 Acres in Sector 88, Faridabad.
           </p>
 
           <div className="auria1-project-details">
             <div className="auria1-detail-row">
               <span className="auria1-detail-label">Location</span>
-              <span className="auria1-detail-value">RPS City, Sec-88, Faridabad</span>
+              <span className="auria1-detail-value">GreenBunch City, Sec-88, Faridabad</span>
             </div>
             <div className="auria1-detail-row">
               <span className="auria1-detail-label">Type</span>
@@ -118,7 +118,7 @@ const Auria1 = () => {
           </div>
         </div>
         <div className="auria1-overview-image">
-          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Auria-2-scaled.jpg" alt="RPS Auria Building" />
+          <img src="https://rpsgroupindia.com/wp-content/uploads/2023/08/Auria-2-scaled.jpg" alt="GreenBunch Auria Building" />
         </div>
       </div>
 
@@ -183,7 +183,7 @@ const Auria1 = () => {
           <div className="auria1-section-marker">⬥⬥⬥</div>
           <h2 className="auria1-section-title">EXPERIENCE THE 5 BHK VIRTUAL TOUR</h2>
           <p className="auria1-description">
-            Explore the enchanting world of RPS Auria through our immersive virtual walkthrough. Experience the perfect blend of modern architecture, exquisite craftsmanship, and serene outdoor spaces. Discover a luxurious living experience where elegance, functionality, and natural beauty converge.
+            Explore the enchanting world of GreenBunch Auria through our immersive virtual walkthrough. Experience the perfect blend of modern architecture, exquisite craftsmanship, and serene outdoor spaces. Discover a luxurious living experience where elegance, functionality, and natural beauty converge.
           </p>
           <button className="auria1-tour-button">
             <span className="auria1-play-icon">▶</span>
@@ -210,7 +210,7 @@ const Auria1 = () => {
           <h3 className="auria1-sports-title">SPORTS ARENA</h3>
           <h2 className="auria1-sports-subtitle">ENERGIZE YOUR LIFESTYLE</h2>
           <p className="auria1-description">
-            Discover the Ultimate Sports Arena at RPS AURIA where residents can indulge in world-class sports having a basketball court, badminton courts and cricket net practice pitch, open gym and much more, enriching the lifestyle of every resident with active and engaging activities.
+            Discover the Ultimate Sports Arena at GreenBunch AURIA where residents can indulge in world-class sports having a basketball court, badminton courts and cricket net practice pitch, open gym and much more, enriching the lifestyle of every resident with active and engaging activities.
           </p>
         </div>
       </div>
@@ -379,14 +379,14 @@ const Auria1 = () => {
 
       <div className="auria1-location-content">
         <div className="auria1-location-info">
-          <h3>RPS AURIA</h3>
+          <h3>GREENBUNCH AURIA</h3>
           <p style={{ marginBottom: '1.5rem' }}>
-            Elevate your lifestyle at RPS Auria, where luxury meets serenity in a prime location.
+            Elevate your lifestyle at GreenBunch Auria, where luxury meets serenity in a prime location.
             Experience the pinnacle of upscale living with top-notch amenities and impeccable craftsmanship.
           </p>
-          <h3>RPS SAVANA</h3>
+          <h3>GREENBUNCH SAVANA</h3>
           <p>
-            Discover the pinnacle of residential excellence at RPS Savana, where prime location meets ultimate comfort and style.
+            Discover the pinnacle of residential excellence at GreenBunch Savana, where prime location meets ultimate comfort and style.
           </p>
         </div>
         <div className="auria1-location-map">
@@ -450,7 +450,7 @@ const Auria1 = () => {
       <div className="auria1-hero">
         <img 
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" 
-          alt="RPS Auria" 
+          alt="GreenBunch Auria" 
           className="auria1-hero-image"
         />
         <div className="auria1-hero-logo">

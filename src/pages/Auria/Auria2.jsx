@@ -38,8 +38,8 @@ const Auria2 = () => {
                 <img src="https://rpsgroupindia.com/wp-content/uploads/2023/09/Auria-13-1.jpg"alt="auriaLocation"/>
               </div>
               <div className="auria2-map-info">
-                <h4>RPS AURIA</h4>
-                <p>27, Sector 88, Bisauli Colony, RPS Colony, Faridabad, Haryana 121014</p>
+                <h4>GREENBUNCH AURIA</h4>
+                <p>27, Sector 88, Bisauli Colony, GreenBunch Colony, Faridabad, Haryana 121014</p>
                 <p style={{ color: '#d97706', marginTop: '0.5rem' }}>3.3 ★★★★★ · 103 reviews</p>
               </div>
             </div>

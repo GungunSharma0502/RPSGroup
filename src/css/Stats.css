@@ -1,0 +1,171 @@
+/* ==================== STATS COMPONENT STYLES ==================== */
+.Stats {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== STATS SECTION (PURE BLACK BACKGROUND) ==================== */
+.Stats__section {
+  position: relative;
+  padding: 80px 0;
+  background: #000000;
+  max-width: 100%;
+  margin: 0;
+}
+
+.Stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.Stats__card {
+  position: relative;
+  text-align: center;
+  padding: 50px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 3px solid #000000;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.Stats__card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.Stats__card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.Stats__card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.Stats__card:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.Stats__card:hover,
+.Stats__card--hovered {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  border-color: #000000;
+}
+
+.Stats__value {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #000000 !important;
+  display: inline;
+  line-height: 1.1;
+  text-shadow: none;
+}
+
+.Stats__suffix {
+  font-size: 36px;
+  font-weight: 300;
+  color: #000000 !important;
+  margin-left: 8px;
+  display: inline;
+}
+
+.Stats__divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #000000, transparent);
+  margin: 20px 0;
+}
+
+.Stats__label {
+  font-size: 11px;
+  color: #000000 !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .Stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 30px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .Stats__section {
+    padding: 60px 0;
+  }
+
+  .Stats__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+  .Stats__card {
+    padding: 40px 25px;
+  }
+
+  .Stats__value {
+    font-size: 48px;
+  }
+
+  .Stats__suffix {
+    font-size: 28px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .Stats__section {
+    padding: 50px 0;
+  }
+
+  .Stats__grid {
+    padding: 0 15px;
+  }
+
+  .Stats__card {
+    padding: 30px 20px;
+  }
+
+  .Stats__value {
+    font-size: 40px;
+  }
+
+  .Stats__suffix {
+    font-size: 24px;
+  }
+
+  .Stats__label {
+    font-size: 10px;
+  }
+}
